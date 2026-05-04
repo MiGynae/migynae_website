@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Complete Labour Prep Guide | MiGynae</title>
+    <meta name="description" content="A complete guide to preparing for a smoother, more confident normal delivery — by Dr. Shuchita Batra.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F4A4A3;
+            --primary-dark: #e88a89;
+            --primary-light: #fdf0f0;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --green: #27ae60;
+            --red: #e74c3c;
+            --amber: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: #fafafa;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 24px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -40px;
+            width: 250px; height: 250px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+
+        .hero-brand {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero-author {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-weight: 500;
+        }
+
+        /* Content wrapper */
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+        }
+
+        /* Intro card */
+        .intro-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .intro-card strong {
+            color: var(--primary-dark);
+        }
+
+        /* Section */
+        .section {
+            margin: 28px 0;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-number {
+            background: rgba(255,255,255,0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .section-body {
+            background: white;
+            border-radius: 0 0 16px 16px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+
+        /* Cards inside sections */
+        .card {
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 14px 0;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title .icon {
+            font-size: 1rem;
+        }
+
+        /* Check list */
+        ul.check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.check-list li {
+            padding: 5px 0 5px 28px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        ul.check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        ul.cross-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.cross-list li {
+            padding: 5px 0 5px 28px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        ul.cross-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        ul.dot-list {
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        ul.dot-list li {
+            padding: 4px 0;
+        }
+
+        /* Week blocks */
+        .week-block {
+            border: 1.5px solid #f1e4e4;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 14px 0;
+        }
+
+        .week-block-header {
+            background: linear-gradient(90deg, var(--primary-light), #fff5f5);
+            padding: 12px 18px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            border-bottom: 1.5px solid #f1e4e4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .week-block-body {
+            padding: 14px 18px;
+            background: white;
+        }
+
+        .week-focus {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: var(--primary-light);
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #fff8e6;
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-box .warning-title {
+            font-weight: 700;
+            color: var(--amber);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Info row */
+        .info-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            padding: 7px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f8f8f8;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row .label {
+            font-weight: 700;
+            color: var(--primary-dark);
+            min-width: 90px;
+            font-size: 0.88rem;
+        }
+
+        /* Exercise grid */
+        .exercise-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #f8f8f8;
+        }
+
+        .exercise-item:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .exercise-text strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .exercise-text span {
+            font-size: 0.83rem;
+            color: var(--text-light);
+        }
+
+        /* Daily routine */
+        .routine-row {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .routine-row:last-child {
+            border-bottom: none;
+        }
+
+        .routine-time {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            min-width: 90px;
+            text-align: center;
+        }
+
+        .routine-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Q&A */
+        .qa-item {
+            background: var(--primary-light);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .qa-item::before {
+            content: '?';
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            padding: 36px 24px;
+            text-align: center;
+            color: white;
+            margin: 28px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
+
+        .cta-btn-android {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .cta-btn-ios {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            padding: 20px 16px 40px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 16px 0 8px;
+        }
+
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .goal-box {
+            background: linear-gradient(135deg, var(--primary-light), #fff);
+            border: 1.5px dashed var(--primary);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .goal-box strong {
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-brand">MiGynae</div>
+        <h1>&#127800; Your Complete Labour Prep Guide</h1>
+        <div class="hero-author">By Dr. Shuchita Batra</div>
+        <div class="hero-tagline">
+            Labour is not luck.<br>It is <strong>preparation + patience + guidance.</strong>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="intro-card">
+            If you want a smoother, more confident normal delivery — start preparing <strong>BEFORE labour begins.</strong>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>Antenatal Foundation (0–20 Weeks)</h2>
+            </div>
+            <div class="section-body">
+                <p>First rule: <span class="highlight">If you are a LOW-RISK pregnancy — stay ACTIVE.</span></p>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#10003;</span> Confirm with your doctor</div>
+                    <ul class="check-list">
+                        <li>No cervical shortening</li>
+                        <li>No cervical dilation</li>
+                        <li>No bleeding / complications</li>
+                    </ul>
+                </div>
+
+                <h3>&#128161; What most women do wrong</h3>
+                <p>They become overly cautious &#8594; stop movement &#8594; body becomes stiff &#8594; labour becomes difficult</p>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#9989;</span> What you SHOULD do</div>
+                    <ul class="check-list">
+                        <li>Continue daily routine work</li>
+                        <li>Avoid unnecessary bed rest</li>
+                        <li>Do not panic with mild pulling pains</li>
+                    </ul>
+                </div>
+
+                <h3>&#127939;&#8205;&#9792;&#65039; 3 Must-Do Exercises (0–20 Weeks)</h3>
+                <div class="exercise-item">
+                    <div class="exercise-icon"><i class="fas fa-walking"></i></div>
+                    <div class="exercise-text">
+                        <strong>Walking (20–30 min daily)</strong>
+                        <span>Improves circulation &amp; stamina</span>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                    <div class="exercise-text">
+                        <strong>Pelvic Tilts (5–10 reps, 2–3 times/day)</strong>
+                        <span>Strengthens pelvic muscles</span>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-icon"><i class="fas fa-wind"></i></div>
+                    <div class="exercise-text">
+                        <strong>Deep Breathing Practice (5 min daily)</strong>
+                        <span>Starts training your body for labour</span>
+                    </div>
+                </div>
+
+                <div class="goal-box">&#127919; Goal: Build a <strong>flexible + strong body</strong> early</div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>Smart Activity Plan (20–36 Weeks)</h2>
+            </div>
+            <div class="section-body">
+                <p>Now your preparation becomes <strong>targeted for labour.</strong> Progress gradually every 4 weeks:</p>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 20–24 Weeks</div>
+                    <div class="week-block-body">
+                        <ul class="check-list">
+                            <li>Walking daily (30 min)</li>
+                            <li>Butterfly pose (gentle)</li>
+                        </ul>
+                        <div class="week-focus">Focus: Flexibility begins</div>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 24–28 Weeks</div>
+                    <div class="week-block-body">
+                        <ul class="check-list">
+                            <li>Walking continues</li>
+                            <li>Butterfly pose</li>
+                            <li>Start Pelvic Opening Movements (Duck walk – mild, assisted)</li>
+                        </ul>
+                        <div class="week-focus">Focus: Hip opening</div>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 28–32 Weeks</div>
+                    <div class="week-block-body">
+                        <ul class="check-list">
+                            <li>Walking</li>
+                            <li>Butterfly pose</li>
+                            <li>Add Squats (supported, 5–10 reps)</li>
+                            <li>Cat-Cow Stretch (very important)</li>
+                        </ul>
+                        <div class="week-focus">Focus: Pelvis mobility + baby positioning</div>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 32–34 Weeks — Start Active Labour Preparation</div>
+                    <div class="week-block-body">
+                        <ul class="check-list">
+                            <li>Walking (30–40 min daily)</li>
+                            <li>Supported squats (8–10 reps)</li>
+                            <li>Cat-Cow stretch</li>
+                            <li>Pelvic rocking</li>
+                            <li>Birthing ball sitting &amp; gentle bouncing</li>
+                        </ul>
+                        <div class="week-focus">Focus: Improve flexibility + begin baby descent preparation</div>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 34–36 Weeks — Intensify Your Preparation</div>
+                    <div class="week-block-body">
+                        <ul class="check-list">
+                            <li>Walking (essential daily)</li>
+                            <li>Squats (increase frequency)</li>
+                            <li>Birthing ball (15–20 mins/day)</li>
+                            <li>Pelvic rocking (regular)</li>
+                            <li>Lunges (supported) &#8594; improves pelvic opening</li>
+                            <li>Side-lying leg lifts &#8594; strengthens pelvic muscles</li>
+                        </ul>
+                        <div class="week-focus">Focus: Open pelvis + improve baby positioning</div>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 36+ Weeks — Final Labour Readiness Phase</div>
+                    <div class="week-block-body">
+                        <p>Now your body needs <strong>maximum support for labour.</strong> Make movement your routine throughout the day.</p>
+
+                        <h3>&#128293; Must-Do Exercises</h3>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-child"></i></div>
+                            <div class="exercise-text">
+                                <strong>Deep Squats / Malasana (supported)</strong>
+                                <span>Opens pelvic outlet</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-circle"></i></div>
+                            <div class="exercise-text">
+                                <strong>Birthing Ball Exercises</strong>
+                                <span>Sitting, bouncing, circular hip movements</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-sync-alt"></i></div>
+                            <div class="exercise-text">
+                                <strong>Pelvic Rocking (frequent)</strong>
+                                <span>Helps baby descend</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-walking"></i></div>
+                            <div class="exercise-text">
+                                <strong>Walking (multiple short rounds daily)</strong>
+                                <span>Encourages natural labour onset</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-paw"></i></div>
+                            <div class="exercise-text">
+                                <strong>Cat-Cow Stretch</strong>
+                                <span>Improves baby alignment</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-spa"></i></div>
+                            <div class="exercise-text">
+                                <strong>Butterfly Pose</strong>
+                                <span>Keeps pelvic muscles relaxed</span>
+                            </div>
+                        </div>
+                        <div class="exercise-item">
+                            <div class="exercise-icon"><i class="fas fa-stairs"></i></div>
+                            <div class="exercise-text">
+                                <strong>Stair Climbing (if comfortable)</strong>
+                                <span>Helps engagement of baby</span>
+                            </div>
+                        </div>
+
+                        <h3>&#128197; Daily Routine</h3>
+                        <div class="routine-row">
+                            <div class="routine-time">Morning</div>
+                            <div class="routine-text">Walk + Squats</div>
+                        </div>
+                        <div class="routine-row">
+                            <div class="routine-time">Afternoon</div>
+                            <div class="routine-text">Birthing ball + Pelvic rocking</div>
+                        </div>
+                        <div class="routine-row">
+                            <div class="routine-time">Evening</div>
+                            <div class="routine-text">Walk + Butterfly pose</div>
+                        </div>
+                        <div class="routine-row">
+                            <div class="routine-time">Night</div>
+                            <div class="routine-text">Deep breathing + Relaxation</div>
+                        </div>
+
+                        <div class="goal-box">&#127919; Focus: <strong>Encourage baby descent + natural labour onset</strong></div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-title"><i class="fas fa-exclamation-triangle"></i> Always stop if:</div>
+                    <ul class="dot-list">
+                        <li>Pain increases</li>
+                        <li>Giddiness</li>
+                        <li>Bleeding / leaking</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#10003;</span> Important reminders</div>
+                    <ul class="check-list">
+                        <li>Stay active — but don't exhaust yourself</li>
+                        <li>Take breaks</li>
+                        <li>Stay hydrated</li>
+                        <li>Consistency matters more than intensity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>Diet for Easier Labour (32+ Weeks)</h2>
+            </div>
+            <div class="section-body">
+                <p>This is where most people ignore preparation. From <strong>32–34 weeks onwards</strong>, shift to a labour-supportive diet.</p>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#9989;</span> What Helps</div>
+                    <ul class="check-list">
+                        <li><strong>Protein-rich foods</strong> (dal, paneer, sprouts) — builds stamina for labour</li>
+                        <li><strong>Iron + hydration</strong> — prevents exhaustion</li>
+                        <li><strong>Dates</strong> (2–3 daily) — natural energy</li>
+                        <li><strong>Coconut water</strong> — electrolytes</li>
+                        <li><strong>Banana</strong> — quick energy</li>
+                        <li><strong>Fibre-rich diet</strong> — prevents constipation for a smoother labour experience</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="background:#fff5f5; border-left: 3px solid var(--red);">
+                    <div class="card-title" style="color: var(--red);"><span class="icon">&#10007;</span> Avoid</div>
+                    <ul class="cross-list">
+                        <li>Heavy oily food</li>
+                        <li>Excess sugar</li>
+                        <li>Overeating at night</li>
+                    </ul>
+                </div>
+
+                <div class="goal-box">&#127919; Goal: <strong>Light body + high energy = better pushing ability</strong></div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>What to Discuss with Your Doctor</h2>
+            </div>
+            <div class="section-body">
+                <p>A prepared mother has a smoother journey. Ask THESE important questions:</p>
+
+                <div class="qa-item">"Am I a candidate for normal delivery?"</div>
+                <div class="qa-item">"What is my cervical status?" (length + dilation)</div>
+                <div class="qa-item">"Can we wait for spontaneous labour if safe?"</div>
+                <div class="qa-item">"If leaking happens, can induction be tried first?"</div>
+                <div class="qa-item">"When is C-section truly required?"</div>
+
+                <div class="card" style="margin-top: 18px;">
+                    <div class="card-title"><span class="icon">&#127919;</span> Realistic Expectations</div>
+                    <ul class="dot-list">
+                        <li>Cervix needs to <strong>soften + open gradually</strong></li>
+                        <li>Labour can take <strong>hours — not minutes</strong></li>
+                        <li>Pain is <strong>progressive and purposeful</strong></li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Understanding this reduces fear &#8594; improves outcomes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>Labour Management (Most Important)</h2>
+            </div>
+            <div class="section-body">
+                <p>Now comes the real game: <strong>PATIENCE + TECHNIQUE</strong></p>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#127744;</span> Breathing — Your Biggest Tool</div>
+                    <ul class="check-list">
+                        <li>Slow deep inhale &#8594; controlled exhale</li>
+                        <li>Do NOT panic-breathe</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.88rem; color: var(--text-light);">This reduces pain perception significantly</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#127939;</span> Movement During Labour</div>
+                    <ul class="check-list">
+                        <li>Walking</li>
+                        <li>Birthing ball exercises</li>
+                        <li>Changing positions</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.88rem; color: var(--text-light);">Helps baby descend faster</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#127939;&#8205;&#9792;</span> Positions That Help</div>
+                    <ul class="check-list">
+                        <li>Squatting</li>
+                        <li>Side-lying</li>
+                        <li>Leaning forward</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-title"><i class="fas fa-exclamation-triangle"></i> Very Important</div>
+                    <p><strong>Do NOT push early.</strong> Push ONLY when your doctor advises.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="icon">&#128137;</span> Epidural?</div>
+                    <p style="font-size: 0.9rem;">You can ask for an epidural if:</p>
+                    <ul class="check-list" style="margin-top: 8px;">
+                        <li>Pain is unbearable</li>
+                        <li>Labour is prolonged</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.88rem; color: var(--text-light);">It is a safe option when used correctly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <i class="fas fa-info-circle"></i>&nbsp; Follow these guidelines only if your doctor has confirmed a low-risk pregnancy with no contraindications. Always consult your healthcare provider before starting any new exercise or diet routine.
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3>&#128242; Want Step-by-Step Support?</h3>
+            <p>Track your pregnancy, contractions, kick counts &amp; more on the MiGynae App</p>
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="cta-btn cta-btn-android" target="_blank">
+                    <i class="fab fa-google-play"></i> Download on Play Store
+                </a>
+                <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="cta-btn cta-btn-ios" target="_blank">
+                    <i class="fab fa-apple"></i> Download on App Store
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page-footer">
+        &copy; 2026 MiGynae. All rights reserved.<br>
+        <a href="https://migynae.com" style="color: var(--primary-dark); text-decoration: none;">migynae.com</a>
+    </div>
+
+</body>
+</html>
