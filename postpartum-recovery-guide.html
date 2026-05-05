@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Complete Postpartum Recovery Guide | MiGynae</title>
+    <meta name="description" content="Recover faster after delivery — what to expect, wound care, exercises, feeding, diet, and mental health. With MiGynae app support.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F4A4A3;
+            --primary-dark: #e88a89;
+            --primary-light: #fdf0f0;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --green: #27ae60;
+            --red: #e74c3c;
+            --amber: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: #fafafa;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 24px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -40px;
+            width: 250px; height: 250px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+
+        .hero-brand {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 440px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .intro-card strong {
+            color: var(--primary-dark);
+        }
+
+        .section {
+            margin: 28px 0;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-number {
+            background: rgba(255,255,255,0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .section-body {
+            background: white;
+            border-radius: 0 0 16px 16px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+
+        .card {
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 14px 0;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        ul.check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.check-list li {
+            padding: 5px 0 5px 28px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        ul.check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        ul.cross-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.cross-list li {
+            padding: 5px 0 5px 28px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        ul.cross-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        ul.dot-list {
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        ul.dot-list li {
+            padding: 4px 0;
+        }
+
+        .warning-box {
+            background: #fff8e6;
+            border-left: 4px solid var(--amber);
+            border-radius: 0 12px 12px 0;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-box .warning-title {
+            font-weight: 700;
+            color: var(--amber);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .danger-box {
+            background: #fff5f5;
+            border-left: 4px solid var(--red);
+            border-radius: 0 12px 12px 0;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.9rem;
+        }
+
+        .danger-box .danger-title {
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .week-block {
+            border: 1.5px solid #f1e4e4;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 14px 0;
+        }
+
+        .week-block-header {
+            background: linear-gradient(90deg, var(--primary-light), #fff5f5);
+            padding: 12px 18px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            border-bottom: 1.5px solid #f1e4e4;
+        }
+
+        .week-block-body {
+            padding: 14px 18px;
+            background: white;
+        }
+
+        .disclaimer {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            padding: 36px 24px;
+            text-align: center;
+            color: white;
+            margin: 28px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
+
+        .cta-btn-android {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .cta-btn-ios {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 20px 16px 40px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 16px 0 8px;
+        }
+
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .goal-box {
+            background: linear-gradient(135deg, var(--primary-light), #fff);
+            border: 1.5px dashed var(--primary);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .goal-box strong {
+            color: var(--primary-dark);
+        }
+
+        .care-table-wrap {
+            overflow-x: auto;
+            margin: 14px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table.care-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 520px;
+        }
+
+        table.care-table th,
+        table.care-table td {
+            border: 1px solid #f1e4e4;
+            padding: 10px 12px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        table.care-table thead th {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        table.care-table tbody th {
+            background: #fafafa;
+            font-weight: 700;
+            color: var(--text-dark);
+            width: 22%;
+        }
+
+        table.care-table ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        table.care-table li {
+            margin: 4px 0;
+        }
+
+        .inline-link {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .qa-lead {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-brand">MiGynae</div>
+        <h1>&#127800; Your Complete Postpartum Recovery Guide</h1>
+        <div class="hero-sub">Featuring the MiGynae app — delivery is just the beginning.</div>
+    </div>
+
+    <div class="content">
+
+        <div class="intro-card">
+            <p>No one prepares you for this part… Your body, hormones, sleep, emotions — <strong>everything changes after delivery</strong>… and the unexpected happens.</p>
+            <p style="margin-top: 12px;"><strong>This guide will help you:</strong></p>
+            <ul class="check-list" style="margin-top: 8px;">
+                <li>Recover faster</li>
+                <li>Avoid common mistakes</li>
+                <li>Know what is normal vs not</li>
+                <li>Take care of yourself while caring for baby</li>
+            </ul>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>What to Expect Immediately After Delivery</h2>
+            </div>
+            <div class="section-body">
+                <div class="card" style="background: white; border: 1.5px solid var(--primary);">
+                    <div class="card-title"><span class="icon">&#128242;</span> Need daily postpartum guidance?</div>
+                    <p style="font-size: 0.95rem;">MiGynae covers pregnancy and post-delivery — all in one place.</p>
+                    <div class="cta-buttons" style="margin-top: 14px;">
+                        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="cta-btn cta-btn-android" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                        <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="cta-btn cta-btn-ios" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-apple"></i> App Store
+                        </a>
+                    </div>
+                </div>
+
+                <ul class="check-list" style="margin-top: 16px;">
+                    <li>Bleeding (like heavy periods) is normal, but if you are <strong>changing pads every hour</strong>, that is not normal — seek care.</li>
+                    <li>Pain in abdomen / stitches is common; you may ask for a different painkiller or for medication earlier if needed.</li>
+                    <li>Weakness and exhaustion are common — keep sipping fluids.</li>
+                    <li>Start breastfeeding <strong>within 1 hour</strong> when possible.</li>
+                    <li>Gentle movement in bed is allowed. After a normal delivery you may start a <strong>supported walk</strong> soon after. After a caesarean, move your legs while lying down as soon as you have leg sensation.</li>
+                    <li>Soft diet or liquids are usually fine soon after a normal delivery. After an uncomplicated caesarean, you may start sipping fluids after <strong>4–6 hours</strong> (as your team advises).</li>
+                    <li>You may feel dizzy the first time you stand — ask someone to support you and stay hydrated.</li>
+                    <li>After a caesarean, your doctor may allow you to turn in bed around <strong>8–16 hours</strong> and walking between <strong>12–24 hours</strong>, depending on your case.</li>
+                    <li>A catheter usually stays for <strong>at least 24 hours</strong> after a caesarean.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>What to Expect in the First 4–7 Days</h2>
+            </div>
+            <div class="section-body">
+                <ul class="check-list">
+                    <li>Your body is healing. The uterus is shrinking — you may feel cramps.</li>
+                    <li>Vaginal discharge (lochia) continues; bleeding may be mild to moderate, not heavy. If it is heavy, inform your gynaecologist.</li>
+                    <li>Stitches may feel sore after either a normal delivery or caesarean. Cold packs on the area can help healing (as advised).</li>
+                </ul>
+
+                <h3>Understand lochia (bleeding — what is normal?)</h3>
+                <ul class="check-list">
+                    <li>Discharge (lochia) often changes colour over weeks: <strong>red → pink → brown → yellowish</strong>.</li>
+                    <li>Contact your doctor for <strong>very heavy bleeding</strong> (soaking a pad hourly), <strong>foul-smelling discharge</strong>, or <strong>large clots</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>Wound care: episiotomy vs caesarean</h2>
+            </div>
+            <div class="section-body">
+                <p class="highlight">Practical tips — always follow your own doctor’s instructions.</p>
+
+                <div class="care-table-wrap">
+                    <table class="care-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Episiotomy (normal delivery stitch)</th>
+                                <th>C-section (abdominal stitch)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Water &amp; cleaning</th>
+                                <td>
+                                    <ul>
+                                        <li>Use warm water after every urination / defecation. Use antiseptic liquid or ointment, especially after passing stool.</li>
+                                        <li>Gently pat dry (don’t rub). Clean from front to back.</li>
+                                        <li>Sitz bath (10–15 min, 1–2 times/day) can help — <em>after bleeding has reduced</em>, as advised.</li>
+                                        <li>You can usually bathe after 24–48 hours (as advised).</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Let water run gently over the incision; dressing in hospital, then antiseptic care as instructed.</li>
+                                        <li>Avoid moisture trapped on the wound — change wet dressings early or use waterproof dressing if advised.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Dressing / exposure</th>
+                                <td>
+                                    <ul>
+                                        <li>Often no dressing needed.</li>
+                                        <li>Keep the area dry and open; avoid very tight clothing.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Dressing for a few days depending on incision type.</li>
+                                        <li>Once healed, keep clean and dry (antiseptic powder or ointment only if prescribed).</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Pain relief &amp; comfort</th>
+                                <td>
+                                    <ul>
+                                        <li>Ice packs in the first 24 hours can reduce swelling.</li>
+                                        <li>Sitz bath can soothe.</li>
+                                        <li>Soft cushion or donut pillow when sitting.</li>
+                                        <li>Pain medicines as prescribed.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Use pillow support when getting up; avoid sudden twisting.</li>
+                                        <li>Push more through hands and heels when moving, not through the stitch line.</li>
+                                        <li>Pain medicines as prescribed.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>What to avoid</h2>
+            </div>
+            <div class="section-body">
+                <ul class="cross-list">
+                    <li>Tight underwear</li>
+                    <li>Constipation / straining — use stool softeners if prescribed</li>
+                    <li>Ignoring increasing pain, swelling, pus, or throbbing pain</li>
+                    <li>Lifting baby incorrectly — bend from the knees</li>
+                    <li>Tight waistbands over stitches or incision</li>
+                    <li>Wet or sweaty incision area</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2>Warning signs — seek care</h2>
+            </div>
+            <div class="section-body">
+                <div class="danger-box">
+                    <div class="danger-title">&#128680; Get medical help if you notice</div>
+                    <ul class="dot-list">
+                        <li>Increasing pain or swelling</li>
+                        <li>Foul smell or abnormal discharge</li>
+                        <li>Severe difficulty sitting or walking</li>
+                        <li>Redness, pus, or a gap in stitches</li>
+                        <li>Fever</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <h2>Postpartum exercises (week-wise)</h2>
+            </div>
+            <div class="section-body">
+                <p><strong>Start slow, progress smartly, build stamina.</strong> Don’t stay in bed.</p>
+                <ul class="check-list">
+                    <li>Start walking early, or as your doctor advises.</li>
+                    <li>Avoid complete bed rest when safe — it helps prevent clots, improves healing, mood, and digestion.</li>
+                </ul>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 2–6 weeks: what you should do</div>
+                    <div class="week-block-body">
+                        <h3>If you had a normal delivery</h3>
+                        <ul class="check-list">
+                            <li>Start moving gently.</li>
+                            <li><strong>Kegel exercises daily</strong> (very important).</li>
+                            <li>Walk every day — slowly increase time.</li>
+                            <li>Light stretching for back and hips.</li>
+                            <li>Simple pelvic movements like butterfly when comfortable.</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Your body is ready to regain strength — just don’t overdo it.</p>
+
+                        <h3>If you had a C-section</h3>
+                        <ul class="check-list">
+                            <li>Your body needs a little more protection.</li>
+                            <li><strong>Start Kegels</strong> (safe and important).</li>
+                            <li>Walk in <strong>short intervals</strong> — avoid long pushes at first.</li>
+                            <li>Deep breathing exercises.</li>
+                            <li>Keep movements gentle — avoid strain on the abdomen.</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Healing is happening inside — respect that pace.</p>
+                    </div>
+                </div>
+
+                <div class="week-block">
+                    <div class="week-block-header">&#128205; 6–10 weeks: moving forward <span style="font-weight:600;font-size:0.85rem;">(only after your doctor says you’re ready)</span></div>
+                    <div class="week-block-body">
+                        <h3>After normal delivery</h3>
+                        <ul class="check-list">
+                            <li>Continue Kegels.</li>
+                            <li>Increase walking pace gradually.</li>
+                            <li>Light yoga or simple exercises.</li>
+                            <li>Begin mild core work and squats when cleared.</li>
+                        </ul>
+
+                        <h3>After C-section</h3>
+                        <ul class="check-list">
+                            <li>Go slow — your scar is still healing.</li>
+                            <li>Increase walking time gradually.</li>
+                            <li>Continue Kegels.</li>
+                            <li>Very gentle core activation.</li>
+                            <li>Light yoga without pressure on stitches — when approved.</li>
+                        </ul>
+
+                        <div class="warning-box" style="margin-top: 16px;">
+                            <div class="warning-title"><i class="fas fa-user-md"></i> For all mothers</div>
+                            <ul class="dot-list">
+                                <li>If something hurts — stop.</li>
+                                <li>Don’t compare your recovery with others.</li>
+                                <li>Slow progress is still progress.</li>
+                                <li>Always discuss changes with your doctor before intensifying activity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2>Breastfeeding basics</h2>
+            </div>
+            <div class="section-body">
+                <p>Wondering if your baby is getting enough milk?</p>
+                <p style="margin-top: 10px;">
+                    <a href="https://mimedic.org/share/aba684a9-f718-43f7-a578-64cad14d51bc" class="inline-link" target="_blank" rel="noopener noreferrer">Tap here to read the signs</a>
+                    — and download the MiGynae app for the full article and tools.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">8</div>
+                <h2>Eat to recover (diet after delivery)</h2>
+            </div>
+            <div class="section-body">
+                <ul class="check-list">
+                    <li>Include <strong>protein</strong> (dal, paneer, eggs if non-veg), <strong>iron + calcium</strong>, and <strong>warm fluids</strong>.</li>
+                    <li>Indian staples like panjiri / gond, ajwain water, and jeera water — <strong>in moderation</strong>.</li>
+                    <li>Warm fluids can support recovery and breastfeeding.</li>
+                </ul>
+                <div class="card" style="background:#fff5f5; border-left: 3px solid var(--red);">
+                    <div class="card-title" style="color: var(--red);"><span class="icon">&#10007;</span> Limit or avoid</div>
+                    <ul class="cross-list">
+                        <li>Excess ghee or oil</li>
+                        <li>Junk food and excess sweets</li>
+                        <li>Foods that trigger acidity for you</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">9</div>
+                <h2>Take care of your mental health</h2>
+            </div>
+            <div class="section-body">
+                <ul class="check-list">
+                    <li>Mood swings are common; you may feel overwhelmed.</li>
+                    <li>Ask for help if you have <strong>continuous sadness or anxiety</strong>, especially if bonding with baby feels difficult.</li>
+                    <li>Postpartum depression is <strong>real and treatable</strong> — reach out early.</li>
+                    <li>You will often be tired. You don’t have to do everything alone — ask for help and sleep when baby sleeps when you can.</li>
+                    <li><strong>Family support matters.</strong> Delegate tasks; accept help. Focus on your recovery and the baby.</li>
+                    <li>Be kind to yourself — your body has done something incredible.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <i class="fas fa-info-circle"></i>&nbsp; This guide is for general education only. Every delivery and recovery is different. Always follow your obstetrician or healthcare team’s advice, especially if you had complications, pain, fever, or heavy bleeding.
+        </div>
+
+        <div class="cta-section">
+            <h3>&#127800; MiGynae app</h3>
+            <p>Track recovery, baby growth, feeding, and more — baby tracking, feeding guidance, recovery tips, and doctor-backed content.</p>
+            <div class="cta-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="cta-btn cta-btn-android" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google-play"></i> Download on Play Store
+                </a>
+                <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="cta-btn cta-btn-ios" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-apple"></i> Download on App Store
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page-footer">
+        &copy; 2026 MiGynae. All rights reserved.<br>
+        <a href="https://mimedic.org/" style="color: var(--primary-dark); text-decoration: none;">mimedic.org</a>
+    </div>
+
+</body>
+</html>
