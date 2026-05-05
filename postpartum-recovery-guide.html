@@ -35,10 +35,42 @@
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 60px 24px 50px;
-            text-align: center;
+            padding: 48px 24px 44px;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Baby steps along a soft S-curve: appear, then fade (walking trail) */
+        .hero-footsteps {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: clamp(96px, 26vw, 148px);
+            pointer-events: none;
+            z-index: 1;
+            overflow: visible;
+            mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+        }
+
+        .hero-feet-s-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @keyframes hero-step-dissolve {
+            0% { opacity: 0; }
+            10% { opacity: 0.22; }
+            26% { opacity: 0.18; }
+            40% { opacity: 0.1; }
+            55%, 100% { opacity: 0; }
+        }
+
+        .hero-s-step {
+            animation: hero-step-dissolve 6s ease-in-out infinite;
+            opacity: 0;
         }
 
         .hero::before {
@@ -48,6 +80,7 @@
             width: 200px; height: 200px;
             background: rgba(255,255,255,0.08);
             border-radius: 50%;
+            z-index: 0;
         }
 
         .hero::after {
@@ -57,6 +90,67 @@
             width: 250px; height: 250px;
             background: rgba(255,255,255,0.06);
             border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 28px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+            text-align: center;
+            min-width: 0;
+        }
+
+        /*
+          Parent must have a real width; otherwise min(300px, 100%) on the frame
+          resolves to 0 and the aspect-ratio box (and SVG) collapses.
+        */
+        .hero-visual {
+            flex: 0 0 auto;
+            width: min(300px, 100%);
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 0;
+        }
+
+        /*
+          Let the SVG define proportions via width/height attributes + viewBox.
+          Block + width:100% + height:auto keeps a single scale (no stretched viewport).
+        */
+        .hero-svg-frame {
+            width: 100%;
+            flex-shrink: 0;
+            line-height: 0;
+            filter: drop-shadow(0 18px 36px rgba(255, 252, 251, 0.35));
+        }
+
+        .hero-illustration {
+            display: block;
+            width: 100%;
+            height: auto;
+            vertical-align: top;
+            object-fit: contain;
+        }
+
+        /* Baby motion uses SMIL inside SVG (avoids WebKit/CSS transform bugs on <g>). */
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-s-step {
+                animation: none !important;
+                opacity: 0.12;
+            }
         }
 
         .hero-brand {
@@ -66,6 +160,7 @@
             text-transform: uppercase;
             opacity: 0.85;
             margin-bottom: 16px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .hero h1 {
@@ -73,6 +168,7 @@
             font-weight: 800;
             line-height: 1.25;
             margin-bottom: 12px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .hero-sub {
@@ -81,6 +177,19 @@
             max-width: 440px;
             margin: 0 auto;
             font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media (min-width: 768px) {
+            .hero-text {
+                text-align: left;
+            }
+            .hero-sub {
+                margin: 0;
+            }
+            .hero-inner {
+                justify-content: space-between;
+            }
         }
 
         .content {
@@ -434,9 +543,62 @@
 <body>
 
     <div class="hero">
-        <div class="hero-brand">MiGynae</div>
-        <h1>&#127800; Your Complete Postpartum Recovery Guide</h1>
-        <div class="hero-sub">Featuring the MiGynae app — delivery is just the beginning.</div>
+        <div class="hero-footsteps" aria-hidden="true">
+            <svg class="hero-feet-s-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet" fill="none" aria-hidden="true">
+                <defs>
+                    <g id="hero-s-foot-l">
+                        <ellipse cx="0" cy="4.5" rx="3.4" ry="6" fill="#fff"/>
+                        <circle cx="-2.5" cy="-3" r="1.2" fill="#fff"/><circle cx="0" cy="-3.8" r="1.05" fill="#fff"/><circle cx="2.5" cy="-3.1" r="0.95" fill="#fff"/>
+                    </g>
+                    <g id="hero-s-foot-r">
+                        <ellipse cx="0" cy="4.5" rx="3.4" ry="6" fill="#fff"/>
+                        <circle cx="-2.5" cy="-3" r="1.2" fill="#fff"/><circle cx="0" cy="-3.8" r="1.05" fill="#fff"/><circle cx="2.5" cy="-3.1" r="0.95" fill="#fff"/>
+                    </g>
+                </defs>
+                <!-- S-curve trail: alternating L/R feet, staggered appear → fade (imitates walking) -->
+                <g class="hero-s-step" style="animation-delay: 0s"><g transform="translate(38,108) rotate(-18)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 0.25s"><g transform="translate(58,112) rotate(14)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 0.5s"><g transform="translate(118,72) rotate(22)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 0.75s"><g transform="translate(138,78) rotate(-12)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 1s"><g transform="translate(198,98) rotate(-20)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 1.25s"><g transform="translate(218,102) rotate(16)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 1.5s"><g transform="translate(288,58) rotate(18)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 1.75s"><g transform="translate(308,64) rotate(-14)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 2s"><g transform="translate(378,92) rotate(-16)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 2.25s"><g transform="translate(398,96) rotate(12)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 2.5s"><g transform="translate(468,52) rotate(20)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 2.75s"><g transform="translate(488,58) rotate(-10)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 3s"><g transform="translate(558,88) rotate(-18)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 3.25s"><g transform="translate(578,92) rotate(14)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 3.5s"><g transform="translate(648,54) rotate(16)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 3.75s"><g transform="translate(668,60) rotate(-12)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 4s"><g transform="translate(738,82) rotate(-14)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 4.25s"><g transform="translate(758,86) rotate(10)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 4.5s"><g transform="translate(828,62) rotate(12)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 4.75s"><g transform="translate(848,66) rotate(-8)"><use href="#hero-s-foot-r"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 5s"><g transform="translate(918,78) rotate(-6)"><use href="#hero-s-foot-l"/></g></g>
+                <g class="hero-s-step" style="animation-delay: 5.25s"><g transform="translate(938,80) rotate(6)"><use href="#hero-s-foot-r"/></g></g>
+            </svg>
+        </div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-brand">MiGynae</div>
+                <h1>Your Complete Postpartum Recovery Guide</h1>
+                <div class="hero-sub">Featuring the MiGynae app — delivery is just the beginning.</div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-svg-frame">
+                    <img class="hero-illustration"
+                         src="images/postpartum-hero.png"
+                         srcset="images/postpartum-hero.png 1x, images/postpartum-hero@2x.png 2x"
+                         width="420"
+                         height="340"
+                         alt="Soft illustration of a mother in profile cradling her newborn"
+                         decoding="async"
+                         fetchpriority="high">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="content">
