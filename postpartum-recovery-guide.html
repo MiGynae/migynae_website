@@ -509,51 +509,19 @@
 </head>
 <body>
 
-    <div class="hero">
-        <div class="hero-footsteps" aria-hidden="true">
-            <svg class="hero-feet-s-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet" fill="none" aria-hidden="true">
-                <defs>
-                    <g id="hero-s-foot-l">
-                        <ellipse cx="0" cy="4.5" rx="3.4" ry="6" fill="#fff"/>
-                        <circle cx="-2.5" cy="-3" r="1.2" fill="#fff"/><circle cx="0" cy="-3.8" r="1.05" fill="#fff"/><circle cx="2.5" cy="-3.1" r="0.95" fill="#fff"/>
-                    </g>
-                    <g id="hero-s-foot-r">
-                        <ellipse cx="0" cy="4.5" rx="3.4" ry="6" fill="#fff"/>
-                        <circle cx="-2.5" cy="-3" r="1.2" fill="#fff"/><circle cx="0" cy="-3.8" r="1.05" fill="#fff"/><circle cx="2.5" cy="-3.1" r="0.95" fill="#fff"/>
-                    </g>
-                </defs>
-                <!-- S-curve trail: alternating L/R feet, staggered appear → fade (imitates walking) -->
-                <g class="hero-s-step" style="animation-delay: 0s"><g transform="translate(38,108) rotate(-18)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 0.25s"><g transform="translate(58,112) rotate(14)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 0.5s"><g transform="translate(118,72) rotate(22)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 0.75s"><g transform="translate(138,78) rotate(-12)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 1s"><g transform="translate(198,98) rotate(-20)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 1.25s"><g transform="translate(218,102) rotate(16)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 1.5s"><g transform="translate(288,58) rotate(18)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 1.75s"><g transform="translate(308,64) rotate(-14)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 2s"><g transform="translate(378,92) rotate(-16)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 2.25s"><g transform="translate(398,96) rotate(12)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 2.5s"><g transform="translate(468,52) rotate(20)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 2.75s"><g transform="translate(488,58) rotate(-10)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 3s"><g transform="translate(558,88) rotate(-18)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 3.25s"><g transform="translate(578,92) rotate(14)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 3.5s"><g transform="translate(648,54) rotate(16)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 3.75s"><g transform="translate(668,60) rotate(-12)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 4s"><g transform="translate(738,82) rotate(-14)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 4.25s"><g transform="translate(758,86) rotate(10)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 4.5s"><g transform="translate(828,62) rotate(12)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 4.75s"><g transform="translate(848,66) rotate(-8)"><use href="#hero-s-foot-r"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 5s"><g transform="translate(918,78) rotate(-6)"><use href="#hero-s-foot-l"/></g></g>
-                <g class="hero-s-step" style="animation-delay: 5.25s"><g transform="translate(938,80) rotate(6)"><use href="#hero-s-foot-r"/></g></g>
-            </svg>
-        </div>
-        <div class="hero-inner">
-            <div class="hero-text">
-                <div class="hero-brand">MiGynae</div>
-                <h1>Your Complete Postpartum Recovery Guide</h1>
-                <div class="hero-sub">Featuring the MiGynae app — delivery is just the beginning.</div>
-            </div>
-        </div>
+    <!-- Banner -->
+    <img src="images/blog/postpartum-guide-banner.png" alt="Post Delivery Guide — Your guide to a safe, smooth and happy recovery" style="width:100%; display:block;">
+
+    <!-- App Download Bar -->
+    <div style="background:var(--primary); padding:16px 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 24px; background:#1a1a1a; color:white; border-radius:12px; text-decoration:none; font-weight:700; font-size:0.9rem;">
+            <i class="fab fa-google-play"></i> Download on Play Store
+        </a>
+        <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; padding:12px 24px; background:white; color:var(--primary-dark); border-radius:12px; text-decoration:none; font-weight:700; font-size:0.9rem;">
+            <i class="fab fa-apple"></i> Download on App Store
+        </a>
     </div>
 
     <div class="content">
