@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Blog Post - MiGynae</title>
-    <meta name="description" id="pageDescription" content="Expert pregnancy advice and maternal health insights from MiGynae.">
+    <title id="pageTitle">Pregnancy Articles &amp; Expert Health Guides | MiGynae</title>
+    <meta name="description" id="pageDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -1201,9 +1201,20 @@
                     return;
                 }
 
-                // Update metadata
-                document.getElementById('pageTitle').textContent = `${blog.title} - MiGynae Blog`;
-                document.getElementById('pageDescription').content = blog.excerpt;
+                // Update metadata (title ≤60 chars, description ≤160 chars)
+                const brandSuffix = ' | MiGynae';
+                let metaTitle = blog.title + brandSuffix;
+                if (metaTitle.length > 60) {
+                    const maxTitleLen = 60 - brandSuffix.length - 3;
+                    metaTitle = blog.title.slice(0, maxTitleLen).trim() + '...' + brandSuffix;
+                }
+                let metaDescription = blog.excerpt || '';
+                if (metaDescription.length > 160) {
+                    metaDescription = metaDescription.slice(0, 157).trim() + '...';
+                }
+                document.getElementById('pageTitle').textContent = metaTitle;
+                document.getElementById('pageDescription').content = metaDescription;
+                document.title = metaTitle;
 
                 // Load full data based on blog type
                 if (blog.id === 'first-trimester-diet-guide') {
