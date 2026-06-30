@@ -27,26 +27,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "name": "MiGynae",
-          "url": "https://migynaeapp.com/",
-          "logo": "https://migynaeapp.com/images/logo.webp"
-        },
-        {
-          "@type": "WebSite",
-          "name": "MiGynae",
-          "url": "https://migynaeapp.com/"
-        },
-        {
-          "@type": "MobileApplication",
-          "name": "MiGynae",
-          "operatingSystem": "iOS, Android",
-          "applicationCategory": "HealthApplication",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-        }
-      ]
+      "@type": "Organization",
+      "@id": "https://migynaeapp.com/#organization",
+      "name": "MiGynae",
+      "url": "https://migynaeapp.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://migynaeapp.com/images/logo.webp",
+        "contentUrl": "https://migynaeapp.com/images/logo.webp"
+      },
+      "description": "MiGynae is a free pregnancy tracker app with kick counter, contraction timer, and evidence-based prenatal guidance trusted by healthcare professionals."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "MiGynae",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "HealthApplication",
+      "url": "https://migynaeapp.com/",
+      "description": "Free pregnancy tracker app with kick counter, contraction timer, prenatal nutrition, and OBGYN-backed guidance.",
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=com.mimedic.migynae",
+        "https://apps.apple.com/in/app/migynae/id6748379521"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@id": "https://migynaeapp.com/#organization"
+      }
     }
     </script>
 </head>
