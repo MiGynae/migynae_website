@@ -9,6 +9,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
     <title id="pageTitle">Pregnancy Articles &amp; Expert Health Guides | MiGynae</title>
     <meta name="description" id="pageDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
+    <link rel="canonical" id="pageCanonical" href="https://migynaeapp.com/blog-post.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="ogUrl" content="https://migynaeapp.com/blog-post.html">
+    <meta property="og:title" id="ogTitle" content="Pregnancy Articles &amp; Expert Health Guides | MiGynae">
+    <meta property="og:description" id="ogDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
+    <meta property="og:image" id="ogImage" content="https://migynaeapp.com/images/weekly_updates_screen.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitterTitle" content="Pregnancy Articles &amp; Expert Health Guides | MiGynae">
+    <meta name="twitter:description" id="twitterDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
     <link rel="stylesheet" href="css/index.min.css">
     <link rel="stylesheet" href="css/landing.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -1159,6 +1168,18 @@
                 document.getElementById('pageTitle').textContent = metaTitle;
                 document.getElementById('pageDescription').content = metaDescription;
                 document.title = metaTitle;
+
+                const canonicalUrl = `https://migynaeapp.com/blog-post.html?id=${encodeURIComponent(blog.id)}`;
+                const imageUrl = blog.image
+                    ? `https://migynaeapp.com/${blog.image}`
+                    : 'https://migynaeapp.com/images/weekly_updates_screen.webp';
+                document.getElementById('pageCanonical').href = canonicalUrl;
+                document.getElementById('ogUrl').content = canonicalUrl;
+                document.getElementById('ogTitle').content = metaTitle;
+                document.getElementById('ogDescription').content = metaDescription;
+                document.getElementById('ogImage').content = imageUrl;
+                document.getElementById('twitterTitle').content = metaTitle;
+                document.getElementById('twitterDescription').content = metaDescription;
 
                 // Load full data based on blog type
                 if (blog.id === 'first-trimester-diet-guide') {
