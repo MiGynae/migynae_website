@@ -9,6 +9,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
     <title id="pageTitle">Pregnancy Articles &amp; Expert Health Guides | MiGynae</title>
     <meta name="description" id="pageDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
+    <link rel="canonical" id="pageCanonical" href="https://migynaeapp.com/blog-post.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="ogUrl" content="https://migynaeapp.com/blog-post.html">
+    <meta property="og:title" id="ogTitle" content="Pregnancy Articles &amp; Expert Health Guides | MiGynae">
+    <meta property="og:description" id="ogDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
+    <meta property="og:image" id="ogImage" content="https://migynaeapp.com/images/weekly_updates_screen.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitterTitle" content="Pregnancy Articles &amp; Expert Health Guides | MiGynae">
+    <meta name="twitter:description" id="twitterDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
+    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/landing.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -43,72 +54,7 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(244, 164, 163, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-mark {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            font-weight: 600;
-            box-shadow: var(--shadow);
-        }
-
-        .logo h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-dark);
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
+        /* Header — uses index.min.css */
 
         /* Banner */
         .banner-image {
@@ -1122,18 +1068,21 @@
         }
     </style>
 </head>
-<body>
+<body class="blog-page">
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
-                <h1>MiGynae</h1>
+                <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="guides.html">Guides</a></li>
             </ul>
-            <div class="mobile-menu">
+            <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1219,6 +1168,18 @@
                 document.getElementById('pageTitle').textContent = metaTitle;
                 document.getElementById('pageDescription').content = metaDescription;
                 document.title = metaTitle;
+
+                const canonicalUrl = `https://migynaeapp.com/blog-post.html?id=${encodeURIComponent(blog.id)}`;
+                const imageUrl = blog.image
+                    ? `https://migynaeapp.com/${blog.image}`
+                    : 'https://migynaeapp.com/images/weekly_updates_screen.webp';
+                document.getElementById('pageCanonical').href = canonicalUrl;
+                document.getElementById('ogUrl').content = canonicalUrl;
+                document.getElementById('ogTitle').content = metaTitle;
+                document.getElementById('ogDescription').content = metaDescription;
+                document.getElementById('ogImage').content = imageUrl;
+                document.getElementById('twitterTitle').content = metaTitle;
+                document.getElementById('twitterDescription').content = metaDescription;
 
                 // Load full data based on blog type
                 if (blog.id === 'first-trimester-diet-guide') {
@@ -2371,6 +2332,35 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
         } else {
             showError('No blog post specified');
         }
+    </script>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            if (!toggle || !nav) return;
+
+            function setOpen(open) {
+                nav.classList.toggle('open', open);
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!nav.classList.contains('open'));
+            });
+
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!nav.classList.contains('open'));
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
     </script>
 </body>
 </html>

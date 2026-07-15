@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="images/weekly_updates_screen.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/landing.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <script type="application/ld+json">
@@ -66,137 +67,139 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">
+            <a href="index.html" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
                 <p class="logo-title" aria-label="MiGynae">MiGynae</p>
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="resources.html">Resources</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="labour-prep-guide.html">Labour Guide</a></li>
-                <li><a href="postpartum-recovery-guide.html">Postpartum Guide</a></li>
+                <li><a href="guides.html">Guides</a></li>
             </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero hero-enhanced">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>Professional Pregnancy Care in Your Pocket</h1>
-                        <p>Evidence-based guidance, expert insights, and comprehensive tracking tools trusted by healthcare professionals and expecting mothers worldwide.</p>
-                        
+                        <span class="section-eyebrow">Free pregnancy tracker app · Android &amp; iOS</span>
+                        <h1>Professional <span class="highlight">Pregnancy Care</span> in Your Pocket</h1>
+
+                        <p class="hero-lead">
+                            <strong>MiGynae</strong> is a free maternity app with OBGYN-backed prenatal guidance, trimester nutrition plans, and hospital-grade tracking tools — built for expecting mothers from week 1 through postpartum.
+                        </p>
+
+                        <div class="hero-keywords" aria-label="Key features">
+                            <span class="hero-keyword"><i class="fas fa-heartbeat"></i> Kick Counter</span>
+                            <span class="hero-keyword"><i class="fas fa-stopwatch"></i> Contraction Timer</span>
+                            <span class="hero-keyword"><i class="fas fa-apple-alt"></i> Prenatal Nutrition</span>
+                            <span class="hero-keyword"><i class="fas fa-calendar-week"></i> Weekly Updates</span>
+                        </div>
+
                         <div class="beta-notice">
                             <div class="beta-badge">
                                 <i class="fas fa-flask"></i>
-                                <span>Now in Beta - Free for all users</span>
+                                <span>Now in Beta — Free for all users</span>
                             </div>
                         </div>
 
                         <div class="hero-cta">
-                            <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                            <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
                                 <picture>
-                                <source srcset="images/Playstore_button.webp" type="image/webp">
-                                <img src="images/Playstore_button.png" alt="Get it on Google Play" width="200" height="60" loading="lazy" decoding="async">
-                            </picture>
+                                    <source srcset="images/Playstore_button.webp" type="image/webp">
+                                    <img src="images/Playstore_button.png" alt="Download MiGynae on Google Play" width="200" height="60" loading="eager">
+                                </picture>
                             </a>
-                            <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank">
-                                <img src="images/apple_logo_button_white.svg" alt="Download on the App Store" width="200" height="60" loading="lazy" decoding="async">
+                            <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
+                                <img src="images/apple_logo_button_white.svg" alt="Download MiGynae on the App Store" width="200" height="60" loading="eager">
                             </a>
                         </div>
+
+                        <div class="hero-trust-line">
+                            <span><i class="fas fa-check-circle"></i> Medically reviewed</span>
+                            <span><i class="fas fa-check-circle"></i> Privacy focused</span>
+                            <span><i class="fas fa-check-circle"></i> No subscription during beta</span>
+                        </div>
                     </div>
-                    
+
                     <div class="hero-visual">
                         <div class="phone-mockup">
                             <picture>
                                 <source srcset="images/weekly_updates_screen.webp" type="image/webp">
-                                <img src="images/weekly_updates_screen.png" alt="MiGynae app showing pregnancy tracking and weekly updates" width="260" height="520" fetchpriority="high" decoding="async" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                                <img src="images/weekly_updates_screen.png" alt="MiGynae pregnancy app weekly updates screen" width="260" height="520" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
                             </picture>
                         </div>
-                        
                         <div class="floating-elements">
                             <div class="floating-card card-1">
-                                <div style="display: flex; align-items: center; gap: 12px;">
-                                    <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-heartbeat" style="color: white;"></i>
-                                    </div>
+                                <div style="display:flex;align-items:center;gap:14px;">
+                                    <div class="fc-icon-3d"><i class="fas fa-heartbeat"></i></div>
                                     <div>
-                                        <div style="font-weight: 600; font-size: 14px;">Kick Counter</div>
-                                        <div style="color: #666; font-size: 12px;">24 movements today</div>
+                                        <div class="fc-title">Free Kick Counter</div>
+                                        <div class="fc-sub">24 movements logged today</div>
+                                        <span class="fc-free">FREE</span>
                                     </div>
                                 </div>
                             </div>
-                            
                             <div class="floating-card card-2">
-                                <div style="display: flex; align-items: center; gap: 12px;">
-                                    <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-user-md" style="color: white;"></i>
-                                    </div>
+                                <div style="display:flex;align-items:center;gap:12px;">
+                                    <div class="fc-icon-3d"><i class="fas fa-stopwatch"></i></div>
                                     <div>
-                                        <div style="font-weight: 600; font-size: 14px;">Expert Advice</div>
-                                        <div style="color: #666; font-size: 12px;">Professional guidance</div>
+                                        <div class="fc-title">Contraction Timer</div>
+                                        <div class="fc-sub">Ready when labour starts</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="hero-stats-inline">
+                    <div class="hero-stat-box"><strong>Free</strong><span>Download on Android &amp; iOS</span></div>
+                    <div class="hero-stat-box"><strong>40 Weeks</strong><span>Trimester-by-trimester care</span></div>
+                    <div class="hero-stat-box"><strong>Expert</strong><span>Medically reviewed content</span></div>
+                    <div class="hero-stat-box"><strong>India</strong><span>Diet guides &amp; cultural tips</span></div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
+        <!-- Brief overview — links to detail pages -->
+        <section class="brief-sections">
             <div class="container">
                 <div class="section-header">
-                    <h2>Comprehensive Pregnancy Support</h2>
-                    <p>Everything you need for a healthy, informed pregnancy journey backed by medical expertise and the latest research.</p>
+                    <span class="section-eyebrow">Explore MiGynae</span>
+                    <h2>Everything You Need, One Tap Away</h2>
+                    <p>Tap a topic below for the full breakdown — tracking tools, setup steps, free guides, and expert articles.</p>
                 </div>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-stethoscope"></i>
-                        </div>
-                        <h3>Medical-Grade Q&A</h3>
-                        <p>Access to evidence-based answers for pregnancy concerns, reviewed by certified healthcare professionals and updated with latest medical guidelines.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3>Advanced Fetal Monitoring</h3>
-                        <p>Professional-grade kick counting and pattern analysis with intelligent alerts and comprehensive movement tracking history.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Precision Contraction Timer</h3>
-                        <p>Hospital-quality contraction monitoring with pattern recognition, timing analysis, and automated birth preparation alerts.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-apple-alt"></i>
-                        </div>
-                        <h3>Personalized Nutrition Plans</h3>
-                        <p>Customized meal planning based on trimester, dietary restrictions, and nutritional needs with registered dietitian oversight.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3>Safe Exercise Programs</h3>
-                        <p>Trimester-specific workout routines designed by certified prenatal fitness specialists with safety monitoring protocols.</p>
-                    </div>
+                <div class="brief-grid">
+                    <a href="features.html" class="brief-card">
+                        <div class="brief-card-icon"><i class="fas fa-th-large"></i></div>
+                        <h3>App Features</h3>
+                        <p>Kick counter, contraction timer, medical Q&amp;A, nutrition plans, safe exercises, and weekly pregnancy updates.</p>
+                        <span class="read-more">See all features <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="how-it-works.html" class="brief-card">
+                        <div class="brief-card-icon"><i class="fas fa-route"></i></div>
+                        <h3>How It Works</h3>
+                        <p>Download free, set your due date, and start tracking — three simple steps to daily prenatal support.</p>
+                        <span class="read-more">View setup guide <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="resources.html" class="brief-card">
+                        <div class="brief-card-icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Resources &amp; Blog</h3>
+                        <p>Free articles on nutrition, exercise, and trimester care — written for Indian mothers, reviewed by experts.</p>
+                        <span class="read-more">Browse resources <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="guides.html" class="brief-card">
+                        <div class="brief-card-icon"><i class="fas fa-map-signs"></i></div>
+                        <h3>Labour &amp; Postpartum Guides</h3>
+                        <p>In-depth guides for birth preparation and recovery after delivery — read free, no login required.</p>
+                        <span class="read-more">Choose your guide <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -205,33 +208,80 @@
             <div class="container">
                 <div class="trust-content">
                     <h2>Trusted by Healthcare Professionals</h2>
-                    <p>MiGynae is developed in collaboration with leading obstetricians, midwives, and maternal health experts to ensure the highest standards of care.</p>
-                    
+                    <p>Developed with obstetricians, midwives, and maternal health experts for the highest standards of prenatal care.</p>
                     <div class="trust-badges">
                         <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
+                            <div class="trust-badge-icon"><i class="fas fa-award"></i></div>
                             <h4>Medically Reviewed</h4>
-                            <p>All content verified by certified specialists</p>
+                            <p>Content verified by specialists</p>
                         </div>
-                        
                         <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
+                            <div class="trust-badge-icon"><i class="fas fa-shield-alt"></i></div>
                             <h4>Privacy Focused</h4>
-                            <p>HIPAA-compliant data protection</p>
+                            <p>Your data stays protected</p>
                         </div>
-
                         <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
+                            <div class="trust-badge-icon"><i class="fas fa-sync-alt"></i></div>
                             <h4>Regular Updates</h4>
-                            <p>Content reviewed quarterly</p>
+                            <p>Reviewed quarterly</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Moms Are Saying</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <blockquote>"The diet guides with Indian food options were exactly what I needed as a first-time mom."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">A</div>
+                            <div><strong>Ananya</strong><span>12 weeks · Mumbai</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <blockquote>"Simple, clear contraction timing — it helped us know when to leave for the hospital."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">S</div>
+                            <div><strong>Shreya</strong><span>New mom · Delhi</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <blockquote>"I could share kick count history with my doctor — gave me real peace of mind."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">P</div>
+                            <div><strong>Priya</strong><span>34 weeks · Bengaluru</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Is MiGynae free?</summary>
+                        <div class="faq-answer">Yes — free to download and use during beta on both Android and iOS.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can it replace my doctor?</summary>
+                        <div class="faq-answer">No. MiGynae supports your pregnancy with education and tracking — always follow your healthcare provider's advice.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where can I read labour and postpartum guides?</summary>
+                        <div class="faq-answer">Visit our <a href="guides.html" style="color:var(--primary-dark);font-weight:600;">Guides page</a> for free labour prep and postpartum recovery content.</div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -240,17 +290,16 @@
             <div class="container">
                 <div class="cta-content">
                     <h2>Begin Your Pregnancy Journey Today</h2>
-                    <p>Join thousands of expecting mothers using MiGynae for professional guidance and support.</p>
-
-                    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
-                        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                    <p>Download MiGynae free on Google Play or the App Store.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+                        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
                             <picture>
-                            <source srcset="images/Playstore_button.webp" type="image/webp">
-                            <img src="images/Playstore_button.png" alt="Get it on Google Play" width="200" height="60" loading="lazy" decoding="async" style="height: 60px; width: auto;">
-                        </picture>
+                                <source srcset="images/Playstore_button.webp" type="image/webp">
+                                <img src="images/Playstore_button.png" alt="Get it on Google Play" width="200" height="60" style="height:60px;width:auto;">
+                            </picture>
                         </a>
-                        <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank">
-                            <img src="images/apple_logo_button_white.svg" alt="Download on the App Store" width="200" height="60" loading="lazy" decoding="async" style="height: 60px; width: auto;">
+                        <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
+                            <img src="images/apple_logo_button_white.svg" alt="Download on the App Store" width="200" height="60" style="height:60px;width:auto;">
                         </a>
                     </div>
                 </div>
@@ -263,13 +312,14 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>MiGynae</h3>
-                    <p>Professional pregnancy care platform trusted by healthcare professionals and expecting mothers worldwide.</p>
+                    <p>Professional pregnancy care platform for expecting mothers worldwide.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="#features">Features</a>
-                    <a href="blog.html">Blog</a>
+                    <h4>Explore</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="guides.html">Guides</a>
                 </div>
                 <div class="footer-section">
                     <h4>Guides</h4>
@@ -278,8 +328,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Download</h4>
-                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank">Android App</a>
-                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank">iOS App</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener">Android App</a>
+                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener">iOS App</a>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
@@ -292,5 +342,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            if (!toggle || !nav) return;
+
+            function setOpen(open) {
+                nav.classList.toggle('open', open);
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!nav.classList.contains('open'));
+            });
+
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!nav.classList.contains('open'));
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
+    </script>
 </body>
 </html>
