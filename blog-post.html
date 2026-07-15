@@ -19,7 +19,7 @@
     <meta name="twitter:title" id="twitterTitle" content="Pregnancy Articles &amp; Expert Health Guides | MiGynae">
     <meta name="twitter:description" id="twitterDescription" content="Read medically-reviewed pregnancy articles on nutrition, exercise, trimester care and maternal health from the MiGynae team. Explore expert guides now.">
     <link rel="stylesheet" href="css/index.min.css">
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/landing.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -1082,7 +1082,7 @@
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="guides.html">Guides</a></li>
             </ul>
-            <div class="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -2332,6 +2332,35 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
         } else {
             showError('No blog post specified');
         }
+    </script>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            if (!toggle || !nav) return;
+
+            function setOpen(open) {
+                nav.classList.toggle('open', open);
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!nav.classList.contains('open'));
+            });
+
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!nav.classList.contains('open'));
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
     </script>
 </body>
 </html>

@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="MiGynae App Features — Kick Counter, Contraction Timer & More">
     <meta name="twitter:description" content="Explore MiGynae pregnancy app features: kick counter, contraction timer, medical Q&A, trimester nutrition plans, safe exercises, and weekly updates. Free on Android & iOS.">
     <link rel="stylesheet" href="css/index.min.css">
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/landing.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -36,6 +36,11 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="guides.html">Guides</a></li>
             </ul>
+            <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -151,5 +156,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            if (!toggle || !nav) return;
+
+            function setOpen(open) {
+                nav.classList.toggle('open', open);
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!nav.classList.contains('open'));
+            });
+
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!nav.classList.contains('open'));
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
+    </script>
 </body>
 </html>
