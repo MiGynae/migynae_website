@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Guide for the Family | MiGynae App</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+    <meta name="description" content="A guide for the family: how to understand and support her through pregnancy and after the baby arrives.">
+    <link rel="canonical" href="https://migynaeapp.com/family-support-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://migynaeapp.com/family-support-guide.html">
+    <meta property="og:title" content="A Guide for the Family | MiGynae App">
+    <meta property="og:description" content="A guide for the family: how to understand and support her through pregnancy and after the baby arrives.">
+    <meta property="og:image" content="https://migynaeapp.com/images/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Guide for the Family | MiGynae App">
+    <meta name="twitter:description" content="A guide for the family: how to understand and support her through pregnancy and after the baby arrives.">
+<style>
+  :root{
+    --green:#2f4a3d; --cream:#faf6ee; --card:#ffffff; --ink:#3a352f; --muted:#7c756b; --line:#ece2d1;
+    --gold:#c8974a; --gold-tx:#a9781f; --gold-bg:#fbf3e4;
+    --serif:Georgia,'Times New Roman',serif;      /* -> Lora */
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; /* -> DM Sans */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e3d9c7;font-family:var(--sans);color:var(--ink);display:flex;justify-content:center;padding:24px 12px;-webkit-font-smoothing:antialiased;}
+  .phone{width:390px;max-width:100%;background:var(--cream);border-radius:28px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.18);}
+
+  .cta{background:var(--green);color:#fff;padding:18px 20px 20px;}
+  .cta.bottom{padding:22px 20px 26px;}
+  .cta h3{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.35;margin:6px 0 4px;}
+  .cta p{font-size:12.5px;color:#d9e5df;line-height:1.5;margin-bottom:14px;}
+  .stores{display:flex;gap:8px;}
+  .store{flex:1;display:flex;align-items:center;gap:8px;background:#fff;color:var(--green);text-decoration:none;padding:9px 10px;border-radius:11px;font-size:11px;font-weight:600;line-height:1.2;}
+  .store .ico{font-size:16px;line-height:1;}
+  .store small{display:block;font-size:8.5px;font-weight:500;color:var(--muted);letter-spacing:.3px;}
+
+  .logo-badge{width:40px;height:40px;border-radius:50%;background:#fff;padding:4px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.12);}
+  .logo-badge img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+  .head .logo-badge{width:64px;height:64px;margin:0 auto 14px;}
+
+  .head{padding:24px 22px 6px;text-align:center;}
+  .kicker{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-tx);font-weight:700;margin-bottom:8px;}
+  .head h1{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.28;color:var(--green);}
+  .head .sub{font-size:13px;color:var(--muted);line-height:1.6;margin-top:10px;}
+
+  .note{margin:16px 22px 4px;background:var(--gold-bg);border:1px solid #efe0c4;border-radius:14px;padding:14px 16px;}
+  .note p{font-family:var(--serif);font-style:italic;font-size:13.5px;line-height:1.6;color:#6d5a2f;}
+
+  .wrap{padding:16px 22px 6px;}
+  .block{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:16px;padding:15px 16px 12px;margin-bottom:12px;}
+  .block.g{border-left-color:var(--green);}
+  .block h2{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--green);margin-bottom:9px;}
+  .block ul{list-style:none;}
+  .block li{font-size:13px;line-height:1.5;color:var(--ink);padding:5px 0 5px 18px;position:relative;}
+  .block li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .block.g li::before{background:var(--green);}
+  .block .foot-line{font-size:11.5px;font-style:italic;color:var(--muted);margin-top:8px;padding-left:2px;}
+
+  .blogs{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px 11px;margin-bottom:12px;}
+  .blogs .bh{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--green);margin-bottom:3px;}
+  .blogs .bs{font-size:12px;color:var(--muted);line-height:1.45;margin-bottom:11px;}
+  .chip{display:inline-block;background:var(--gold-bg);color:var(--gold-tx);font-size:12px;font-weight:600;padding:7px 12px;border-radius:20px;margin:0 6px 7px 0;border:1px solid #efe0c4;}
+
+  .disc{padding:14px 22px 4px;font-size:10.5px;line-height:1.5;color:var(--muted);text-align:center;}
+  .foot{padding:12px 22px 18px;text-align:center;font-size:10px;color:#b3a99c;}
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- TOP APP CTA -->
+  <div class="cta">
+    <div class="logo-badge"><img src="data:image/jpeg;base64,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" alt="MiGynae App logo"></div>
+    <h3>Understand her journey, so you can support it</h3>
+    <p>Read the guides and FAQs in the MiGynae App, so the whole family knows what is normal and how to help.</p>
+    <div class="stores">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener"><span class="ico">▶</span><span><small>GET IT ON</small>Play Store</span></a>
+      <a class="store" href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener"><span class="ico"></span><span><small>DOWNLOAD ON</small>App Store</span></a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="logo-badge"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCACAAIADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7+ooqve3ttp1hJeXcojhjGWY/560N21Y4xcnZbkssscELSzSLHGoyzMcAD1JriNZ+I1tAzQaNALlhx58uQn4Dqf0rk/Efii81+5KZaGyU/JAD1929T/KsGvLr453tT+8+xy7h2CSqYrV9v8zZvPFniG9cmTVJo1P8EP7sfpVNNX1aN96aneK3qJm/xqlRXA6k3q2fRQwlCC5YwSXojpLDxz4hsnHmXQu4+6XC5P8A30Oa77w/4v07XcQAG2u8ZMDn73+6e/8AOvHa0bfT7j/hH5dchkZPs9ykeV4IyMhgfUHH5100MVUi+6PLzDKMJVje3JJ6Jru9ro9zormvB/iP+3dKKXBH22DCy443jswHv3966WvYhNTipI+Fr0J0KjpVFqgoooqjEKKKKACiiigAryPxp4ibV9VNnbP/AKFbsQuDxI/Qt9Ow/wDr13PjXVzpPheTyn23FwfJjI6jI5P4DP6V49Xm4+tb92vmfWcN4BSbxU1tov1YUUUV5Z9gFFFWbDT7zU75LSxgaWVuw6AepPYe9NJt2RM5xgnKTskRW9vNdXUdtbxtJLIwVEXqTXoPiCwj8PfC1NMyHlmlQSMO7k7mP/juK3PDHhO10GHzpCs984w8uOFHovoPfvSeN9Jl1XwyRbsokt3EwDMFDAAgjJ6cH9K9OnhXTpyb+Jo+QxOcQxOLpQTtTjJO/d9/Q838LamdK8U2twWxE7eVL/utx+hwfwr2yvnvnHHBr1jUPGdnpfh2zlI+0Xs9ukiwg4xlRyx7D+dTgayjGSk9Ea8Q4GVWrTlSV5S0+46mWWOGJpZZFjReSzHAH41z15468OWjlBeNcMOot0Lj8+n615hq2uanrVwZL+5Z1zlYl4Rfov8AXrWdRUzB7QQ8LwzG18RLXsv8z1NfiRoRbBt75R6+Wp/9mrW0/wAW6BqTiODUI1kPSObMZ/XrXi1FZxx9RPVHTV4aw0l7jaf3n0JRXkHhzxjf6NMkFy73NieDGxy0Y9VP9P5V61bXMF5aR3VtIskUihkdehFejQrxrK63Plcwy2rgpWnqnszzH4jXxn8SRWQPyW0QJH+03J/QCuOrW8Tzm48Y6lITn9+VH0Xj+lZNeNXlzVJM+/y2iqWFpwXZfjqFFFbXhvw7ceINS8pSY7aPBmmx0HoPc/8A16zhBzfLHc6K9aFCDqVHZIboHh2+1+98uAeXAh/ezsOF9h6n2r1vR9EsNDsRbWUWM8vI3LSH1JrK17Ubbwf4Vji06BFdj5UCY4BxksfX19zXldzqeo3l0bm6vriSXOdxcjH0x0/CvRUqeE0teR8vKnic6TmpclNbLue9V5f488RxajONJs2V4IX3SSDIy4yCvuB/OqFt478QW2nm1M8Ux27VmlXLr+OefxrmiSSSSSTySe9TicYpx5YGuVZFLD1nVr622t+YUpJY5JJPTmkorzj6gKKKKACiiigArv8A4caw4nm0WZ8qQZoc9j/EP6/nXAVq+Grk2ni/Tpgcfvgh+jfKf51vh5uFRM8/NMOsRhZwfa69UVtXyfEN+T1+0Sf+hGqdafiOLyPF2pR4xi4cj8Tn+tZlZ1FaTR1YZqVGDXZfkWdPsbjU9ThsbVd0srbRnoPUn2A5r23SNKttG0mKxtV+VBlmPV27sfc1yHw30pUsp9ZkX55D5UWeyj7x/E8fhXb21zHdQ+ZGehKsD1VgcEH3zXq4KioR53uz4viDHSrVnRj8Mfz/AOBscr8RNOlu/Dkd3ECxtZN7Af3SME/hxXldfQToskZR1DKwwQRkEV5b4q8Fz6bLJfaXG01kfmaNeWh/xX37VnjcO2/aROvh/M4Qj9Wqu3Z/ocfRRRXln14UUUUAFFFFABRRRQAVc0pS2v2Kr1NxHj/voVTra8I2xuvGunoBkJJ5rfRQT/PFXSV5peZz4qahRnJ9E/yL3j+0Nv4yklxhbiNZB9QNp/lXL9Oa9L+JWnmXSrXUkXmBzG5/2W6fqB+deZt90/StsXDlqvzOLJK/tcHB9Vp93/APcPDVqLPwjp8AGMQKx+rDcf51Vt5jZePrmwJ/dXsAukHYSL8rfmAp/CtewAXS7dR0ESgf98iuf8Qn7N4z8OXa8bppLdj7MtevL3Yq3S3+R8NSftq01L7Sl9+/5o6iiignAya2OE5nWfA+j6q7TRqbO4bkyQgYY+69D+leTXUK299PbpKJVjkZBIBgNg4zXp/ivxlaWFlLY6bOs164K7ozlYfcn19BXldePjnT5rR36n3XD0cT7JyrN8vRP+tgooorhPogooooAKKKKACu++Gumlri71V1+VQIIz7nlv6VwkUUs9wkEKF5JGCIo7knAFe4aFpcej6Db2CYJRcuw/iY8k/nXdgaXNPmeyPnuIsWqWH9it5fkS6rYR6potzYSdJoyoPoex/A4rwmeGSCaWCZSsiEoynsRwa+gq8u+IWjG01hNVhT9zdcPjtIB/UfyNdOPpc0eddDyuG8Z7Oq6Etpbev/AAUeiaRKJtAspQc74Eb/AMdFYnjUeXa6Vef88NQiOfQHIqz4LuRc+CLE5yY1MR/4CSP5YpPGtu1x4JvSgJeILMv1Vgf5Zrok+alddjyqUfZY7kf81vxsdBUN1aW17bmC7gSaM9VcZFNsLlbzS7e7U5Esavn6jNWK23RwO8JeaOP1H4d6NcqWsWlsZOwQ70/75P8AQ1wuteF9W0Ml7mES2+f+PiLlfx7r+Ne1VXS5srwywRTwTlflkRWDY9iK5auEpz20Z7GDzzFUH7z5o+f+Z4HRXaeMfCUdhG2raSoNrn97EpyIvcf7Pt2+lcXXkVaUqcuWR9xg8ZTxdNVKf/DBRRRWZ1BRRXTeEfC0muXgubpSunxN8x6eaf7o9vU1dOm6kuWJhicTTw1N1ajskbfw/wDDhLDXrxMDkWyn8i/9B+Neh01ESONY41CqowFAwAPSnV71GkqUVFH5rjsZPF1nVn8vJBVDWdLh1jRZ7CfgSL8rf3GHQ/gav0Vo0mrM5oTlCSlF2aOJ+HzzWialol2uye2m3FfqMHHtkZ/GuyuIUubSW3kGUkQow9iMGsy500w+J7fWrZfmZDb3Kj+JD91vqCB+B9q16zpQ5Y8j6HVja6rVfbR0b1fk+v8Amcv4KuHj0y40O5P+kadKYSD3QklT/OuorkvEUE+i65F4qso2kjCiK+iXq0fZvqP6D3rp7S7t76yju7WVZIZF3Ky9xRSdvce6/IrGR52sRHaW/k+q/VeQXSSS2M0cTbZGRlU+hI4NeDpJdWMs0SSSQSEGGUKSpIzyp/EV79XNat4J0nVtYXUJWlhY8zJEQBL7n0PuKxxVCVWzjujuyXMaWEc41l7sv0MH4cWs0tjqRnUtZS7Y9jfdY4O79CAa4zWdPOla/d6eckRSEKT3U8j9CK9wtbS3srSO1tIVihjGFRRwBXlPxAVV8bSkdWhjJ+uCP6Vz4qioUYrqj08nx7xGPqSSspLb0tY5eiiu38MeBZbspfa0jRW/Vbc8NJ/veg9up9q4KVKVV2ifRYzG0sJDnqv/ADfoZnhbwnca7OLi43Q2Cn5n6GT/AGV/qa9btraC0tY7a2iWKKNdqIowAKdFFHDCsUSKiKMKqjAA9AKfXt0KEaSstz8/zHMqmNnzS0itl/XUKKKK3POCiiigArIuNTbSLrbqWfsTn5LvHEZP8Mnp7N07H316bJGksbRyIrowwVYZBHoRSd+hcHFP3ldCfu54eCskbj6hgf5iuVk0TVvD13Jd+Gis9o53SabK2AD6oe30/nVmTw5fac5l8M6ibRScmynHmQH6Dqv4U0a74js/k1LwxLNj/lrYyCQH/gJ5rGTT+JNPud9CMo39jJST3T0+9P8ARhF440pG8rVYbvTJhwUuYjj8CBzTU8XS6lqTWnh3TGv1T79y8nlxD8cGlfxXYTJ5d3oWre6SWZYVPa65EIhFp3hzVAueFFssK5+rECpUm9Ob8NTR0YRTl7F385e7+j/E07WbU2wLyygj94Z94/VRXmOuWl/4k8fX0em27TCNxEX6IgUYJJ6DnNenWj6jM3mXUEVqnaIP5jn6noPoM/WrFvbW9pD5VtCkSZJ2oMDJ6n61VWj7VKLehng8c8FUlUjFczVl2X+Zzfh3wTY6OUursrd3o5DkfJGf9kevuf0rqaKK0hCMFaKOTEYmpiJ+0qu7CiiirMAooooA/9k=" alt="MiGynae App logo"></div>
+    <div class="kicker">For the Family</div>
+    <h1>How to support her</h1>
+    <p class="sub">Someone you love is expecting. A little understanding from the people around her makes the whole journey easier. Here is how you can help.</p>
+  </div>
+
+  <!-- BRAND NOTE -->
+  <div class="note">
+    <p>"Pregnancy is never carried by one woman alone. It is carried by everyone who loves her, and your support becomes part of her care."</p>
+  </div>
+
+  <div class="wrap">
+
+    <!-- 1 -->
+    <div class="block">
+      <h2>Understand what she is feeling</h2>
+      <ul>
+        <li>Her body and hormones are changing every week. Tiredness, nausea and mood changes are real, not drama.</li>
+        <li>Some days she will glow, some days she will simply need to rest.</li>
+        <li>She may feel anxious about the baby and the delivery. Calm reassurance helps more than advice.</li>
+      </ul>
+    </div>
+
+    <!-- 2 -->
+    <div class="block g">
+      <h2>The support that helps most</h2>
+      <ul>
+        <li>Let her rest without guilt, and share the housework.</li>
+        <li>Help her eat well, simple home food that her body can handle.</li>
+        <li>Make sure she reaches every check-up.</li>
+        <li>Keep visitors few and gentle, especially when she is tired.</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="block">
+      <h2>Please be gentle with words</h2>
+      <ul>
+        <li>Do not compare her pregnancy to anyone else's.</li>
+        <li>Do not share frightening birth stories with her.</li>
+        <li>Trust her doctor's advice over old remedies and myths.</li>
+        <li>Never make her feel pressure about the baby's gender. A healthy baby is the blessing.</li>
+      </ul>
+      <div class="foot-line">Kind words heal. Careless ones stay with her.</div>
+    </div>
+
+    <!-- BLOGS -->
+    <div class="blogs">
+      <div class="bh">Read these to understand her better</div>
+      <div class="bs">A few guides in the MiGynae App the family can read too:</div>
+      <span class="chip">Breastfeeding Basics</span>
+      <span class="chip">What to Know When Labour Begins</span>
+      <span class="chip">Preparing for a Normal Delivery</span>
+      <span class="chip">Post-Delivery Recovery</span>
+      <span class="chip">Warning Signs: When to See a Doctor</span>
+    </div>
+
+    <!-- 4 -->
+    <div class="block g">
+      <h2>After the baby arrives</h2>
+      <ul>
+        <li>She will be healing and very short on sleep. Let her rest and recover.</li>
+        <li>Share the night duties and the baby's care, so it is not all on her.</li>
+        <li>Feed her well, especially while she is breastfeeding.</li>
+        <li>If she seems low, cries often, or pulls away, do not judge. Help her see her doctor. This is common and treatable.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM APP CTA -->
+  <div class="cta bottom">
+    <div class="logo-badge"><img src="data:image/jpeg;base64,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" alt="MiGynae App logo"></div>
+    <h3>Support her, every step of the way</h3>
+    <p>Follow her pregnancy and read the guides together in the MiGynae App.</p>
+    <div class="stores">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener"><span class="ico">▶</span><span><small>GET IT ON</small>Play Store</span></a>
+      <a class="store" href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener"><span class="ico"></span><span><small>DOWNLOAD ON</small>App Store</span></a>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disc">
+    General support tips. For any health concern, always follow her doctor's advice.
+  </div>
+  <div class="foot"><a href="index.html" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">← Back to MiGynae</a> &nbsp;·&nbsp; © 2026 MiGynae</div>
+
+</div>
+</body>
+</html>
