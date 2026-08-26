@@ -15,29 +15,245 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-    <title>MiGynae App Features — Kick Counter, Contraction Timer & More</title>
-    <meta name="description" content="Explore MiGynae pregnancy app features: kick counter, contraction timer, medical Q&A, trimester nutrition plans, safe exercises, and weekly updates. Free on Android & iOS.">
+    <title>MiGynae — Pregnancy &amp; Period Tracking App | Features</title>
+    <meta name="description" content="MiGynae is an all-in-one pregnancy and period tracking app for Indian women. Pregnancy calculator week by week, menstrual cycle tracking, baby kick tracker, contraction timer, Indian pregnancy diet plan, and more.">
+    <meta name="keywords" content="pregnancy calculator week by week pictures, menstrual cycle tracking app, baby kick tracker app, baby movement tracker app, pregnancy weight gain tracker, Indian pregnancy diet plan app, contraction tracker app, MiGynae, pregnancy companion app India">
     <link rel="canonical" href="https://migynaeapp.com/features.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://migynaeapp.com/features.html">
-    <meta property="og:title" content="MiGynae App Features — Kick Counter, Contraction Timer & More">
-    <meta property="og:description" content="Explore MiGynae pregnancy app features: kick counter, contraction timer, medical Q&A, trimester nutrition plans, safe exercises, and weekly updates. Free on Android & iOS.">
+    <meta property="og:title" content="MiGynae — Pregnancy &amp; Period Tracking App | Features">
+    <meta property="og:description" content="MiGynae is an all-in-one pregnancy and period tracking app for Indian women. Pregnancy calculator, menstrual cycle tracking, baby kick tracker, contraction timer, and more.">
     <meta property="og:image" content="https://migynaeapp.com/images/weekly_updates_screen.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MiGynae App Features — Kick Counter, Contraction Timer & More">
-    <meta name="twitter:description" content="Explore MiGynae pregnancy app features: kick counter, contraction timer, medical Q&A, trimester nutrition plans, safe exercises, and weekly updates. Free on Android & iOS.">
+    <meta name="twitter:title" content="MiGynae — Pregnancy &amp; Period Tracking App | Features">
+    <meta name="twitter:description" content="MiGynae is an all-in-one pregnancy and period tracking app for Indian women. Pregnancy calculator, menstrual cycle tracking, baby kick tracker, contraction timer, and more.">
     <link rel="stylesheet" href="css/index.min.css">
     <link rel="stylesheet" href="css/landing.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ── Features page supplemental styles ── */
+        :root {
+            --fp-pink:         #CF3476;
+            --fp-pink-soft:    #FCD5D4;
+            --fp-cream:        #FEF9F7;
+            --fp-purple:       #7B4F9E;
+            --fp-purple-light: #F3EDF8;
+            --fp-text-muted:   #7A7A8C;
+            --fp-radius:       20px;
+        }
+
+        /* shared label pill */
+        .section-tag {
+            display: inline-block;
+            background: var(--fp-pink-soft); color: var(--fp-pink);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+        }
+        .fp-section-title {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700; line-height: 1.2; margin-bottom: 14px;
+        }
+        .fp-section-sub {
+            font-size: 1rem; color: var(--fp-text-muted);
+            max-width: 640px; margin-bottom: 48px;
+        }
+
+        /* ── FEATURES GRID ── */
+        .feat-section { background: #fff; padding: 80px 0; }
+        .feat-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .feat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .feat-card {
+            background: var(--fp-cream);
+            border-radius: var(--fp-radius);
+            padding: 32px 28px;
+            border: 1px solid #F0E8E4;
+            transition: transform .25s, box-shadow .25s;
+        }
+        .feat-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(207,52,118,.1); }
+        .feat-card.accent {
+            background: linear-gradient(135deg, var(--fp-pink) 0%, #a8255e 100%);
+            color: #fff; border: none;
+        }
+        .feat-card.accent .feat-card-title,
+        .feat-card.accent .feat-card-desc { color: #fff; }
+        .feat-card.accent .feat-card-desc { opacity: .85; }
+        .feat-card-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+            background: var(--fp-pink-soft);
+        }
+        .feat-card.accent .feat-card-icon { background: rgba(255,255,255,.2); }
+        .feat-card-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; }
+        .feat-card-desc { font-size: 0.9rem; color: var(--fp-text-muted); line-height: 1.6; }
+        .feat-kw {
+            display: inline-block; margin-top: 14px;
+            background: rgba(207,52,118,.1); color: var(--fp-pink);
+            font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 50px;
+        }
+        .feat-card.accent .feat-kw { background: rgba(255,255,255,.2); color: #fff; }
+
+        /* ── PREGNANCY TRACKER ── */
+        .preg-section {
+            background: linear-gradient(160deg, #FEF9F7 0%, var(--fp-purple-light) 100%);
+            padding: 80px 0;
+        }
+        .preg-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .preg-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .weeks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .week-pill {
+            background: #fff; border-radius: 14px; padding: 16px 10px;
+            text-align: center; border: 1px solid #F0E8E4;
+            transition: background .2s, transform .2s;
+        }
+        .week-pill:hover { background: var(--fp-pink-soft); transform: scale(1.04); }
+        .week-pill.active { background: var(--fp-pink); color: #fff; border-color: var(--fp-pink); }
+        .week-pill .wnum { font-weight: 700; font-size: 1.1rem; }
+        .week-pill .wlabel { font-size: 0.65rem; color: var(--fp-text-muted); }
+        .week-pill.active .wlabel { color: rgba(255,255,255,.8); }
+        .preg-copy h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+        .preg-copy p { color: var(--fp-text-muted); margin-bottom: 14px; }
+        .preg-bullets { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+        .preg-bullets li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; }
+        .preg-bullets li::before {
+            content: ''; min-width: 20px; height: 20px; border-radius: 50%;
+            background: var(--fp-pink);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='12' height='12'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: center; background-size: 12px;
+        }
+
+        /* ── STATS BAND ── */
+        .fp-stats-band {
+            background: linear-gradient(135deg, var(--fp-pink) 0%, var(--fp-purple) 100%);
+            padding: 60px 32px;
+        }
+        .fp-stats-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 32px; text-align: center;
+        }
+        .fp-stat-num { font-size: 2.8rem; font-weight: 700; color: #fff; line-height: 1; }
+        .fp-stat-label { font-size: 0.85rem; color: rgba(255,255,255,.75); margin-top: 8px; }
+
+        /* ── PERIOD TRACKER ── */
+        .period-section { background: #fff; padding: 80px 0; }
+        .period-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .period-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .cycle-visual { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .cycle-ring {
+            width: 280px; height: 280px; border-radius: 50%;
+            background: conic-gradient(
+                var(--fp-pink) 0deg 72deg,
+                #F8C4C8 72deg 144deg,
+                var(--fp-purple) 144deg 216deg,
+                #C8B8E8 216deg 288deg,
+                #E8D8F4 288deg 360deg
+            );
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 20px 60px rgba(207,52,118,.15);
+        }
+        .cycle-center {
+            width: 180px; height: 180px; border-radius: 50%;
+            background: #fff; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 4px;
+        }
+        .cycle-center .day-num { font-size: 2.4rem; font-weight: 700; color: var(--fp-pink); line-height: 1; }
+        .cycle-center .day-label { font-size: 0.75rem; color: var(--fp-text-muted); }
+        .fp-cycle-legend { display: flex; flex-wrap: wrap; gap: 12px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--fp-text-muted); }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+        /* ── DIET SECTION ── */
+        .diet-section { background: var(--fp-cream); padding: 80px 0; }
+        .diet-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .diet-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .diet-card {
+            background: #fff; border-radius: var(--fp-radius); padding: 28px 24px;
+            border: 1px solid #F0E8E4;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .diet-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(123,79,158,.1); }
+        .trim-badge {
+            display: inline-block; margin-bottom: 14px;
+            padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+        }
+        .t1 { background: #FDE8F0; color: #C0185C; }
+        .t2 { background: #EDE0F8; color: #6B3A9A; }
+        .t3 { background: #E0F0F8; color: #1A6A9A; }
+        .diet-card h3 { font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+        .diet-card p { font-size: 0.88rem; color: var(--fp-text-muted); }
+        .food-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+        .food-tag {
+            background: var(--fp-cream); padding: 3px 10px; border-radius: 50px;
+            font-size: 0.72rem; color: var(--fp-text-muted); border: 1px solid #F0E8E4;
+        }
+
+        /* ── TOOLS SECTION ── */
+        .tools-section { background: var(--fp-purple-light); padding: 80px 0; }
+        .tools-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .tool-row {
+            display: flex; gap: 20px; align-items: flex-start;
+            background: #fff; border-radius: 18px; padding: 24px;
+            border: 1px solid #E8DDF2;
+            transition: box-shadow .2s;
+        }
+        .tool-row:hover { box-shadow: 0 12px 32px rgba(123,79,158,.1); }
+        .tool-icon {
+            min-width: 48px; height: 48px; border-radius: 12px;
+            background: var(--fp-purple-light);
+            display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+        }
+        .tool-info h3 { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+        .tool-info p { font-size: 0.85rem; color: var(--fp-text-muted); }
+
+        /* ── COMMUNITY ── */
+        .community-section { background: #fff; padding: 80px 0; }
+        .community-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        .community-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .q-cards { display: flex; flex-direction: column; gap: 14px; }
+        .q-card {
+            background: var(--fp-cream); border-radius: 16px; padding: 18px 20px;
+            border-left: 4px solid var(--fp-pink);
+        }
+        .q-card .q-text { font-size: 0.9rem; font-weight: 500; margin-bottom: 10px; }
+        .q-card .a-text { font-size: 0.82rem; color: var(--fp-text-muted); }
+        .q-card .a-badge {
+            display: inline-block; background: var(--fp-pink-soft); color: var(--fp-pink);
+            font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; margin-bottom: 6px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .feat-grid { grid-template-columns: 1fr; }
+            .preg-layout, .period-layout, .community-layout { grid-template-columns: 1fr; }
+            .fp-stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .diet-cards, .tools-grid { grid-template-columns: 1fr; }
+            .feat-section .container,
+            .preg-section .container,
+            .period-section .container,
+            .diet-section .container,
+            .tools-section .container,
+            .community-section .container { padding: 0 20px; }
+            .feat-section, .preg-section, .period-section,
+            .diet-section, .tools-section, .community-section { padding: 60px 0; }
+            .fp-stats-band { padding: 48px 20px; }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="container">
             <a href="index.html" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
-                <p class="logo-title">MiGynae</p>
+                <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="features.html" class="active">Features</a></li>
                 <li><a href="how-it-works.html">How It Works</a></li>
                 <li><a href="resources.html">Resources</a></li>
@@ -45,122 +261,337 @@
                 <li><a href="guides.html">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </nav>
     </header>
 
     <section class="page-hero">
         <div class="container">
-            <span class="section-eyebrow">Pregnancy app features</span>
-            <h1>Complete Prenatal Care &amp; Tracking Tools</h1>
-            <p>MiGynae combines hospital-grade tracking with medically reviewed education — every tool you need from positive test to postpartum.</p>
+            <span class="section-eyebrow">India's Pregnancy &amp; Period App</span>
+            <h1>Your Complete Pregnancy &amp; Period Companion</h1>
+            <p>Track your cycle, follow your baby's growth week by week, log kicks and contractions, follow an Indian pregnancy diet plan — all in one beautifully simple app, free to download.</p>
         </div>
     </section>
 
-    <main class="page-content">
-        <section class="features" style="padding-top:0;">
+    <main>
+
+        <!-- FEATURES GRID -->
+        <section class="feat-section">
             <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
-                        <h3>Medical-Grade Q&amp;A</h3>
-                        <p>Search pregnancy symptoms and get evidence-based answers reviewed by certified healthcare professionals. Updated with current OBGYN guidelines — from morning sickness to third-trimester concerns.</p>
+                <span class="section-tag">Everything You Need</span>
+                <h2 class="fp-section-title">Built for every stage of your journey</h2>
+                <p class="fp-section-sub">From your first missed period to delivery day — MiGynae has a feature for every milestone, designed specifically for Indian women.</p>
+                <div class="feat-grid">
+                    <div class="feat-card accent">
+                        <div class="feat-card-icon">&#128336;</div>
+                        <div class="feat-card-title">Pregnancy Calculator — Week by Week with Pictures</div>
+                        <div class="feat-card-desc">See exactly how your baby is growing each week with size comparisons, illustrated milestones, and what to expect at every stage of your pregnancy.</div>
+                        <span class="feat-kw">pregnancy calculator week by week pictures</span>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
-                        <h3>Advanced Kick Counter</h3>
-                        <p>Log fetal movements daily, view history over weeks, and spot pattern changes. Share records at antenatal visits. Intelligent reminders help you stay consistent from week 28 onward.</p>
+                    <div class="feat-card">
+                        <div class="feat-card-icon">&#128197;</div>
+                        <div class="feat-card-title">Menstrual Cycle Tracking</div>
+                        <div class="feat-card-desc">Log your periods, predict your next cycle, track ovulation, and understand your hormonal patterns — all with a clean, intuitive calendar.</div>
+                        <span class="feat-kw">menstrual cycle tracking app</span>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                        <h3>Precision Contraction Timer</h3>
-                        <p>One-tap start/stop timing with duration and interval analysis. Pattern recognition helps you know when contractions are regular enough to call your doctor or head to the hospital.</p>
+                    <div class="feat-card">
+                        <div class="feat-card-icon">&#128149;</div>
+                        <div class="feat-card-title">Baby Kick &amp; Movement Tracker</div>
+                        <div class="feat-card-desc">Count baby kicks in real time, set daily movement goals, and spot patterns. Never miss a moment of your baby's activity in the third trimester.</div>
+                        <span class="feat-kw">baby kick tracker app</span>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-apple-alt"></i></div>
-                        <h3>Personalized Nutrition Plans</h3>
-                        <p>Trimester-specific meal plans with Indian diet charts, traditional superfoods (ghee, dates, millets), sample daily menus, and clear do's and don'ts for vegetarian and non-vegetarian mothers.</p>
+                    <div class="feat-card">
+                        <div class="feat-card-icon">&#9203;</div>
+                        <div class="feat-card-title">Contraction Timer</div>
+                        <div class="feat-card-desc">Accurately time your contractions during labor. Tap to start, tap to stop. Know instantly when contractions are close enough to head to the hospital.</div>
+                        <span class="feat-kw">contraction tracker app</span>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
-                        <h3>Safe Exercise Programs</h3>
-                        <p>Certified prenatal workouts by trimester — walking, pelvic tilts, squats, breathing exercises, and cultural tips for Indian moms. Safety protocols tell you when to stop.</p>
+                    <div class="feat-card">
+                        <div class="feat-card-icon">&#9878;</div>
+                        <div class="feat-card-title">Pregnancy Weight Gain Tracker</div>
+                        <div class="feat-card-desc">Monitor your weight gain trimester by trimester against WHO and Indian guidelines, with visual charts to keep you and your doctor informed.</div>
+                        <span class="feat-kw">pregnancy weight gain tracker</span>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-calendar-week"></i></div>
-                        <h3>Weekly Pregnancy Updates</h3>
-                        <p>See your baby's size each week, track body changes, and get actionable tips matched to your gestational age. Personalized from your due date at setup.</p>
+                    <div class="feat-card">
+                        <div class="feat-card-icon">&#127758;</div>
+                        <div class="feat-card-title">Indian Pregnancy Diet Plan</div>
+                        <div class="feat-card-desc">Trimester-specific diet plans curated by gynecologists, featuring dals, sabzis, millets, and foods readily available in Indian kitchens.</div>
+                        <span class="feat-kw">Indian pregnancy diet plan app</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="trimester-section">
+        <!-- PREGNANCY TRACKER -->
+        <section class="preg-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Support Across All Three Trimesters</h2>
-                    <p>The app adapts content and tools to your current pregnancy week.</p>
+                <div class="preg-layout">
+                    <div>
+                        <div class="weeks-grid">
+                            <div class="week-pill"><div class="wnum">6</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">10</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill active"><div class="wnum">16</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">20</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">24</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">28</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">32</div><div class="wlabel">Week</div></div>
+                            <div class="week-pill"><div class="wnum">40</div><div class="wlabel">Week</div></div>
+                        </div>
+                    </div>
+                    <div class="preg-copy">
+                        <span class="section-tag">Pregnancy Calculator</span>
+                        <h2>Week by week, picture by picture</h2>
+                        <p>Our <strong>pregnancy calculator week by week with pictures</strong> helps you visualise exactly how big your baby is, what organs are developing, and what symptoms to expect — no medical jargon, just clear, reassuring information.</p>
+                        <ul class="preg-bullets">
+                            <li>Baby size comparisons using familiar fruits and vegetables</li>
+                            <li>Illustrated fetal development milestones from week 4 to 40</li>
+                            <li>Due date calculator based on your last menstrual period (LMP)</li>
+                            <li>Personalised weekly tips from Indian gynecologists</li>
+                            <li>First, second, and third trimester summaries</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="trimester-grid">
-                    <div class="trimester-card">
-                        <div class="trimester-header"><h3>First Trimester</h3><p>Weeks 1–12</p></div>
-                        <div class="trimester-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Nausea-friendly diet &amp; safe food lists</li>
-                                <li><i class="fas fa-check-circle"></i> Daily activity guidance (Pregnancy 101)</li>
-                                <li><i class="fas fa-check-circle"></i> Early symptom Q&amp;A</li>
-                            </ul>
+            </div>
+        </section>
+
+        <!-- STATS BAND -->
+        <div class="fp-stats-band">
+            <div class="fp-stats-inner">
+                <div>
+                    <div class="fp-stat-num">40</div>
+                    <div class="fp-stat-label">Weeks of detailed pregnancy content</div>
+                </div>
+                <div>
+                    <div class="fp-stat-num">50+</div>
+                    <div class="fp-stat-label">Indian diet recipes per trimester</div>
+                </div>
+                <div>
+                    <div class="fp-stat-num">10k+</div>
+                    <div class="fp-stat-label">Questions answered by our doctor community</div>
+                </div>
+                <div>
+                    <div class="fp-stat-num">4.8</div>
+                    <div class="fp-stat-label">Average App Store rating</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERIOD TRACKER -->
+        <section class="period-section">
+            <div class="container">
+                <div class="period-layout">
+                    <div>
+                        <span class="section-tag">Menstrual Cycle Tracking</span>
+                        <h2 class="fp-section-title">Understand your cycle like never before</h2>
+                        <p style="color:var(--fp-text-muted); margin-bottom:14px">MiGynae's <strong>menstrual cycle tracking app</strong> uses your history to predict your next period, fertile window, and ovulation day — with an accuracy that improves over time.</p>
+                        <p style="color:var(--fp-text-muted)">Log flow intensity, symptoms, mood, and discharge. The app surfaces patterns you might never have noticed on your own, and alerts you when something looks irregular.</p>
+                        <div class="fp-cycle-legend" style="margin-top:24px;">
+                            <div class="legend-item"><div class="legend-dot" style="background:var(--fp-pink)"></div> Period</div>
+                            <div class="legend-item"><div class="legend-dot" style="background:#F8C4C8"></div> PMS</div>
+                            <div class="legend-item"><div class="legend-dot" style="background:var(--fp-purple)"></div> Ovulation</div>
+                            <div class="legend-item"><div class="legend-dot" style="background:#C8B8E8"></div> Fertile</div>
+                            <div class="legend-item"><div class="legend-dot" style="background:#E8D8F4"></div> Luteal</div>
                         </div>
                     </div>
-                    <div class="trimester-card">
-                        <div class="trimester-header"><h3>Second Trimester</h3><p>Weeks 13–27</p></div>
-                        <div class="trimester-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Weekly baby development updates</li>
-                                <li><i class="fas fa-check-circle"></i> Nutrition &amp; exercise by trimester</li>
-                                <li><i class="fas fa-check-circle"></i> Kick counting begins when recommended</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="trimester-card">
-                        <div class="trimester-header"><h3>Third Trimester</h3><p>Weeks 28–40+</p></div>
-                        <div class="trimester-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Full kick counter &amp; contraction timer</li>
-                                <li><i class="fas fa-check-circle"></i> 9th-month diet &amp; labour prep exercises</li>
-                                <li><i class="fas fa-check-circle"></i> Links to free labour &amp; postpartum guides</li>
-                            </ul>
+                    <div class="cycle-visual">
+                        <div class="cycle-ring">
+                            <div class="cycle-center">
+                                <div class="day-num">14</div>
+                                <div class="day-label">Day of cycle</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- DIET SECTION -->
+        <section class="diet-section">
+            <div class="container">
+                <span class="section-tag">Nutrition</span>
+                <h2 class="fp-section-title">An Indian pregnancy diet plan, trimester by trimester</h2>
+                <p class="fp-section-sub">Our <strong>Indian pregnancy diet plan app</strong> features meals designed around what's actually available in Indian homes — dal, roti, sabzi, curd, and seasonal fruits — with nutrient breakdowns approved by gynecologists.</p>
+                <div class="diet-cards">
+                    <div class="diet-card">
+                        <span class="trim-badge t1">First Trimester</span>
+                        <h3>Combat nausea, build foundations</h3>
+                        <p>Small, frequent meals to manage morning sickness. Focus on folate, iron, and B6 — critical for neural tube development in weeks 1–13.</p>
+                        <div class="food-tags">
+                            <span class="food-tag">Methi paratha</span>
+                            <span class="food-tag">Masoor dal</span>
+                            <span class="food-tag">Coconut water</span>
+                            <span class="food-tag">Banana</span>
+                            <span class="food-tag">Curd rice</span>
+                        </div>
+                    </div>
+                    <div class="diet-card">
+                        <span class="trim-badge t2">Second Trimester</span>
+                        <h3>Build bone, brain &amp; muscle</h3>
+                        <p>Calcium, DHA, and protein take centre stage as your baby's skeleton, brain, and muscles grow rapidly through weeks 14–27.</p>
+                        <div class="food-tags">
+                            <span class="food-tag">Paneer</span>
+                            <span class="food-tag">Ragi porridge</span>
+                            <span class="food-tag">Palak sabzi</span>
+                            <span class="food-tag">Moong sprouts</span>
+                            <span class="food-tag">Til chikki</span>
+                        </div>
+                    </div>
+                    <div class="diet-card">
+                        <span class="trim-badge t3">Third Trimester</span>
+                        <h3>Prepare for labour &amp; breastfeeding</h3>
+                        <p>High-fibre, iron-rich foods to prevent constipation and top up iron stores. Calories increase slightly to fuel your baby's final growth surge.</p>
+                        <div class="food-tags">
+                            <span class="food-tag">Khichdi</span>
+                            <span class="food-tag">Dates</span>
+                            <span class="food-tag">Lauki soup</span>
+                            <span class="food-tag">Rajma</span>
+                            <span class="food-tag">Dry fruits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section class="tools-section">
+            <div class="container">
+                <span class="section-tag">Pregnancy Tools</span>
+                <h2 class="fp-section-title">Every tool you need in one app</h2>
+                <p class="fp-section-sub">No need to switch between five different apps. MiGynae packs every tracker, calculator, and monitor you'll use across your pregnancy.</p>
+                <div class="tools-grid">
+                    <div class="tool-row">
+                        <div class="tool-icon">&#128062;</div>
+                        <div class="tool-info">
+                            <h3>Baby Kick &amp; Movement Tracker</h3>
+                            <p>Log baby movements with a single tap. Our <strong>baby kick tracker app</strong> counts daily kicks and alerts you if movement drops below your usual pattern — a key safety signal in the third trimester.</p>
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-icon">&#9203;</div>
+                        <div class="tool-info">
+                            <h3>Contraction Timer</h3>
+                            <p>The <strong>contraction tracker app</strong> records duration and frequency automatically. A colour-coded guide tells you when to call your doctor, when to head to the hospital, and when to stay home.</p>
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-icon">&#9878;</div>
+                        <div class="tool-info">
+                            <h3>Pregnancy Weight Gain Tracker</h3>
+                            <p>Enter your pre-pregnancy BMI and the app sets a personalised target range. The <strong>pregnancy weight gain tracker</strong> plots every weigh-in on a chart so both you and your gynecologist can track progress at a glance.</p>
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-icon">&#128214;</div>
+                        <div class="tool-info">
+                            <h3>Pregnancy 101 Articles</h3>
+                            <p>A curated library of evidence-based articles covering tests, scans, warning signs, and labour prep — written in plain Hindi and English, reviewed by Indian OBGYNs.</p>
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-icon">&#128722;</div>
+                        <div class="tool-info">
+                            <h3>Pregnancy Shopping List</h3>
+                            <p>Week-appropriate, trimester-tagged product recommendations for Indian mothers — from prenatal vitamins to nursery essentials, with affiliate links to trusted retailers.</p>
+                        </div>
+                    </div>
+                    <div class="tool-row">
+                        <div class="tool-icon">&#128200;</div>
+                        <div class="tool-info">
+                            <h3>Exercise Tracker</h3>
+                            <p>Safe, trimester-specific pregnancy exercises with illustrated guides. Log your daily activity and follow routines approved for Indian climates and home workouts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMUNITY -->
+        <section class="community-section">
+            <div class="container">
+                <div class="community-layout">
+                    <div>
+                        <span class="section-tag">Doctor Community</span>
+                        <h2 class="fp-section-title">Real answers from real gynecologists</h2>
+                        <p style="color:var(--fp-text-muted); margin-bottom:14px">Every question in the MiGynae community is reviewed by a verified gynecologist. Ask anything — from diet concerns to labour signs — and get an evidence-based answer, not just crowd opinions.</p>
+                        <p style="color:var(--fp-text-muted)">Thousands of questions are already answered and searchable. If yours is already there, you get an instant AI-assisted response drawing from our doctor-verified archive.</p>
+                    </div>
+                    <div class="q-cards">
+                        <div class="q-card">
+                            <div class="q-text">"Is it safe to eat papaya during the first trimester?"</div>
+                            <span class="a-badge">Doctor Answered</span>
+                            <div class="a-text">Raw papaya contains latex which can trigger uterine contractions and should be avoided. Ripe papaya in small amounts is generally considered safe after the first trimester.</div>
+                        </div>
+                        <div class="q-card">
+                            <div class="q-text">"How many kicks should I feel in third trimester?"</div>
+                            <span class="a-badge">Doctor Answered</span>
+                            <div class="a-text">Most guidelines recommend at least 10 movements within 2 hours. Use the baby movement tracker in the app and contact your doctor if you notice a significant decrease.</div>
+                        </div>
+                        <div class="q-card">
+                            <div class="q-text">"My periods are irregular — how do I track ovulation?"</div>
+                            <span class="a-badge">Doctor Answered</span>
+                            <div class="a-text">With irregular cycles, tracking is harder by calendar alone. Log your symptoms daily in the app — the AI learns your personal patterns and improves predictions over time.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Try Every Feature Free</h2>
-                    <p>Download MiGynae on Android or iOS — no subscription during beta.</p>
+                    <h2>Start Your Journey Today</h2>
+                    <p>Join thousands of Indian mothers who trust MiGynae as their daily pregnancy and period companion — completely free to download.</p>
                     <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
                         <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
-                            <picture><source srcset="images/Playstore_button.webp" type="image/webp"><img src="images/Playstore_button.png" alt="Google Play" width="200" height="60" style="height:60px;width:auto;"></picture>
+                            <picture>
+                                <source srcset="images/Playstore_button.webp" type="image/webp">
+                                <img src="images/Playstore_button.png" alt="Get it on Google Play" width="200" height="60" style="height:60px;width:auto;">
+                            </picture>
                         </a>
                         <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
-                            <img src="images/apple_logo_button_white.svg" alt="App Store" width="200" height="60" style="height:60px;width:auto;">
+                            <img src="images/apple_logo_button_white.svg" alt="Download on the App Store" width="200" height="60" style="height:60px;width:auto;">
                         </a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-bottom" style="border:none;padding-top:20px;">
-                <p><a href="index.html" style="color:var(--primary-color);">← Back to home</a></p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MiGynae</h3>
+                    <p>Professional pregnancy care platform for expecting mothers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="labour-prep-guide.html">Labour Prep Guide</a>
+                    <a href="postpartum-recovery-guide.html">Postpartum Recovery Guide</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener">Android App</a>
+                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener">iOS App</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MiGynae. All rights reserved.</p>
             </div>
         </div>
     </footer>

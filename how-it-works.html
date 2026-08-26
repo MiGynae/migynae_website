@@ -15,29 +15,232 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-    <title>How MiGynae Works — Free Pregnancy Tracker Setup</title>
-    <meta name="description" content="Set up MiGynae in three steps: download free, enter your due date, and start daily kick counts, contraction timing, and trimester-matched prenatal guidance.">
+    <title>How It Works — MiGynae Pregnancy &amp; Period Tracking App</title>
+    <meta name="description" content="See exactly how MiGynae works — from setting up your profile to tracking periods, monitoring your pregnancy week by week, logging baby kicks, timing contractions, and getting doctor answers. Simple. Powerful. Made for Indian women.">
     <link rel="canonical" href="https://migynaeapp.com/how-it-works.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://migynaeapp.com/how-it-works.html">
-    <meta property="og:title" content="How MiGynae Works — Free Pregnancy Tracker Setup">
-    <meta property="og:description" content="Set up MiGynae in three steps: download free, enter your due date, and start daily kick counts, contraction timing, and trimester-matched prenatal guidance.">
+    <meta property="og:title" content="How It Works — MiGynae Pregnancy &amp; Period Tracking App">
+    <meta property="og:description" content="See exactly how MiGynae works — from setting up your profile to tracking periods, monitoring your pregnancy week by week, logging baby kicks, timing contractions, and getting doctor answers.">
     <meta property="og:image" content="https://migynaeapp.com/images/weekly_updates_screen.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How MiGynae Works — Free Pregnancy Tracker Setup">
-    <meta name="twitter:description" content="Set up MiGynae in three steps: download free, enter your due date, and start daily kick counts, contraction timing, and trimester-matched prenatal guidance.">
+    <meta name="twitter:title" content="How It Works — MiGynae Pregnancy &amp; Period Tracking App">
+    <meta name="twitter:description" content="See exactly how MiGynae works — from profile setup to pregnancy tracking, baby kicks, contractions, Indian diet plans, and doctor Q&A.">
     <link rel="stylesheet" href="css/index.min.css">
     <link rel="stylesheet" href="css/landing.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ── How It Works page supplemental styles ── */
+        :root {
+            --hiw-pink:         #CF3476;
+            --hiw-pink-soft:    #FCD5D4;
+            --hiw-cream:        #FEF9F7;
+            --hiw-purple:       #7B4F9E;
+            --hiw-purple-light: #F3EDF8;
+            --hiw-text:         #2D2D2D;
+            --hiw-text-muted:   #7A7A8C;
+            --hiw-radius:       20px;
+        }
+
+        .hiw-section-tag {
+            display: inline-block;
+            background: var(--hiw-pink-soft); color: var(--hiw-pink);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+        }
+        .hiw-section-title {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700; line-height: 1.2; margin-bottom: 12px;
+        }
+        .hiw-section-sub { font-size: 1rem; color: var(--hiw-text-muted); max-width: 580px; }
+
+        /* ── JOURNEY STEPS ── */
+        .journey-section { background: #fff; padding: 80px 0; }
+        .journey-section .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        .journey-steps { display: flex; flex-direction: column; gap: 0; margin-top: 60px; }
+
+        .journey-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #F0E8E4;
+            position: relative;
+            z-index: 0;
+        }
+        .journey-step:last-child { border-bottom: none; }
+        .journey-step.reverse { direction: rtl; }
+        .journey-step.reverse > * { direction: ltr; }
+
+        .journey-num {
+            font-size: 7rem; font-weight: 700; line-height: 1;
+            color: var(--hiw-pink-soft);
+            position: absolute; top: 30px; left: -10px;
+            pointer-events: none; user-select: none;
+            z-index: -1;
+        }
+        .journey-step.reverse .journey-num { left: auto; right: -10px; }
+
+        .step-copy { position: relative; z-index: 1; }
+        .step-tag {
+            display: inline-block; margin-bottom: 12px;
+            padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+            background: var(--hiw-pink-soft); color: var(--hiw-pink);
+        }
+        .step-copy h3 { font-size: 1.7rem; font-weight: 700; margin-bottom: 14px; }
+        .step-copy p { color: var(--hiw-text-muted); margin-bottom: 14px; font-size: 0.95rem; }
+        .step-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+        .step-bullets li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; }
+        .step-bullets li .chk {
+            min-width: 20px; height: 20px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--hiw-pink), var(--hiw-purple));
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 0.6rem; font-weight: 900; flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-visual { display: flex; align-items: center; justify-content: center; }
+
+        .app-screenshot {
+            width: 260px;
+            border-radius: 36px;
+            box-shadow: 0 32px 80px rgba(123,79,158,.18), 0 8px 24px rgba(0,0,0,.08);
+            display: block;
+        }
+
+        /* ── Phone shell (kept for future use) ── */
+        .hiw-phone {
+            width: 200px; border-radius: 30px;
+            background: #fff;
+            box-shadow: 0 24px 64px rgba(123,79,158,.18), 0 4px 12px rgba(0,0,0,.06);
+            overflow: hidden; position: relative;
+        }
+        .hiw-phone-bar { height: 22px; background: linear-gradient(90deg, var(--hiw-pink), var(--hiw-purple)); }
+        .hiw-phone-body { padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; }
+
+        /* profile screen */
+        .profile-avatar {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--hiw-pink-soft), var(--hiw-purple-light));
+            margin: 0 auto 8px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+        }
+        .profile-name { text-align: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 12px; }
+        .profile-field { background: var(--hiw-cream); border-radius: 8px; padding: 8px 10px; font-size: 0.65rem; color: var(--hiw-text-muted); }
+        .profile-field span { display: block; font-weight: 600; color: var(--hiw-text); font-size: 0.7rem; margin-top: 2px; }
+
+        /* week tracker screen */
+        .week-header {
+            background: linear-gradient(135deg, var(--hiw-pink), var(--hiw-purple));
+            border-radius: 12px; padding: 14px; text-align: center; color: #fff;
+        }
+        .week-header .wk-sm { font-size: 0.55rem; opacity: .8; text-transform: uppercase; letter-spacing: .06em; }
+        .week-header .wk-num { font-size: 2rem; font-weight: 700; line-height: 1; }
+        .week-header .wk-sub { font-size: 0.55rem; opacity: .75; margin-top: 2px; }
+        .baby-size-row { display: flex; gap: 8px; align-items: center; background: var(--hiw-cream); border-radius: 10px; padding: 8px 10px; }
+        .baby-size-row .fruit { font-size: 1.4rem; }
+        .baby-size-row .info { font-size: 0.6rem; color: var(--hiw-text-muted); }
+        .baby-size-row .info b { display: block; color: var(--hiw-text); font-size: 0.65rem; }
+        .dev-bar { background: var(--hiw-cream); border-radius: 10px; padding: 8px 10px; }
+        .dev-bar .lbl { font-size: 0.55rem; color: var(--hiw-text-muted); font-weight: 600; margin-bottom: 4px; }
+        .bar { height: 5px; background: #F0E8E4; border-radius: 3px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--hiw-pink), var(--hiw-purple)); }
+
+        /* period calendar screen */
+        .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .cal-header .month { font-weight: 700; font-size: 0.72rem; }
+        .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+        .cal-day { width: 100%; aspect-ratio: 1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; }
+        .cal-day.period { background: var(--hiw-pink); color: #fff; font-weight: 700; }
+        .cal-day.fertile { background: var(--hiw-purple-light); color: var(--hiw-purple); font-weight: 600; }
+        .cal-day.ovu { background: var(--hiw-purple); color: #fff; font-weight: 700; }
+        .cal-day.today { border: 1.5px solid var(--hiw-pink); color: var(--hiw-pink); font-weight: 600; }
+        .cal-day.empty { opacity: 0; }
+        .cal-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .cl-item { display: flex; align-items: center; gap: 3px; font-size: 0.52rem; color: var(--hiw-text-muted); }
+        .cl-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+        /* kick tracker screen */
+        .kick-counter { background: linear-gradient(135deg, var(--hiw-pink), var(--hiw-purple)); border-radius: 14px; padding: 16px; text-align: center; color: #fff; }
+        .kick-counter .kcount { font-size: 2.8rem; font-weight: 700; line-height: 1; }
+        .kick-counter .klabel { font-size: 0.6rem; opacity: .8; margin-top: 4px; }
+        .kick-btn { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--hiw-pink), var(--hiw-purple)); margin: 10px auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(207,52,118,.3); font-size: 1.4rem; }
+        .kick-timeline { display: flex; flex-direction: column; gap: 5px; }
+        .kick-entry { background: var(--hiw-cream); border-radius: 8px; padding: 5px 8px; display: flex; justify-content: space-between; align-items: center; }
+        .kick-entry .ktime { font-size: 0.6rem; color: var(--hiw-text-muted); }
+        .kick-entry .kn { font-size: 0.65rem; font-weight: 700; color: var(--hiw-pink); }
+
+        /* diet screen */
+        .diet-screen-header { text-align: center; margin-bottom: 10px; }
+        .diet-screen-header .trim { font-size: 0.6rem; font-weight: 700; color: var(--hiw-pink); }
+        .diet-screen-header .meal { font-size: 0.8rem; font-weight: 700; }
+        .meal-item { background: var(--hiw-cream); border-radius: 8px; padding: 7px 10px; display: flex; gap: 8px; align-items: center; }
+        .meal-item .mi { font-size: 1rem; }
+        .meal-item .mname { font-size: 0.62rem; font-weight: 600; }
+        .meal-item .mnut { font-size: 0.55rem; color: var(--hiw-text-muted); }
+
+        /* community screen */
+        .comm-q { background: var(--hiw-cream); border-radius: 10px; padding: 9px 10px; margin-bottom: 8px; }
+        .comm-q .qt { font-size: 0.62rem; font-weight: 600; margin-bottom: 5px; }
+        .comm-q .ab { display: inline-block; background: var(--hiw-pink-soft); color: var(--hiw-pink); font-size: 0.5rem; font-weight: 700; padding: 2px 6px; border-radius: 50px; margin-bottom: 3px; }
+        .comm-q .at { font-size: 0.58rem; color: var(--hiw-text-muted); }
+        .comm-input { background: #fff; border: 1px solid #F0E8E4; border-radius: 8px; padding: 7px 10px; font-size: 0.6rem; color: var(--hiw-text-muted); margin-top: 4px; }
+
+        /* ── PRIVACY SECTION ── */
+        .privacy-section { background: #fff; padding: 80px 0; }
+        .privacy-section .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        .privacy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .privacy-card {
+            border-radius: var(--hiw-radius); padding: 32px 28px;
+            border: 1px solid #F0E8E4;
+            transition: box-shadow .2s;
+        }
+        .privacy-card:hover { box-shadow: 0 12px 36px rgba(207,52,118,.08); }
+        .privacy-icon { font-size: 2rem; margin-bottom: 16px; }
+        .privacy-card h3 { font-weight: 700; margin-bottom: 10px; }
+        .privacy-card p { font-size: 0.88rem; color: var(--hiw-text-muted); }
+
+        /* ── FAQ (checkbox accordion, unique class names) ── */
+        .hiw-faq-section { background: var(--hiw-cream); padding: 80px 0; }
+        .hiw-faq-section .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; text-align: center; }
+        .hiw-faq-list { max-width: 720px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 16px; text-align: left; }
+        .hiw-faq-item { background: #fff; border-radius: 16px; border: 1px solid #F0E8E4; overflow: hidden; }
+        .hiw-faq-q {
+            padding: 20px 24px; font-weight: 600; font-size: 0.95rem;
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            user-select: none; list-style: none;
+        }
+        .hiw-faq-q::after { content: '+'; font-size: 1.3rem; color: var(--hiw-pink); font-weight: 300; transition: transform .2s; }
+        .hiw-faq-item input[type=checkbox] { display: none; }
+        .hiw-faq-item input:checked ~ .hiw-faq-q::after { transform: rotate(45deg); }
+        .hiw-faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+        .hiw-faq-item input:checked ~ .hiw-faq-a { max-height: 300px; }
+        .hiw-faq-a-inner { padding: 0 24px 20px; font-size: 0.9rem; color: var(--hiw-text-muted); border-top: 1px solid #F0E8E4; padding-top: 16px; line-height: 1.7; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .journey-step { grid-template-columns: 1fr; gap: 32px; }
+            .journey-step.reverse { direction: ltr; }
+            .journey-num { display: none; }
+            .privacy-grid { grid-template-columns: 1fr; }
+            .journey-section .container,
+            .privacy-section .container,
+            .hiw-faq-section .container { padding: 0 20px; }
+            .journey-section, .privacy-section, .hiw-faq-section { padding: 60px 0; }
+            .app-screenshot { width: 220px; }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="container">
             <a href="index.html" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
-                <p class="logo-title">MiGynae</p>
+                <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="how-it-works.html" class="active">How It Works</a></li>
                 <li><a href="resources.html">Resources</a></li>
@@ -45,112 +248,284 @@
                 <li><a href="guides.html">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </nav>
     </header>
 
     <section class="page-hero">
         <div class="container">
-            <span class="section-eyebrow">Get started in minutes</span>
-            <h1>How the MiGynae Pregnancy App Works</h1>
-            <p>From download to daily tracking — here's exactly how expecting mothers use MiGynae throughout pregnancy.</p>
+            <span class="section-eyebrow">Simple. Powerful. Private.</span>
+            <h1>How MiGynae Works</h1>
+            <p>From first setup to delivery day — here's exactly what happens inside the app, step by step, in plain language.</p>
         </div>
     </section>
 
-    <main class="page-content">
-        <section class="how-it-works" style="padding-top:0;">
+    <main>
+
+        <!-- JOURNEY STEPS -->
+        <section class="journey-section">
             <div class="container">
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3>Download &amp; Create Your Profile</h3>
-                        <p>Install MiGynae free from <strong>Google Play</strong> or the <strong>App Store</strong>. Enter your due date (or last menstrual period) so the app personalizes weekly updates, diet plans, and trimester content from day one.</p>
+                <span class="hiw-section-tag">Your Journey</span>
+                <h2 class="hiw-section-title">Six steps from download to done</h2>
+                <p class="hiw-section-sub">MiGynae adapts to where you are — pregnant or tracking your period. Here's how each core feature actually works.</p>
+
+                <div class="journey-steps">
+
+                    <!-- STEP 1 -->
+                    <div class="journey-step">
+                        <div class="journey-num">01</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Getting Started</span>
+                            <h3>Set up your profile in under 2 minutes</h3>
+                            <p>Download the app and tell MiGynae where you are in your journey. Are you pregnant, or tracking your period? One tap, and the entire app rearranges itself around you.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Sign in with Google, Apple, or your phone number</li>
+                                <li><span class="chk">&#10003;</span> Choose your phase: Pregnant or Period Tracking</li>
+                                <li><span class="chk">&#10003;</span> Enter your last menstrual period (LMP) or due date</li>
+                                <li><span class="chk">&#10003;</span> App instantly calculates your pregnancy week or cycle day</li>
+                                <li><span class="chk">&#10003;</span> No subscription required — core features are free</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-onboarding.png" alt="MiGynae onboarding — choose your journey" class="app-screenshot">
+                        </div>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3>Use Daily Tracking &amp; Learn</h3>
-                        <p>Open the app each day for your week-by-week update. Log kicks when advised, start the contraction timer if labour begins, browse nutrition charts, and search the medical Q&amp;A library anytime a question comes up.</p>
+
+                    <!-- STEP 2 -->
+                    <div class="journey-step reverse">
+                        <div class="journey-num">02</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Pregnancy Tracker</span>
+                            <h3>Follow your baby's growth, week by week with pictures</h3>
+                            <p>Every week unlocks a new update — what your baby looks like, which organs are forming, how big they are (using fruits and vegetables you know), and what you might be feeling.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Illustrated baby size comparison updated each week</li>
+                                <li><span class="chk">&#10003;</span> Fetal development milestones in plain language</li>
+                                <li><span class="chk">&#10003;</span> What symptoms to expect this week — and which to report</li>
+                                <li><span class="chk">&#10003;</span> Scan and test reminders timed to your due date</li>
+                                <li><span class="chk">&#10003;</span> Trimester summaries for first, second, and third trimesters</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-pregnancy.png" alt="MiGynae pregnancy week tracker" class="app-screenshot">
+                        </div>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3>Prepare for Birth &amp; Recovery</h3>
-                        <p>In your third trimester, access labour prep exercises and our free <a href="guides.html" style="color:var(--primary-dark);font-weight:600;">Guides</a> for birth and postpartum. Share tracking history with your doctor at every visit.</p>
+
+                    <!-- STEP 3 -->
+                    <div class="journey-step">
+                        <div class="journey-num">03</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Period &amp; Cycle Tracking</span>
+                            <h3>Your menstrual cycle — understood, not just logged</h3>
+                            <p>Log your period start and end, flow intensity, symptoms, and mood. MiGynae builds a model of your cycle over time and predicts your next period, fertile window, and ovulation day with improving accuracy.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Calendar view colour-coded by phase: period, fertile, ovulation, luteal</li>
+                                <li><span class="chk">&#10003;</span> Log flow, cramps, discharge, and mood in seconds</li>
+                                <li><span class="chk">&#10003;</span> Predictions improve the more cycles you track</li>
+                                <li><span class="chk">&#10003;</span> Late period and irregular cycle alerts</li>
+                                <li><span class="chk">&#10003;</span> Works for cycles of any length — not just the standard 28 days</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-period.png" alt="MiGynae period cycle tracker" class="app-screenshot">
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div class="journey-step reverse">
+                        <div class="journey-num">04</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Baby Kick &amp; Contraction Tracking</span>
+                            <h3>One tap to log a kick. One tap to time a contraction.</h3>
+                            <p>In the third trimester, monitoring baby movement is a key safety check. MiGynae makes it effortless — tap the screen every time you feel a kick, and the app counts, timestamps, and charts each session.</p>
+                            <p>When labour begins, switch to the contraction timer. It logs every contraction's duration and the gap between them, and tells you when to call your doctor.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Baby kick tracker: tap to count, automatic session timing</li>
+                                <li><span class="chk">&#10003;</span> Baby movement tracker: graphs daily activity over weeks</li>
+                                <li><span class="chk">&#10003;</span> Contraction timer: logs duration and frequency</li>
+                                <li><span class="chk">&#10003;</span> Colour-coded guidance: stay home / call doctor / go now</li>
+                                <li><span class="chk">&#10003;</span> History saved so your doctor can review it</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-kick.png" alt="MiGynae kick counter" class="app-screenshot">
+                        </div>
+                    </div>
+
+                    <!-- STEP 5 -->
+                    <div class="journey-step">
+                        <div class="journey-num">05</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Indian Pregnancy Diet</span>
+                            <h3>What to eat this week — in your kitchen, in your language</h3>
+                            <p>Most pregnancy diet apps recommend foods you can't find at your local kirana. MiGynae's diet plans are built around what Indian families actually cook — dal, roti, sabzi, curd, millets, and seasonal fruits.</p>
+                            <p>Recipes and food lists are trimester-specific, so the nutrients you need most (folate in week 6, calcium in week 20, iron in week 32) are front and centre at exactly the right time.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Trimester-specific meal guides reviewed by Indian gynecologists</li>
+                                <li><span class="chk">&#10003;</span> Nausea-friendly options for the first trimester</li>
+                                <li><span class="chk">&#10003;</span> Foods to avoid — with clear reasons, not just a list</li>
+                                <li><span class="chk">&#10003;</span> Nutrient highlights for each food (iron, calcium, folate, DHA)</li>
+                                <li><span class="chk">&#10003;</span> Pregnancy weight gain tracker alongside diet to see the full picture</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-diet.png" alt="MiGynae Indian pregnancy diet guide" class="app-screenshot">
+                        </div>
+                    </div>
+
+                    <!-- STEP 6 -->
+                    <div class="journey-step reverse">
+                        <div class="journey-num">06</div>
+                        <div class="step-copy">
+                            <span class="step-tag">Doctor Community</span>
+                            <h3>Ask a question, get a doctor's answer</h3>
+                            <p>The MiGynae community lets you post questions anonymously. Every question is reviewed and answered by a verified gynecologist — so you always get a reliable, medically sound response.</p>
+                            <ul class="step-bullets">
+                                <li><span class="chk">&#10003;</span> Post anonymously — no one sees your name</li>
+                                <li><span class="chk">&#10003;</span> Search thousands of doctor-answered questions instantly</li>
+                                <li><span class="chk">&#10003;</span> Real gynecologists review and answer every new question</li>
+                                <li><span class="chk">&#10003;</span> Search by keyword — "nausea", "back pain", "spotting"</li>
+                                <li><span class="chk">&#10003;</span> Push notification when your question is answered</li>
+                            </ul>
+                        </div>
+                        <div class="step-visual">
+                            <img src="images/screen-community.png" alt="MiGynae doctor community Q&A" class="app-screenshot">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY -->
+        <section class="privacy-section">
+            <div class="container">
+                <span class="hiw-section-tag">Your Data</span>
+                <h2 class="hiw-section-title">Built with your privacy in mind</h2>
+                <p class="hiw-section-sub">Your health data is deeply personal. Here is exactly what MiGynae does — and does not — do with it.</p>
+                <div class="privacy-grid">
+                    <div class="privacy-card">
+                        <div class="privacy-icon">&#128274;</div>
+                        <h3>Your data stays yours</h3>
+                        <p>Cycle dates, pregnancy details, and kick logs are stored securely under your account and never sold to third parties. You can delete your account and all associated data at any time.</p>
+                    </div>
+                    <div class="privacy-card">
+                        <div class="privacy-icon">&#127759;</div>
+                        <h3>Anonymous community</h3>
+                        <p>Questions posted in the community are anonymous to other users and doctors — only your question text is visible. Your name, profile, and pregnancy week are never shown.</p>
+                    </div>
+                    <div class="privacy-card">
+                        <div class="privacy-icon">&#128101;</div>
+                        <h3>No advertising profiles</h3>
+                        <p>MiGynae does not build advertising profiles from your health data. Analytics help us improve the app, but your menstrual or pregnancy data is never used for ad targeting.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="why-section">
+        <!-- FAQ -->
+        <section class="hiw-faq-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>What You'll Use Most</h2>
-                </div>
-                <div class="why-grid">
-                    <div class="why-item">
-                        <i class="fas fa-home"></i>
-                        <div>
-                            <h4>Home screen</h4>
-                            <p>Weekly baby size, popular symptom topics, and quick search for pregnancy questions.</p>
-                        </div>
+                <span class="hiw-section-tag">Common Questions</span>
+                <h2 class="hiw-section-title">Frequently asked questions</h2>
+                <p class="hiw-section-sub" style="margin:0 auto;">Still unsure about something? These are the questions we hear most often.</p>
+
+                <div class="hiw-faq-list">
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq1">
+                        <label class="hiw-faq-q" for="hfaq1">Is MiGynae free to use?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">Yes — all core features including the pregnancy tracker, period tracker, baby kick counter, contraction timer, and community Q&amp;A are completely free. There are no hidden charges or forced subscriptions.</div></div>
                     </div>
-                    <div class="why-item">
-                        <i class="fas fa-chart-line"></i>
-                        <div>
-                            <h4>Trackers tab</h4>
-                            <p>Kick counter and contraction timer in one place — designed for use at 3 AM when you need clarity.</p>
-                        </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq2">
+                        <label class="hiw-faq-q" for="hfaq2">Can I use MiGynae for period tracking if I'm not pregnant?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">Absolutely. When you set up the app, select "Period Tracking" as your phase. The app shifts entirely to cycle tracking mode — showing your menstrual calendar, predictions, and symptom logging. You can switch to pregnancy mode later if needed.</div></div>
                     </div>
-                    <div class="why-item">
-                        <i class="fas fa-utensils"></i>
-                        <div>
-                            <h4>Diet section</h4>
-                            <p>Trimester meal plans, Indian superfoods, sample charts, and foods to avoid.</p>
-                        </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq3">
+                        <label class="hiw-faq-q" for="hfaq3">How accurate is the pregnancy calculator?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">MiGynae calculates your due date and current week from your last menstrual period (LMP), using the same Naegele's Rule your gynecologist uses. Accuracy depends on the LMP date you enter — if your cycle is irregular, your doctor's ultrasound date will be more precise and can be set manually in the app.</div></div>
                     </div>
-                    <div class="why-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <h4>Community</h4>
-                            <p>Connect with other expecting mothers (where enabled) for shared experiences and support.</p>
-                        </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq4">
+                        <label class="hiw-faq-q" for="hfaq4">Are the doctors in the community verified?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">Yes. Every doctor who answers questions on MiGynae is verified by the MIMEDIC team with their medical registration details before being approved. Their answers are not anonymous — they answer under their verified doctor profile.</div></div>
+                    </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq5">
+                        <label class="hiw-faq-q" for="hfaq5">Is the Indian diet plan safe to follow during pregnancy?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">The diet content in MiGynae is curated and reviewed by Indian gynecologists with specific attention to nutrient needs by trimester. It is meant as a general guide — always consult your own doctor before making significant dietary changes, especially if you have conditions like gestational diabetes, anaemia, or food allergies.</div></div>
+                    </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq6">
+                        <label class="hiw-faq-q" for="hfaq6">Can I use the contraction timer during labour at the hospital?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">Yes. The contraction timer works offline and records a log of all contractions with timestamps that you can show your doctor or midwife. It shows duration, frequency, and a simple colour-coded guide — green (early labour, stay home), yellow (call your doctor), red (head to hospital now).</div></div>
+                    </div>
+                    <div class="hiw-faq-item">
+                        <input type="checkbox" id="hfaq7">
+                        <label class="hiw-faq-q" for="hfaq7">Does the app work in Hindi?</label>
+                        <div class="hiw-faq-a"><div class="hiw-faq-a-inner">The app interface is currently in English, with Indian-specific content throughout. Community questions and diet content are written with Indian users in mind. Hindi language support is on our roadmap.</div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="app-showcase">
+        <!-- CTA -->
+        <section class="cta-section">
             <div class="container">
-                <div class="showcase-content">
-                    <div>
-                        <h2>Ready to Start?</h2>
-                        <p style="color:var(--text-light);line-height:1.7;margin-top:12px;">MiGynae is free during beta. No credit card, no trial that expires — just download and begin your pregnancy journey.</p>
-                        <div class="hero-cta" style="margin-top:28px;">
-                            <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
-                                <picture><source srcset="images/Playstore_button.webp" type="image/webp"><img src="images/Playstore_button.png" alt="Google Play" width="200" height="60"></picture>
-                            </a>
-                            <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
-                                <img src="images/apple_logo_button_white.svg" alt="App Store" width="200" height="60">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="phone-mockup" style="margin:0 auto;">
-                        <picture>
-                            <source srcset="images/weekly_updates_screen.webp" type="image/webp">
-                            <img src="images/weekly_updates_screen.png" alt="MiGynae app" style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
-                        </picture>
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Download MiGynae free — no sign-up required to browse. Create an account when you're ready to track.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
+                        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
+                            <picture>
+                                <source srcset="images/Playstore_button.webp" type="image/webp">
+                                <img src="images/Playstore_button.png" alt="Get it on Google Play" width="200" height="60" style="height:60px;width:auto;">
+                            </picture>
+                        </a>
+                        <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
+                            <img src="images/apple_logo_button_white.svg" alt="Download on the App Store" width="200" height="60" style="height:60px;width:auto;">
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-bottom" style="border:none;padding-top:20px;">
-                <p><a href="index.html" style="color:var(--primary-color);">← Back to home</a></p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MiGynae</h3>
+                    <p>Professional pregnancy care platform for expecting mothers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Guides</h4>
+                    <a href="labour-prep-guide.html">Labour Prep Guide</a>
+                    <a href="postpartum-recovery-guide.html">Postpartum Recovery Guide</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener">Android App</a>
+                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener">iOS App</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MiGynae. All rights reserved.</p>
             </div>
         </div>
     </footer>
