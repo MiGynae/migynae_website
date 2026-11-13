@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
     <script>
@@ -17,9 +28,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
     <title>Free Kick Tracker App | MiGynae (Doctor-Reviewed)</title>
     <meta name="description" content="Track your baby's movements free with MiGynae's doctor-reviewed kick counter. Learn when to start, how to count, and what's actually normal.">
-    <link rel="canonical" href="https://migynaeapp.com/free-kick-tracker.html">
+    <link rel="canonical" href="https://migynaeapp.com/free-kick-tracker">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://migynaeapp.com/free-kick-tracker.html">
+    <meta property="og:url" content="https://migynaeapp.com/free-kick-tracker">
     <meta property="og:title" content="Free Kick Tracker App | MiGynae (Doctor-Reviewed)">
     <meta property="og:description" content="Track your baby's movements free with MiGynae's doctor-reviewed kick counter. Learn when to start, how to count, and what's actually normal.">
     <meta property="og:image" content="https://migynaeapp.com/images/blog/free-kick-tracker-banner.webp">
@@ -33,7 +44,7 @@
         "@context": "https://schema.org",
         "@type": "MedicalWebPage",
         "headline": "Free Kick Tracker",
-        "url": "https://migynaeapp.com/free-kick-tracker.html",
+        "url": "https://migynaeapp.com/free-kick-tracker",
         "description": "Track your baby's movements free with MiGynae's doctor-reviewed kick counter. Learn when to start, how to count, and what's actually normal.",
         "author": {
           "@type": "Physician",
@@ -46,7 +57,7 @@
         },
         "datePublished": "2026-09-19",
         "dateModified": "2026-09-19",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/free-kick-tracker.html" }
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/free-kick-tracker" }
       },
       {
         "@context": "https://schema.org",
@@ -233,17 +244,17 @@
 
     <header>
         <nav class="container">
-            <a href="index.html" class="logo" style="text-decoration:none;">
+            <a href="/" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
                 <p class="logo-title">MiGynae</p>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="guides.html" class="active">Guides</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/how-it-works">How It Works</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/guides" class="active">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
                 <span></span><span></span><span></span>
@@ -360,8 +371,8 @@
         <div class="related-reading">
             <h3>Related reading</h3>
             <ul>
-                <li><a href="reduced-fetal-movement-when-to-worry.html">Reduced Fetal Movement: When to Worry and When to Go to the Hospital</a></li>
-                <li><a href="free-period-tracker.html">Free Period Tracker — MiGynae's guide to logging your cycle</a></li>
+                <li><a href="/reduced-fetal-movement-when-to-worry">Reduced Fetal Movement: When to Worry and When to Go to the Hospital</a></li>
+                <li><a href="/free-period-tracker">Free Period Tracker — MiGynae's guide to logging your cycle</a></li>
             </ul>
         </div>
 
@@ -372,8 +383,8 @@
     </div><!-- /.content -->
 
     <div class="page-footer">
-        <a href="guides.html">&#8592; Back to Guides</a> &nbsp;·&nbsp;
-        <a href="index.html">MiGynae Home</a>
+        <a href="/guides">&#8592; Back to Guides</a> &nbsp;·&nbsp;
+        <a href="/">MiGynae Home</a>
     </div>
 
     <script>

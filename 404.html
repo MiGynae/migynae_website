@@ -113,6 +113,40 @@
   <script>
     (function () {
       var path = location.pathname || "/";
+      var search = location.search || "";
+      var hash = location.hash || "";
+
+      // Normalize .html requests
+      if (path.endsWith('.html')) {
+        var clean = path.replace(/\.html$/, '');
+        if (clean === '/index' || clean.endsWith('/index')) clean = clean.slice(0, -5) || '/';
+        location.replace(clean + search + hash);
+        return;
+      }
+
+      // Normalize trailing slash requests (e.g. /features/ -> /features)
+      if (path.length > 1 && path.endsWith('/')) {
+        location.replace(path.slice(0, -1) + search + hash);
+        return;
+      }
+
+      // Normalize /blog-post requests to /blog/<id>
+      if (path === '/blog-post' || path === '/blog-post.html') {
+        var id = new URLSearchParams(search).get('id');
+        if (id) {
+          location.replace('/blog/' + encodeURIComponent(id) + hash);
+          return;
+        } else {
+          location.replace('/blog' + hash);
+          return;
+        }
+      }
+      if (path.startsWith('/blog-post/')) {
+        var id = path.replace(/^\/blog-post\//, '').replace(/\/$/, '');
+        location.replace('/blog/' + id + search + hash);
+        return;
+      }
+
       var el = document.getElementById("app");
 
       // Detect platform
@@ -186,7 +220,7 @@
           <div class="logo">💝</div>
           <h1>404 – Page not found</h1>
           <p>The page you're looking for doesn't exist.</p>
-          <a class="btn-secondary" href="https://mimedic.org" style="margin-top: 20px;">
+          <a class="btn-secondary" href="/" style="margin-top: 20px;">
             Go to Homepage
           </a>
         `;

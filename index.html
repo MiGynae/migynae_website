@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
     <script>
@@ -93,17 +104,17 @@
 <body>
     <header>
         <nav class="container">
-            <a href="index.html" class="logo" style="text-decoration:none;">
+            <a href="/" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
                 <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="guides.html">Guides</a></li>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/how-it-works">How It Works</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/guides">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
         </nav>
@@ -203,25 +214,25 @@
                     <p>Tap a topic below for the full breakdown — tracking tools, setup steps, free guides, and expert articles.</p>
                 </div>
                 <div class="brief-grid">
-                    <a href="features.html" class="brief-card">
+                    <a href="/features" class="brief-card">
                         <div class="brief-card-icon"><i class="fas fa-th-large"></i></div>
                         <h3>App Features</h3>
                         <p>Kick counter, contraction timer, medical Q&amp;A, nutrition plans, safe exercises, and weekly pregnancy updates.</p>
                         <span class="read-more">See all features <i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="how-it-works.html" class="brief-card">
+                    <a href="/how-it-works" class="brief-card">
                         <div class="brief-card-icon"><i class="fas fa-route"></i></div>
                         <h3>How It Works</h3>
                         <p>Download free, set your due date, and start tracking — three simple steps to daily prenatal support.</p>
                         <span class="read-more">View setup guide <i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="resources.html" class="brief-card">
+                    <a href="/resources" class="brief-card">
                         <div class="brief-card-icon"><i class="fas fa-book-open"></i></div>
                         <h3>Resources &amp; Blog</h3>
                         <p>Free articles on nutrition, exercise, and trimester care — written for Indian mothers, reviewed by experts.</p>
                         <span class="read-more">Browse resources <i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="guides.html" class="brief-card">
+                    <a href="/guides" class="brief-card">
                         <div class="brief-card-icon"><i class="fas fa-map-signs"></i></div>
                         <h3>Labour &amp; Postpartum Guides</h3>
                         <p>In-depth guides for birth preparation and recovery after delivery — read free, no login required.</p>
@@ -371,15 +382,15 @@
                 </div>
                 <div class="footer-section">
                     <h4>Explore</h4>
-                    <a href="features.html">Features</a>
-                    <a href="how-it-works.html">How It Works</a>
-                    <a href="resources.html">Resources</a>
-                    <a href="guides.html">Guides</a>
+                    <a href="/features">Features</a>
+                    <a href="/how-it-works">How It Works</a>
+                    <a href="/resources">Resources</a>
+                    <a href="/guides">Guides</a>
                 </div>
                 <div class="footer-section">
                     <h4>Guides</h4>
-                    <a href="labour-prep-guide.html">Labour Prep Guide</a>
-                    <a href="postpartum-recovery-guide.html">Postpartum Recovery Guide</a>
+                    <a href="/labour-prep-guide">Labour Prep Guide</a>
+                    <a href="/postpartum-recovery-guide">Postpartum Recovery Guide</a>
                 </div>
                 <div class="footer-section">
                     <h4>Download</h4>
@@ -388,8 +399,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
