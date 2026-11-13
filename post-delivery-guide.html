@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
 <script>
@@ -17,9 +28,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
 <title>Post-Delivery Recovery Guide | MiGynae</title>
 <meta name="description" content="A post-delivery recovery guide: what's normal and what's not, warning signs, and simple do's and don'ts after a normal or caesarean birth.">
-<link rel="canonical" href="https://migynaeapp.com/post-delivery-guide.html">
+<link rel="canonical" href="https://migynaeapp.com/post-delivery-guide">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://migynaeapp.com/post-delivery-guide.html">
+<meta property="og:url" content="https://migynaeapp.com/post-delivery-guide">
 <meta property="og:title" content="Post-Delivery Recovery Guide | MiGynae">
 <meta property="og:description" content="A post-delivery recovery guide: what's normal and what's not, warning signs, and simple do's and don'ts after a normal or caesarean birth.">
 <meta property="og:image" content="https://migynaeapp.com/images/blog/post-delivery-guide-banner.webp">
@@ -31,14 +42,14 @@
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   "headline": "Post-Delivery Recovery Guide",
-  "url": "https://migynaeapp.com/post-delivery-guide.html",
+  "url": "https://migynaeapp.com/post-delivery-guide",
   "description": "A post-delivery recovery guide: what's normal and what's not, warning signs, and simple do's and don'ts after a normal or caesarean birth.",
   "image": "https://migynaeapp.com/images/blog/post-delivery-guide-banner.webp",
   "author": { "@type": "Physician", "name": "Dr. Shuchita Batra", "medicalSpecialty": "https://schema.org/Gynecologic" },
   "reviewedBy": { "@type": "Physician", "name": "Dr. Shuchita Batra" },
   "datePublished": "2026-09-12",
   "dateModified": "2026-09-12",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/post-delivery-guide.html" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/post-delivery-guide" }
 }
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -144,7 +155,7 @@
     </div>
 
     <div class="page-footer">
-      <a href="guides.html">&larr; All guides</a> &nbsp;&middot;&nbsp; <a href="index.html">MiGynae home</a><br>
+      <a href="/guides">&larr; All guides</a> &nbsp;&middot;&nbsp; <a href="/">MiGynae home</a><br>
       &copy; 2026 MiGynae
     </div>
 
