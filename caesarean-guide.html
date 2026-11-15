@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
 <script>
@@ -17,9 +28,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
 <title>C-Section (Caesarean / LSCS) Guide: What to Expect & Recovery | MiGynae</title>
 <meta name="description" content="A caesarean (LSCS) guide: the essentials, recovering well, warning signs to watch for, and reassurance that it is still your birth.">
-<link rel="canonical" href="https://migynaeapp.com/caesarean-guide.html">
+<link rel="canonical" href="https://migynaeapp.com/caesarean-guide">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://migynaeapp.com/caesarean-guide.html">
+<meta property="og:url" content="https://migynaeapp.com/caesarean-guide">
 <meta property="og:title" content="Your Caesarean Guide | MiGynae">
 <meta property="og:description" content="A caesarean (LSCS) guide: the essentials, recovering well, warning signs to watch for, and reassurance that it is still your birth.">
 <meta property="og:image" content="https://migynaeapp.com/images/blog/caesarean-guide-banner.webp">
@@ -31,14 +42,14 @@
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   "headline": "C-Section (Caesarean / LSCS) Guide: What to Expect & Recovery",
-  "url": "https://migynaeapp.com/caesarean-guide.html",
+  "url": "https://migynaeapp.com/caesarean-guide",
   "description": "A caesarean (LSCS) guide: the essentials, recovering well, warning signs to watch for, and reassurance that it is still your birth.",
   "image": "https://migynaeapp.com/images/blog/caesarean-guide-banner.webp",
   "author": { "@type": "Physician", "name": "Dr. Shuchita Batra", "medicalSpecialty": "https://schema.org/Gynecologic" },
   "reviewedBy": { "@type": "Physician", "name": "Dr. Shuchita Batra" },
   "datePublished": "2026-09-12",
   "dateModified": "2026-09-12",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/caesarean-guide.html" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://migynaeapp.com/caesarean-guide" }
 }
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -135,7 +146,7 @@
     </div>
 
     <div class="page-footer">
-      <a href="guides.html">&larr; All guides</a> &nbsp;&middot;&nbsp; <a href="index.html">MiGynae home</a><br>
+      <a href="/guides">&larr; All guides</a> &nbsp;&middot;&nbsp; <a href="/">MiGynae home</a><br>
       &copy; 2026 MiGynae
     </div>
 

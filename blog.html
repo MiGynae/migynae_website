@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
     <script>
@@ -17,9 +28,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
     <title>MiGynae Pregnancy Blog — Expert Tips for Every Trimester</title>
     <meta name="description" content="Expert pregnancy tips, OBGYN-backed advice, nutrition guides, and trimester-by-trimester support from the MiGynae team. Free to read.">
-    <link rel="canonical" href="https://migynaeapp.com/blog.html">
+    <link rel="canonical" href="https://migynaeapp.com/blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://migynaeapp.com/blog.html">
+    <meta property="og:url" content="https://migynaeapp.com/blog">
     <meta property="og:title" content="MiGynae Pregnancy Blog — Expert Tips for Every Trimester">
     <meta property="og:description" content="Expert pregnancy tips, OBGYN-backed advice, nutrition guides, and trimester-by-trimester support from the MiGynae team. Free to read.">
     <meta property="og:image" content="https://migynaeapp.com/images/weekly_updates_screen.webp">
@@ -31,7 +42,7 @@
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "MiGynae Pregnancy Blog",
-      "url": "https://migynaeapp.com/blog.html",
+      "url": "https://migynaeapp.com/blog",
       "description": "Expert pregnancy tips, OBGYN-backed advice, nutrition guides, and trimester-by-trimester support from the MiGynae team.",
       "publisher": { "@type": "Organization", "name": "MiGynae", "url": "https://migynaeapp.com" }
     }
@@ -439,17 +450,17 @@
 <body class="blog-page">
     <header>
         <nav class="container">
-            <a href="index.html" class="logo" style="text-decoration:none;">
+            <a href="/" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
                 <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="guides.html">Guides</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/how-it-works">How It Works</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/blog" class="active">Blog</a></li>
+                <li><a href="/guides">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
                 <span></span>
@@ -501,9 +512,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="index.html#features">Features</a>
-                    <a href="blog.html">Blog</a>
+                    <a href="/">Home</a>
+                    <a href="/#features">Features</a>
+                    <a href="/blog">Blog</a>
                 </div>
                 <div class="footer-section">
                     <h4>Download</h4>
@@ -512,8 +523,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -585,7 +596,7 @@
             }
 
             blogGrid.innerHTML = blogs.map(blog => `
-                <a href="blog-post.html?id=${blog.id}" class="blog-card">
+                <a href="/blog/${blog.id}" class="blog-card">
                     <img src="${blog.image}" alt="${blog.title}" class="blog-card-image"
                          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23f8f9fa%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%236c757d%22 text-anchor=%22middle%22 dy=%22.3em%22>MiGynae</text></svg>'">
                     <div class="blog-card-content">
