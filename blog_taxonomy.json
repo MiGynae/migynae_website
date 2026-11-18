@@ -1,0 +1,540 @@
+{
+  "navGroups": [
+    {
+      "id": "trying-to-conceive",
+      "name": "Trying to Conceive",
+      "order": 1
+    },
+    {
+      "id": "pregnancy",
+      "name": "Pregnancy",
+      "order": 2
+    },
+    {
+      "id": "labour-and-baby",
+      "name": "Labour & Baby",
+      "order": 3
+    },
+    {
+      "id": "womens-health",
+      "name": "Women's Health",
+      "order": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "Getting Pregnant",
+      "slug": "getting-pregnant",
+      "navGroup": "trying-to-conceive",
+      "order": 1,
+      "description": "Essential guidance on preconception health, ovulation tracking, and early pregnancy testing.",
+      "intro": "Preparing for pregnancy begins before conception. Discover OBGYN-backed advice on preconception planning, fertility windows, and identifying the earliest signs of pregnancy. Start your journey with confidence and clarity.",
+      "icon": "fas fa-heart",
+      "image": "images/blog/Pregnancy_101.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Preconception Planning",
+          "slug": "preconception-planning",
+          "description": "Health checks, nutrition, and lifestyle preparations before conception.",
+          "intro": "Optimize your physical and reproductive health prior to conception with our comprehensive medical checklists and lifestyle recommendations.",
+          "order": 1
+        },
+        {
+          "name": "Pregnancy Tests & Early Signs",
+          "slug": "pregnancy-tests-and-early-signs",
+          "description": "When and how to test for pregnancy, plus subtle early symptoms.",
+          "intro": "Learn how home pregnancy tests work, the best timing for accurate results, and how to recognise subtle early pregnancy indicators.",
+          "order": 2
+        },
+        {
+          "name": "Ovulation & Fertile Window",
+          "slug": "ovulation-and-fertile-window",
+          "description": "Tracking your fertile window and ovulation signs.",
+          "intro": "Understand your menstrual cycle, pinpoint your fertile window, and learn proven ovulation tracking methods.",
+          "order": 3
+        },
+        {
+          "name": "Fertility & Trouble Conceiving",
+          "slug": "fertility-and-trouble-conceiving",
+          "description": "Support, evaluation tips, and when to consult a fertility specialist.",
+          "intro": "Practical guidance on fertility evaluations, common conception challenges, and when to seek medical assistance.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Symptoms",
+      "slug": "pregnancy-symptoms",
+      "navGroup": "pregnancy",
+      "order": 2,
+      "description": "Evidence-based relief for morning sickness, cramps, fatigue, and normal body changes.",
+      "intro": "From the first flutter of nausea to third-trimester aches, pregnancy changes your body constantly. Learn which symptoms are normal, safe relief strategies, and when to seek immediate medical advice.",
+      "icon": "fas fa-stethoscope",
+      "image": "images/blog/nausea_friendly_diet.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Early Pregnancy",
+          "slug": "early-pregnancy",
+          "description": "Spotting, cramping, and symptoms in weeks 1 to 12.",
+          "intro": "Navigate the first 12 weeks with expert guidance on early pregnancy spotting, mild uterine cramping, and hormonal adjustments.",
+          "order": 1
+        },
+        {
+          "name": "Common Discomforts",
+          "slug": "common-discomforts",
+          "description": "Managing constipation, acidity, discharge, and digestive changes.",
+          "intro": "Practical, safe remedies for common pregnancy discomforts like acidity, constipation, and normal discharge changes.",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Week by Week",
+      "slug": "pregnancy-week-by-week",
+      "navGroup": "pregnancy",
+      "order": 3,
+      "description": "Track fetal development milestones, maternal changes, and weekly pregnancy tips.",
+      "intro": "Follow your baby's growth and developmental milestones week by week from conception to full term. Understand the weekly physical and emotional changes you may experience.",
+      "icon": "fas fa-calendar-alt",
+      "image": "images/weekly_updates_screen.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "First Trimester",
+          "slug": "first-trimester",
+          "description": "Weeks 1 through 13 milestones and guidance.",
+          "intro": "Weekly developmental guides covering embryo formation through the close of your first trimester.",
+          "order": 1
+        },
+        {
+          "name": "Second Trimester",
+          "slug": "second-trimester",
+          "description": "Weeks 14 through 27 growth and anatomy scans.",
+          "intro": "Track baby's movements, anatomy development, and the energetic middle trimester weeks.",
+          "order": 2
+        },
+        {
+          "name": "Third Trimester",
+          "slug": "third-trimester",
+          "description": "Weeks 28 through 40 birth preparation.",
+          "intro": "Final stretch tracking: rapid baby growth, lung maturation, and preparing your body for birth.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Health",
+      "slug": "pregnancy-health",
+      "navGroup": "pregnancy",
+      "order": 4,
+      "description": "Clinical advice on managing complications, gestational diabetes, thyroid, and blood health.",
+      "intro": "Protecting both mother and baby requires vigilant health management. Learn about screening for conditions like gestational diabetes and anemia, with practical management strategies from gynecologists.",
+      "icon": "fas fa-heartbeat",
+      "image": "images/blog/reduced-fetal-movement-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Conditions & Complications",
+          "slug": "conditions-and-complications",
+          "description": "Gestational diabetes, low haemoglobin, and high-risk care.",
+          "intro": "In-depth clinical overviews and self-care tips for gestational diabetes, maternal anemia, and managing medical conditions safely.",
+          "order": 1
+        },
+        {
+          "name": "Blood Pressure & Preeclampsia",
+          "slug": "blood-pressure-and-preeclampsia",
+          "description": "Monitoring blood pressure and recognizing warning signs.",
+          "intro": "Crucial information on blood pressure fluctuations, preeclampsia warning signs, and regular prenatal monitoring.",
+          "order": 2
+        },
+        {
+          "name": "Thyroid & PCOS in Pregnancy",
+          "slug": "thyroid-and-pcos-in-pregnancy",
+          "description": "Hormone balance, medication safety, and prenatal endocrinology.",
+          "intro": "Understanding thyroid hormone regulation and PCOS management to ensure a healthy pregnancy outcome.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Scans & Tests",
+      "slug": "scans-and-tests",
+      "navGroup": "pregnancy",
+      "order": 5,
+      "description": "Complete guide to ultrasound scans, blood tests, and screening schedules in India.",
+      "intro": "Prenatal diagnostic tests provide vital insights into your baby's development and well-being. Explore the standard Indian pregnancy scan schedule, blood screening timelines, and what each test reveals.",
+      "icon": "fas fa-clipboard-check",
+      "image": "images/blog/safe_9th_month_exercises.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Trimester Scans & Screenings",
+          "slug": "trimester-scans-and-screenings",
+          "description": "Dating, NT, anomaly, and growth ultrasounds.",
+          "intro": "A complete breakdown of every ultrasound scan and routine screening recommended across each trimester.",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Nutrition & Diet",
+      "slug": "pregnancy-nutrition",
+      "navGroup": "pregnancy",
+      "order": 6,
+      "description": "Traditional Indian foods, meal plans, safe superfoods, and dietary precautions.",
+      "intro": "Optimal prenatal nutrition supports your baby's rapid organ development and maternal energy. Discover traditional Indian foods, meal plans, and critical safety guidelines reviewed by nutrition specialists.",
+      "icon": "fas fa-apple-alt",
+      "image": "images/blog/9th_month_nutrition_guide.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Foods to Eat",
+          "slug": "foods-to-eat",
+          "description": "Nutrient-dense superfoods and balanced meal ideas.",
+          "intro": "Discover safe, wholesome traditional foods rich in folate, iron, calcium, and protein for maternal well-being.",
+          "order": 1
+        },
+        {
+          "name": "Foods to Avoid",
+          "slug": "foods-to-avoid",
+          "description": "Unsafe foods, culinary herbs to limit, and food safety.",
+          "intro": "Clear guidance on foods and culinary ingredients to avoid during pregnancy to keep you and your baby protected.",
+          "order": 2
+        },
+        {
+          "name": "Vitamins & Supplements",
+          "slug": "vitamins-and-supplements",
+          "description": "Folic acid, iron, calcium, and omega-3 guidelines.",
+          "intro": "Learn about essential micronutrient supplementation, optimal timing, and doctor-prescribed prenatal vitamins.",
+          "order": 3
+        },
+        {
+          "name": "Weight Gain",
+          "slug": "weight-gain",
+          "description": "Healthy maternal weight trajectories and trimester advice.",
+          "intro": "Understand recommended pregnancy weight gain ranges tailored to your pre-pregnancy BMI.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Fitness & Yoga",
+      "slug": "pregnancy-fitness",
+      "navGroup": "pregnancy",
+      "order": 7,
+      "description": "Safe trimester-specific exercises, pelvic floor workouts, and yoga postures.",
+      "intro": "Staying safely active during pregnancy strengthens muscles for labour and eases physical tension. Explore trimester-safe workouts, gentle prenatal yoga, and posture alignment tips.",
+      "icon": "fas fa-child",
+      "image": "images/blog/safe_9th_month_exercises.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Exercise",
+          "slug": "exercise",
+          "description": "Safe walking, squats, and strength routines.",
+          "intro": "Low-impact physical exercise routines designed to maintain stamina and prepare your body for childbirth.",
+          "order": 1
+        },
+        {
+          "name": "Yoga & Breathing",
+          "slug": "yoga-and-breathing",
+          "description": "Pranayama, gentle asanas, and pelvic floor toning.",
+          "intro": "Prenatal yoga poses and focused breathing techniques to alleviate back tension and calm your nervous system.",
+          "order": 2
+        },
+        {
+          "name": "Sleep & Posture",
+          "slug": "sleep-and-posture",
+          "description": "Sleeping positions, back care, and ergonomic support.",
+          "intro": "Tips for restorative pregnancy sleep, side sleeping support, and maintaining healthy spine alignment.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Pregnancy Lifestyle",
+      "slug": "pregnancy-lifestyle",
+      "navGroup": "pregnancy",
+      "order": 8,
+      "description": "Practical guides on travel, workplace safety, skincare, and daily routines.",
+      "intro": "Balancing everyday life while pregnant requires thoughtful adjustments. From safe flight and road travel to salon treatments and workplace comfort, get doctor-reviewed lifestyle tips.",
+      "icon": "fas fa-sun",
+      "image": "images/blog/pregnancy-salon-guide-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Travel & Safety",
+          "slug": "travel-and-safety",
+          "description": "Air, car, and train travel safety tips across trimesters.",
+          "intro": "Medical advice on travelling comfortably and safely by road, rail, or air during every stage of pregnancy.",
+          "order": 1
+        },
+        {
+          "name": "Work & Daily Life",
+          "slug": "work-and-daily-life",
+          "description": "Ergonomics, commute, and managing work routines.",
+          "intro": "Strategies for balancing work demands, handling commuting stress, and pacing your daily household activities.",
+          "order": 2
+        },
+        {
+          "name": "Medicines & Safety",
+          "slug": "medicines-and-safety",
+          "description": "Over-the-counter medicine safety and household precautions.",
+          "intro": "Crucial guidelines on medication safety, home chemical avoidance, and safe beauty care in pregnancy.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Mental Health & Wellbeing",
+      "slug": "mental-wellbeing",
+      "navGroup": "pregnancy",
+      "order": 9,
+      "description": "Support for prenatal anxiety, mood shifts, emotional balance, and postpartum wellness.",
+      "intro": "Emotional well-being is just as vital as physical health during pregnancy. Learn to recognize pregnancy anxiety, cope with mood fluctuations, and build a strong emotional support circle.",
+      "icon": "fas fa-smile",
+      "image": "images/blog/family-support-guide-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Pregnancy Anxiety",
+          "slug": "pregnancy-anxiety",
+          "description": "Managing worries about birth and baby health.",
+          "intro": "Evidence-backed grounding methods and professional support options for handling prenatal anxiety.",
+          "order": 1
+        },
+        {
+          "name": "Baby Blues & Postpartum Depression",
+          "slug": "baby-blues-and-postpartum-depression",
+          "description": "Understanding hormonal shifts and finding help.",
+          "intro": "Recognizing the signs of postpartum depression, differentiating normal blues, and getting compassionate support.",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "Labour & Delivery",
+      "slug": "labour-and-delivery",
+      "navGroup": "labour-and-baby",
+      "order": 10,
+      "description": "Birth preparation, contractions, normal delivery, C-section guidance, and hospital prep.",
+      "intro": "Preparing for labour demystifies childbirth and empowers you to make informed decisions. Explore contraction timing, birth positions, pain relief options, and complete hospital bag prep.",
+      "icon": "fas fa-baby-carriage",
+      "image": "images/blog/labour-guide-banner.png",
+      "showWhenEmpty": false,
+      "hubLink": "/labour-prep-guide",
+      "hubLinkLabel": "Explore the Labour Prep Guide →",
+      "subcategories": [
+        {
+          "name": "Signs of Labour",
+          "slug": "signs-of-labour",
+          "description": "True vs false labour, water breaking, and when to go to hospital.",
+          "intro": "Identify true labour contractions, the mucus plug, water breaking, and exact emergency hospital timing.",
+          "order": 1
+        },
+        {
+          "name": "Normal vs C-Section",
+          "slug": "normal-vs-c-section",
+          "description": "Understanding vaginal delivery, planned and emergency cesareans.",
+          "intro": "Comprehensive clinical guidance comparing normal physiological delivery and cesarean birth procedures.",
+          "order": 2
+        },
+        {
+          "name": "Hospital Bag & Prep",
+          "slug": "hospital-bag-and-prep",
+          "description": "Checklists for mother, baby, and birth partner.",
+          "intro": "Complete packing checklists for mother, newborn, and birth partner tailored for Indian hospitals.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Postpartum & Recovery",
+      "slug": "postpartum-recovery",
+      "navGroup": "labour-and-baby",
+      "order": 11,
+      "description": "Post-delivery healing, wound care, lochia, breastfeeding, and new mother recovery.",
+      "intro": "The postpartum period is a profound journey of healing and transformation. Learn about uterine recovery, incision and tear healing, breastfeeding techniques, and postpartum nutrition.",
+      "icon": "fas fa-shield-alt",
+      "image": "images/blog/postpartum-guide-banner.png",
+      "showWhenEmpty": false,
+      "hubLink": "/postpartum-recovery-guide",
+      "hubLinkLabel": "Explore the Postpartum Recovery Guide →",
+      "subcategories": [
+        {
+          "name": "Recovery & Healing",
+          "slug": "recovery-and-healing",
+          "description": "Wound care, lochia, pelvic rest, and red flags.",
+          "intro": "Essential medical advice on physical recovery following both vaginal and cesarean deliveries.",
+          "order": 1
+        },
+        {
+          "name": "Breastfeeding",
+          "slug": "breastfeeding",
+          "description": "Latch tips, milk supply, sore nipples, and feeding schedules.",
+          "intro": "Practical lactation guidance on latching, milk let-down, managing engorgement, and feeding frequency.",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "name": "Baby Care & Development",
+      "slug": "baby-care",
+      "navGroup": "labour-and-baby",
+      "order": 12,
+      "description": "Newborn essentials, infant feeding, milestone tracking, and pediatric vaccines.",
+      "intro": "Caring for a newborn is filled with joy and new questions. Discover pediatrician-backed guidance on newborn sleep, feeding, umbilical cord care, and essential Indian vaccination schedules.",
+      "icon": "fas fa-baby",
+      "image": "images/blog/free-kick-tracker-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Newborn Care",
+          "slug": "newborn-care",
+          "description": "Bathing, diapering, burping, and soothing techniques.",
+          "intro": "Step-by-step newborn care routines for bathing, sleep safety, burping, and comforting your baby.",
+          "order": 1
+        },
+        {
+          "name": "Baby Growth & Milestones",
+          "slug": "baby-growth-and-milestones",
+          "description": "Month-by-month physical and cognitive development.",
+          "intro": "Key developmental milestones in vision, motor skills, social smiles, and early communication.",
+          "order": 2
+        },
+        {
+          "name": "Vaccinations",
+          "slug": "vaccinations",
+          "description": "Indian Academy of Pediatrics immunization timeline.",
+          "intro": "A clear, complete guide to mandatory and recommended childhood vaccinations in India.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Periods & Cycle",
+      "slug": "periods-and-cycle",
+      "navGroup": "womens-health",
+      "order": 13,
+      "description": "Expert advice on menstrual health, heavy flow, period pain, discharge, and cycle tracking.",
+      "intro": "Your menstrual cycle is an indispensable vital sign of your overall hormonal health. Understand heavy bleeding, severe menstrual pain, irregular spotting, and effective cycle tracking methods.",
+      "icon": "fas fa-tint",
+      "image": "images/blog/irregular-periods-pcos-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Period Problems",
+          "slug": "period-problems",
+          "description": "Heavy bleeding, endometriosis pain, and unusual discharge.",
+          "intro": "Medical insights into causes of menorrhagia, dysmenorrhea, endometriosis symptoms, and abnormal spotting.",
+          "order": 1
+        },
+        {
+          "name": "Irregular Periods",
+          "slug": "irregular-periods",
+          "description": "Missed periods, short cycles, and hormonal triggers.",
+          "intro": "Understand what causes delayed or unpredictable cycles and how lifestyle, stress, or PCOS play a role.",
+          "order": 2
+        },
+        {
+          "name": "Cycle Tracking",
+          "slug": "cycle-tracking",
+          "description": "How to track periods, basal body temperature, and luteal phase.",
+          "intro": "Learn how recording your cycle symptoms and temperature patterns helps you predict fertility and detect irregularities.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "name": "Women's Health",
+      "slug": "womens-health",
+      "navGroup": "womens-health",
+      "order": 14,
+      "description": "Gynecological conditions, PCOS/PCOD, thyroid health, contraception, and menopause.",
+      "intro": "Comprehensive medical resources on reproductive wellness across every life stage. Learn about managing PCOS, fibroids, UTIs, and finding the right contraceptive options.",
+      "icon": "fas fa-female",
+      "image": "images/blog/safe-period-method-banner.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "PCOS/PCOD",
+          "slug": "pcos-pcod",
+          "description": "Diet, symptoms, insulin resistance, and cycle restoration.",
+          "intro": "Clinical guidance on diagnosing and managing polycystic ovary syndrome through nutrition, exercise, and medical care.",
+          "order": 1
+        },
+        {
+          "name": "Endometriosis & Fibroids",
+          "slug": "endometriosis-and-fibroids",
+          "description": "Pelvic pain causes, diagnosis, and treatment options.",
+          "intro": "Understand chronic pelvic discomfort, uterine fibroids, and effective medical or surgical management.",
+          "order": 2
+        },
+        {
+          "name": "Thyroid",
+          "slug": "thyroid",
+          "description": "Hypothyroidism, hyperthyroidism, and hormone balance.",
+          "intro": "How thyroid disorders affect menstrual cycles, energy, and reproductive wellness.",
+          "order": 3
+        },
+        {
+          "name": "Infections & UTI",
+          "slug": "infections-and-uti",
+          "description": "Yeast infections, bacterial vaginosis, and urinary tract health.",
+          "intro": "Preventative tips, clinical symptoms, and doctor-prescribed treatments for common vaginal infections and UTIs.",
+          "order": 4
+        },
+        {
+          "name": "Contraception",
+          "slug": "contraception",
+          "description": "Birth control methods, effectiveness, and emergency contraception.",
+          "intro": "A factual comparison of barrier, hormonal, and natural family planning methods suited for Indian women.",
+          "order": 5
+        },
+        {
+          "name": "Menopause",
+          "slug": "menopause",
+          "description": "Perimenopause symptoms, hot flushes, and bone health.",
+          "intro": "Navigating the menopausal transition with evidence-based lifestyle changes and hormone health guidance.",
+          "order": 6
+        }
+      ]
+    },
+    {
+      "name": "Myths & Facts (India)",
+      "slug": "pregnancy-myths-and-facts",
+      "navGroup": "pregnancy",
+      "order": 15,
+      "description": "Debunking traditional pregnancy taboos, dietary misconceptions, and cultural beliefs in India.",
+      "intro": "Indian pregnancy traditions often mix helpful Ayurvedic wisdom with unscientific myths. We separate folklore from medical science on eating saffron, lunar eclipses, papaya, and baby gender myths.",
+      "icon": "fas fa-lightbulb",
+      "image": "images/blog/Pregnancy_101.webp",
+      "showWhenEmpty": false,
+      "subcategories": [
+        {
+          "name": "Common Myths",
+          "slug": "common-myths",
+          "description": "Belly shape, complexion myths, and eclipse taboos.",
+          "intro": "Scientific breakdowns of widespread cultural beliefs and old wives' tales during pregnancy.",
+          "order": 1
+        },
+        {
+          "name": "Diet & Cultural Beliefs",
+          "slug": "diet-and-cultural-beliefs",
+          "description": "Hot and cold foods, ghee consumption, and spice safety.",
+          "intro": "Examining traditional beliefs surrounding 'garam' and 'thanda' foods through an evidence-based clinical lens.",
+          "order": 2
+        },
+        {
+          "name": "Government Schemes",
+          "slug": "government-schemes",
+          "description": "PMMVY, JSY, and maternity benefits in India.",
+          "intro": "A practical guide to Indian government maternity assistance programs, financial aid, and hospital entitlements.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}
