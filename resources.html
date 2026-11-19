@@ -50,20 +50,54 @@
       "publisher": { "@type": "Organization", "name": "MiGynae", "url": "https://migynaeapp.com" }
     }
     </script>
+    <link rel="stylesheet" href="css/blog-redesign.css">
 </head>
 <body>
-    <header>
+        <header>
         <nav class="container">
             <a href="/" class="logo" style="text-decoration:none;">
                 <div class="logo-mark">M</div>
-                <p class="logo-title">MiGynae</p>
+                <p class="logo-title" aria-label="MiGynae">MiGynae</p>
             </a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/features">Features</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
                 <li><a href="/resources" class="active">Resources</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li class="nav-item-has-menu">
+                    <a href="/blog" class="mega-menu-trigger" aria-haspopup="true" aria-expanded="false">
+                        Blog <i class="fas fa-chevron-down chevron-icon"></i>
+                    </a>
+                    <div class="mega-menu" id="blogMegaMenu" role="menu" aria-label="Blog Topics">
+  <div class="mega-menu-grid">
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Trying to Conceive</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/getting-pregnant">Getting Pregnant</a></li>
+      </ul>
+    </div>
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Pregnancy</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/pregnancy-symptoms">Pregnancy Symptoms</a></li>
+        <li><a href="/blog/pregnancy-health">Pregnancy Health</a></li>
+        <li><a href="/blog/scans-and-tests">Scans &amp; Tests</a></li>
+        <li><a href="/blog/pregnancy-lifestyle">Pregnancy Lifestyle</a></li>
+      </ul>
+    </div>
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Women&#39;s Health</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/periods-and-cycle">Periods &amp; Cycle</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mega-menu-footer">
+    <span>Explore clinical guides, symptom relief &amp; trimester care</span>
+    <a href="/blog">View All Blog Articles &rarr;</a>
+  </div>
+</div>
+                </li>
                 <li><a href="/guides">Guides</a></li>
             </ul>
             <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
@@ -159,10 +193,44 @@
         </section>
     </main>
 
-    <footer>
+        <footer>
         <div class="container">
-            <div class="footer-bottom" style="border:none;padding-top:20px;">
-                <p><a href="/" style="color:var(--primary-color);">← Back to home</a></p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MiGynae</h3>
+                    <p>Professional pregnancy care platform trusted by healthcare professionals and expecting mothers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/features">Features</a>
+                    <a href="/how-it-works">How It Works</a>
+                    <a href="/resources">Resources</a>
+                    <a href="/guides">Guides</a>
+                    <a href="/blog">Blog Index</a>
+                </div>
+                <div class="footer-section">
+  <h4>Blog Topics</h4>
+  <a href="/blog/getting-pregnant">Getting Pregnant</a>
+  <a href="/blog/pregnancy-symptoms">Pregnancy Symptoms</a>
+  <a href="/blog/pregnancy-health">Pregnancy Health</a>
+  <a href="/blog/scans-and-tests">Scans &amp; Tests</a>
+  <a href="/blog/pregnancy-lifestyle">Pregnancy Lifestyle</a>
+  <a href="/blog/periods-and-cycle">Periods &amp; Cycle</a>
+</div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener">Android App</a>
+                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener">iOS App</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MiGynae. All rights reserved.</p>
             </div>
         </div>
     </footer>
