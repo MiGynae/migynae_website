@@ -1483,11 +1483,27 @@ def main():
             post_html = render_post_page(p, cat, sub, taxonomy, visible_categories, posts)
             article_count += 1
 
+        # 1. Root blog level: /blog/<id>
         write_dual_file(
             os.path.join(WORKSPACE_DIR, "blog", f"{p['id']}.html"),
             os.path.join(WORKSPACE_DIR, "blog", p["id"], "index.html"),
             post_html
         )
+
+        # 2. Respective category slug: /blog/<category-slug>/<id>
+        write_dual_file(
+            os.path.join(WORKSPACE_DIR, "blog", cat["slug"], f"{p['id']}.html"),
+            os.path.join(WORKSPACE_DIR, "blog", cat["slug"], p["id"], "index.html"),
+            post_html
+        )
+
+        # 3. Respective subcategory slug: /blog/<category-slug>/<subcategory-slug>/<id>
+        if sub:
+            write_dual_file(
+                os.path.join(WORKSPACE_DIR, "blog", cat["slug"], sub["slug"], f"{p['id']}.html"),
+                os.path.join(WORKSPACE_DIR, "blog", cat["slug"], sub["slug"], p["id"], "index.html"),
+                post_html
+            )
 
     print(f"Rendered {guide_count} guide pages and {article_count} article pages ({guide_count + article_count} total).")
 
