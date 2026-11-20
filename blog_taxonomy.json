@@ -155,6 +155,13 @@
           "description": "Hormone balance, medication safety, and prenatal endocrinology.",
           "intro": "Understanding thyroid hormone regulation and PCOS management to ensure a healthy pregnancy outcome.",
           "order": 3
+        },
+        {
+          "name": "Fetal Movement and Kick Counting",
+          "slug": "fetal-movement-and-kick-counting",
+          "description": "Tracking fetal movement, kick counter techniques, and understanding normal movement patterns.",
+          "intro": "Monitoring your baby's kicks and movements is a vital daily health indicator in the third trimester. Learn when to count kicks and when to contact your doctor.",
+          "order": 4
         }
       ]
     },
@@ -284,6 +291,20 @@
           "description": "Over-the-counter medicine safety and household precautions.",
           "intro": "Crucial guidelines on medication safety, home chemical avoidance, and safe beauty care in pregnancy.",
           "order": 3
+        },
+        {
+          "name": "Partner & Family Support",
+          "slug": "partner-and-family-support",
+          "description": "How partners and families can provide emotional, physical, and birth-room support.",
+          "intro": "Guidance for partners and extended family members on supporting an expectant mother through pregnancy, delivery, and postpartum healing.",
+          "order": 4
+        },
+        {
+          "name": "Beauty & Self-care",
+          "slug": "beauty-and-self-care",
+          "description": "Pregnancy skincare, salon safety, hair dye precautions, and maternal self-care.",
+          "intro": "Doctor-reviewed safety guidance on skincare ingredients, cosmetic procedures, and salon treatments during pregnancy.",
+          "order": 5
         }
       ]
     },
@@ -324,8 +345,8 @@
       "icon": "fas fa-baby-carriage",
       "image": "images/blog/labour-guide-banner.png",
       "showWhenEmpty": false,
-      "hubLink": "/labour-prep-guide",
-      "hubLinkLabel": "Explore the Labour Prep Guide →",
+      "hubLink": "/blog/labour-prep-guide",
+      "hubLinkLabel": "Explore the Labour Prep Guide \u2192",
       "subcategories": [
         {
           "name": "Signs of Labour",
@@ -347,6 +368,13 @@
           "description": "Checklists for mother, baby, and birth partner.",
           "intro": "Complete packing checklists for mother, newborn, and birth partner tailored for Indian hospitals.",
           "order": 3
+        },
+        {
+          "name": "Pain Relief",
+          "slug": "pain-relief",
+          "description": "Epidural analgesia, medical pain relief options, and natural coping techniques during childbirth.",
+          "intro": "Explore clinical pain relief options including epidural anesthesia, Entonox, and non-pharmacological comfort measures for labour.",
+          "order": 4
         }
       ]
     },
@@ -360,8 +388,8 @@
       "icon": "fas fa-shield-alt",
       "image": "images/blog/postpartum-guide-banner.png",
       "showWhenEmpty": false,
-      "hubLink": "/postpartum-recovery-guide",
-      "hubLinkLabel": "Explore the Postpartum Recovery Guide →",
+      "hubLink": "/blog/postpartum-recovery-guide",
+      "hubLinkLabel": "Explore the Postpartum Recovery Guide \u2192",
       "subcategories": [
         {
           "name": "Recovery & Healing",

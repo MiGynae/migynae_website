@@ -5,6 +5,9 @@ MiGynae Blog Static Build Pipeline
 Generates static, SEO-optimized, accessible HTML for the category-based MiGynae blog.
 Ensures zero client-side "Loading articles..." delays, strict slug collision protection,
 valid JSON-LD schemas, breadcrumbs, clean URLs (no /category/), and sitemap synchronization.
+
+v2: Adds guide page rendering (migrated top-level articles), split sitemaps
+    (sitemap-pages.xml + sitemap-blog.xml + sitemap index), and redirect stubs.
 """
 
 import os
@@ -18,6 +21,16 @@ WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = "https://migynaeapp.com"
 RESERVED_ROUTES = {"page", "search", "tag", "feed", "rss", "sitemap", "index", "category", "admin", "api"}
 POSTS_PER_PAGE = 12
+
+# Guide slugs that use the full custom-HTML rendering path
+GUIDE_SLUGS = {
+    "irregular-periods-pcos-india", "free-period-tracker", "safe-period-method-pregnancy",
+    "free-kick-tracker", "reduced-fetal-movement-when-to-worry",
+    "labour-prep-guide", "pre-labour-prep-guide", "during-labour-guide",
+    "epidural-guide", "caesarean-guide",
+    "postpartum-recovery-guide", "post-delivery-guide",
+    "partner-support-guide", "family-support-guide", "pregnancy-beauty-salon-guide"
+}
 
 def load_json(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -271,7 +284,7 @@ def build_article_card_html(post, category_name):
     img_url = "/" + post["image"] if not post["image"].startswith("/") else post["image"]
     return f"""                <article class="article-card">
                     <a href="/blog/{post['id']}" class="article-card-thumb-wrap" aria-label="{escape_html(post['title'])}">
-                        <img src="{img_url}" alt="{escape_html(post['title'])}" class="article-card-thumb" loading="lazy" width="400" height="225">
+                        <img src="{img_url}" alt="{escape_html(post.get('imageAlt', post['title']))}" class="article-card-thumb" loading="lazy" width="400" height="225">
                     </a>
                     <div class="article-card-body">
                         <div class="article-card-meta">
@@ -779,11 +792,17 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     canonical_url = f"{SITE_URL}/blog/{post_id}"
     img_url = f"{SITE_URL}/{post['image']}" if not post['image'].startswith("http") else post['image']
 
+    meta_title = post.get("metaTitle") or f"{post['title']} | MiGynae"
+    meta_desc = post.get("metaDescription") or post["excerpt"]
+    if len(meta_desc) > 155:
+        meta_desc = meta_desc[:152] + "..."
+    image_alt = post.get("imageAlt") or post["title"]
+
     article_schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": post["title"],
-        "description": post["excerpt"],
+        "headline": post.get("metaTitle", post["title"]),
+        "description": meta_desc,
         "image": img_url,
         "datePublished": post["date"],
         "dateModified": post["date"],
@@ -806,9 +825,26 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
         }
     }
 
-    meta_desc = post["excerpt"]
-    if len(meta_desc) > 155:
-        meta_desc = meta_desc[:152] + "..."
+    faq_schema_script = ""
+    if post.get("faqs"):
+        faq_schema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": q["question"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": q["answer"]
+                    }
+                }
+                for q in post["faqs"]
+            ]
+        }
+        faq_schema_script = f"""    <script type="application/ld+json">
+{json.dumps(faq_schema, indent=4)}
+    </script>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -839,16 +875,16 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-    <title>{escape_html(post['title'])} | MiGynae</title>
+    <title>{escape_html(meta_title)}</title>
     <meta name="description" content="{escape_html(meta_desc)}">
     <link rel="canonical" href="{canonical_url}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{canonical_url}">
-    <meta property="og:title" content="{escape_html(post['title'])} | MiGynae">
+    <meta property="og:title" content="{escape_html(meta_title)}">
     <meta property="og:description" content="{escape_html(meta_desc)}">
     <meta property="og:image" content="{img_url}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{escape_html(post['title'])} | MiGynae">
+    <meta name="twitter:title" content="{escape_html(meta_title)}">
     <meta name="twitter:description" content="{escape_html(meta_desc)}">
     <script type="application/ld+json">
 {breadcrumbs_json_ld}
@@ -856,6 +892,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     <script type="application/ld+json">
 {json.dumps(article_schema, indent=4)}
     </script>
+{faq_schema_script}
     <link rel="stylesheet" href="css/index.min.css">
     <link rel="stylesheet" href="css/landing.min.css">
     <link rel="stylesheet" href="css/blog-redesign.css">
@@ -931,7 +968,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
                 <span>Medically reviewed by {escape_html(post.get('medicalReviewer', 'Dr. Shuchita Batra, MBBS, MD (Obstetrics & Gynaecology)'))}</span>
             </div>
 
-            <img src="{post['image']}" alt="{escape_html(post['title'])}" class="post-banner" width="820" height="440">
+            <img src="{post['image']}" alt="{escape_html(image_alt)}" class="post-banner" width="820" height="440">
 
             <div class="post-body">
                 {post['content']}
@@ -1000,6 +1037,202 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
 </body>
 </html>"""
 
+def render_guide_page(post, category, subcategory, taxonomy, visible_categories, all_posts, guides_meta):
+    """
+    Renders a migrated guide page at /blog/<slug>.
+    Preserves the original page's body content (custom styles, full HTML, schemas)
+    but adds the new canonical URL, og:url, breadcrumbs, category badge, and
+    "More in Category" block using the shared nav/footer.
+    """
+    post_id = post["id"]
+    cat_slug = category["slug"]
+    sub_slug = subcategory["slug"] if subcategory else None
+
+    crumbs = [
+        ("Home", "/"),
+        ("Blog", "/blog"),
+        (category["name"], f"/blog/{cat_slug}")
+    ]
+    if subcategory:
+        crumbs.append((subcategory["name"], f"/blog/{cat_slug}/{sub_slug}"))
+    crumbs.append((post["title"], None))
+
+    breadcrumbs_html, breadcrumbs_json_ld = build_breadcrumbs_html(crumbs)
+
+    # Related posts
+    same_sub = [p for p in all_posts if p["id"] != post_id and p["category"] == cat_slug and p.get("subcategory") == sub_slug]
+    same_cat = [p for p in all_posts if p["id"] != post_id and p["category"] == cat_slug and p not in same_sub]
+    others = [p for p in all_posts if p["id"] != post_id and p not in same_sub and p not in same_cat]
+    related_posts = (same_sub + same_cat + others)[:3]
+    related_cards = [build_article_card_html(rp, category["name"]) for rp in related_posts]
+
+    header_html = build_header_html("blog", taxonomy, visible_categories)
+    footer_html = build_footer_html(visible_categories)
+    app_cta_html = build_app_cta_html()
+
+    canonical_url = f"{SITE_URL}/blog/{post_id}"
+    img_url = f"{SITE_URL}/{post['image']}" if not post["image"].startswith("http") else post["image"]
+
+    meta_desc = post["excerpt"]
+    if len(meta_desc) > 155:
+        meta_desc = meta_desc[:152] + "..."
+
+    # Guide-specific metadata (custom styles + original schemas with updated URLs)
+    meta = guides_meta.get(post_id, {})
+    custom_styles = meta.get("custom_styles", "")
+    custom_schemas = meta.get("custom_schemas", [])
+
+    # Build extra schema tags (original schemas, URL-updated)
+    extra_schema_tags = ""
+    for schema in custom_schemas:
+        # Update canonical url/id fields in schema
+        if isinstance(schema, dict):
+            schema_str = json.dumps(schema, indent=4)
+        else:
+            schema_str = json.dumps(schema, indent=4)
+        extra_schema_tags += f'\n    <script type="application/ld+json">\n{schema_str}\n    </script>'
+
+    custom_style_tag = f"\n    <style>\n{custom_styles}\n    </style>" if custom_styles else ""
+
+    # Category badge + date line
+    date_str = format_date(post.get("date", ""))
+    read_time = escape_html(post.get("readTime", "8 min read"))
+
+    # More in category section
+    more_section = ""
+    if related_cards:
+        more_section = f"""
+        <section class="more-in-category-section" style="margin: 40px auto; max-width: 1120px; padding: 0 20px;">
+            <h2 class="more-in-category-title">More in {escape_html(category["name"])}</h2>
+            <div class="articles-grid">
+                {"".join(related_cards)}
+            </div>
+        </section>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <script>
+      (function () {{
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {{
+          var c = p.replace(/\\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }}
+      }})();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', 'G-YRTYHVLS8B');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+    <title>{escape_html(post["title"])} | MiGynae</title>
+    <meta name="description" content="{escape_html(meta_desc)}">
+    <link rel="canonical" href="{canonical_url}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{canonical_url}">
+    <meta property="og:title" content="{escape_html(post["title"])} | MiGynae">
+    <meta property="og:description" content="{escape_html(meta_desc)}">
+    <meta property="og:image" content="{img_url}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{escape_html(post["title"])} | MiGynae">
+    <meta name="twitter:description" content="{escape_html(meta_desc)}">
+    <script type="application/ld+json">
+{breadcrumbs_json_ld}
+    </script>{extra_schema_tags}{custom_style_tag}
+    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/landing.min.css">
+    <link rel="stylesheet" href="css/blog-redesign.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+{header_html}
+
+    <main>
+        {breadcrumbs_html}
+
+        <div class="post-content-wrap" style="max-width: 820px; margin: 0 auto; padding: 20px 20px 40px;">
+            <div class="post-meta-top" style="margin-bottom: 16px;">
+                <a href="/blog/{category["slug"]}" class="category-badge">{escape_html(category["name"])}</a>
+                <span style="font-size: 14px; color: #9ca3af; margin-left: 12px;">
+                    <i class="far fa-calendar-alt"></i> {date_str} · <i class="far fa-clock"></i> {read_time}
+                </span>
+            </div>
+        </div>
+
+        <div class="post-body" style="max-width: 820px; margin: 0 auto; padding: 0 20px 20px;">
+            {post.get("content", "")}
+        </div>
+
+{more_section}
+{app_cta_html}
+    </main>
+
+{footer_html}
+
+    <script>
+        (function () {{
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            var megaTrigger = document.querySelector('.mega-menu-trigger');
+            var navMenuHasSub = document.querySelector('.nav-item-has-menu');
+
+            if (toggle && nav) {{
+                function setOpen(open) {{
+                    nav.classList.toggle('open', open);
+                    toggle.classList.toggle('open', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                }}
+
+                toggle.addEventListener('click', function () {{
+                    setOpen(!nav.classList.contains('open'));
+                }});
+
+                toggle.addEventListener('keydown', function (e) {{
+                    if (e.key === 'Enter' || e.key === ' ') {{
+                        e.preventDefault();
+                        setOpen(!nav.classList.contains('open'));
+                    }}
+                }});
+            }}
+
+            if (megaTrigger && navMenuHasSub) {{
+                megaTrigger.addEventListener('click', function (e) {{
+                    if (window.innerWidth <= 900) {{
+                        e.preventDefault();
+                        navMenuHasSub.classList.toggle('mobile-open');
+                        var expanded = navMenuHasSub.classList.contains('mobile-open');
+                        megaTrigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    }}
+                }});
+
+                document.addEventListener('keydown', function (e) {{
+                    if (e.key === 'Escape') {{
+                        navMenuHasSub.classList.remove('mobile-open');
+                        var mm = document.getElementById('blogMegaMenu');
+                        if (mm) mm.classList.remove('is-open');
+                        megaTrigger.setAttribute('aria-expanded', 'false');
+                    }}
+                }});
+            }}
+        }})();
+    </script>
+</body>
+</html>"""
+
+
 def update_legacy_post(file_path, taxonomy, visible_categories):
     """
     Updates legacy post file (e.g. blog/9th-month-nutrition-guide.html) with the
@@ -1062,32 +1295,60 @@ def write_dual_file(path_single, path_index, html_content):
     with open(path_index, "w", encoding="utf-8") as f:
         f.write(html_content)
 
+def build_sitemap_xml(urls, today):
+    """Build a standard urlset XML string from list of (path, freq, priority) tuples."""
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for path, freq, prio in urls:
+        lines.append(
+            f'  <url><loc>{SITE_URL}{path}</loc>'
+            f'<lastmod>{today}</lastmod>'
+            f'<changefreq>{freq}</changefreq>'
+            f'<priority>{prio}</priority></url>'
+        )
+    lines.append('</urlset>')
+    return "\n".join(lines) + "\n"
+
+
 def update_sitemap(visible_categories, taxonomy, posts):
     today = datetime.now().strftime("%Y-%m-%d")
 
-    urls = [
+    # -----------------------------------------------------------------------
+    # sitemap-pages.xml — only the 8 canonical page URLs (NO redirected URLs)
+    # -----------------------------------------------------------------------
+    page_urls = [
         ("/", "weekly", "1.0"),
         ("/features", "monthly", "0.8"),
         ("/how-it-works", "monthly", "0.8"),
         ("/resources", "weekly", "0.8"),
         ("/guides", "monthly", "0.8"),
-        ("/blog", "weekly", "0.9")
+        ("/blog", "weekly", "0.9"),
+        ("/privacy-policy", "yearly", "0.3"),
+        ("/terms-of-service", "yearly", "0.3"),
     ]
+    pages_xml = build_sitemap_xml(page_urls, today)
+    with open(os.path.join(WORKSPACE_DIR, "sitemap-pages.xml"), "w", encoding="utf-8") as f:
+        f.write(pages_xml)
+    print(f"Written sitemap-pages.xml with {len(page_urls)} URLs.")
 
-    # Visible categories and subcategories
+    # -----------------------------------------------------------------------
+    # sitemap-blog.xml — /blog index + visible categories + sub-categories + all posts
+    # -----------------------------------------------------------------------
+    blog_urls = [("/blog", "weekly", "0.9")]
+
+    # Visible categories
     for c in visible_categories:
-        urls.append((f"/blog/{c['slug']}", "weekly", "0.8"))
+        blog_urls.append((f"/blog/{c['slug']}", "weekly", "0.8"))
         for s in c.get("subcategories", []):
-            # Check if subcategory has posts
             sub_posts = [p for p in posts if p["category"] == c["slug"] and p.get("subcategory") == s["slug"]]
-            if len(sub_posts) > 0:
-                urls.append((f"/blog/{c['slug']}/{s['slug']}", "weekly", "0.7"))
+            if sub_posts:
+                blog_urls.append((f"/blog/{c['slug']}/{s['slug']}", "weekly", "0.7"))
 
-    # Posts (15 categorized posts)
+    # All posts (including migrated guides — they are now at /blog/<slug>)
     for p in posts:
-        urls.append((f"/blog/{p['id']}", "monthly", "0.8"))
+        blog_urls.append((f"/blog/{p['id']}", "monthly", "0.8"))
 
-    # Legacy posts
+    # Legacy blog posts (old ones not in blogs.json)
     legacy_posts = [
         "9th-month-nutrition-guide",
         "first-trimester-diet-guide",
@@ -1095,49 +1356,51 @@ def update_sitemap(visible_categories, taxonomy, posts):
         "pregnancy-101",
         "pregnancy-exercises"
     ]
+    post_ids = {p["id"] for p in posts}
     for lp in legacy_posts:
-        if lp not in [p['id'] for p in posts]:
-            urls.append((f"/blog/{lp}", "monthly", "0.8"))
+        if lp not in post_ids:
+            blog_urls.append((f"/blog/{lp}", "monthly", "0.6"))
 
-    # Guides & legal
-    guides_legal = [
-        ("/irregular-periods-pcos-india", "monthly", "0.8"),
-        ("/free-period-tracker", "monthly", "0.8"),
-        ("/free-kick-tracker", "monthly", "0.8"),
-        ("/labour-prep-guide", "monthly", "0.8"),
-        ("/postpartum-recovery-guide", "monthly", "0.8"),
-        ("/pre-labour-prep-guide", "monthly", "0.7"),
-        ("/during-labour-guide", "monthly", "0.7"),
-        ("/epidural-guide", "monthly", "0.7"),
-        ("/caesarean-guide", "monthly", "0.7"),
-        ("/post-delivery-guide", "monthly", "0.7"),
-        ("/partner-support-guide", "monthly", "0.7"),
-        ("/family-support-guide", "monthly", "0.7"),
-        ("/pregnancy-beauty-salon-guide", "monthly", "0.8"),
-        ("/reduced-fetal-movement-when-to-worry", "monthly", "0.8"),
-        ("/safe-period-method-pregnancy", "monthly", "0.8"),
-        ("/privacy-policy", "yearly", "0.3"),
-        ("/terms-of-service", "yearly", "0.3")
-    ]
-    urls.extend(guides_legal)
+    blog_xml = build_sitemap_xml(blog_urls, today)
+    with open(os.path.join(WORKSPACE_DIR, "sitemap-blog.xml"), "w", encoding="utf-8") as f:
+        f.write(blog_xml)
+    print(f"Written sitemap-blog.xml with {len(blog_urls)} URLs.")
 
-    xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for path, freq, prio in urls:
-        xml_lines.append(f'  <url><loc>{SITE_URL}{path}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{prio}</priority></url>')
-    xml_lines.append('</urlset>')
-
-    sitemap_path = os.path.join(WORKSPACE_DIR, "sitemap.xml")
-    with open(sitemap_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(xml_lines) + "\n")
-    print(f"Updated sitemap.xml with {len(urls)} URLs.")
+    # -----------------------------------------------------------------------
+    # sitemap.xml — sitemap index referencing both
+    # -----------------------------------------------------------------------
+    sitemap_index = f"""<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{SITE_URL}/sitemap-pages.xml</loc>
+    <lastmod>{today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>{SITE_URL}/sitemap-blog.xml</loc>
+    <lastmod>{today}</lastmod>
+  </sitemap>
+</sitemapindex>
+"""
+    with open(os.path.join(WORKSPACE_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(sitemap_index)
+    print("Written sitemap.xml (sitemap index referencing sitemap-pages.xml + sitemap-blog.xml).")
 
 def main():
     print("Starting MiGynae Blog Static Build...")
     tax_path = os.path.join(WORKSPACE_DIR, "blog_taxonomy.json")
     blogs_path = os.path.join(WORKSPACE_DIR, "blogs.json")
+    guides_meta_path = os.path.join(WORKSPACE_DIR, "guides_metadata.json")
 
     taxonomy = load_json(tax_path)
     posts = load_json(blogs_path)
+
+    # Load guide metadata (custom styles + schemas extracted from original HTMLs)
+    if os.path.exists(guides_meta_path):
+        guides_meta = load_json(guides_meta_path)
+        print(f"Loaded guides_metadata.json with {len(guides_meta)} guide entries.")
+    else:
+        guides_meta = {}
+        print("WARNING: guides_metadata.json not found — guide pages will render without custom styles.")
 
     # Validate & Collision Protection
     categories_by_slug, subcategory_slugs = validate_and_check_collisions(taxonomy, posts)
@@ -1174,6 +1437,7 @@ def main():
             os.path.join(WORKSPACE_DIR, "blog", "page", "2", "index.html"),
             blog_p2_html
         )
+        print("Rendered Blog Index page 2.")
 
     # 2. Render Categories & Subcategories
     for c in taxonomy["categories"]:
@@ -1198,16 +1462,26 @@ def main():
 
     print(f"Rendered {len(taxonomy['categories'])} category pages and all subcategory pages.")
 
-    # 3. Render Post Pages
+    # 3. Render Post Pages (guides use render_guide_page, articles use render_post_page)
     sub_map = {}
     for c in taxonomy["categories"]:
         for s in c.get("subcategories", []):
             sub_map[(c["slug"], s["slug"])] = s
 
+    guide_count = 0
+    article_count = 0
     for p in posts:
         cat = categories_by_slug[p["category"]]
         sub = sub_map.get((p["category"], p.get("subcategory")))
-        post_html = render_post_page(p, cat, sub, taxonomy, visible_categories, posts)
+
+        if p.get("format") == "guide" and p["id"] in GUIDE_SLUGS:
+            # Migrated guide — use custom renderer
+            post_html = render_guide_page(p, cat, sub, taxonomy, visible_categories, posts, guides_meta)
+            guide_count += 1
+        else:
+            # Regular article
+            post_html = render_post_page(p, cat, sub, taxonomy, visible_categories, posts)
+            article_count += 1
 
         write_dual_file(
             os.path.join(WORKSPACE_DIR, "blog", f"{p['id']}.html"),
@@ -1215,9 +1489,9 @@ def main():
             post_html
         )
 
-    print(f"Rendered {len(posts)} post pages.")
+    print(f"Rendered {guide_count} guide pages and {article_count} article pages ({guide_count + article_count} total).")
 
-    # 4. Update Legacy Post Pages
+    # 4. Update Legacy Blog Post Pages (the 5 old blog posts not in taxonomy)
     legacy_files = [
         "9th-month-nutrition-guide.html",
         "first-trimester-diet-guide.html",
@@ -1244,10 +1518,48 @@ def main():
         update_standalone_page_nav(os.path.join(WORKSPACE_DIR, filename), active_tab, taxonomy, visible_categories)
     print("Updated core landing pages with new header mega-menu and footer topics.")
 
-    # 6. Update Sitemap
+    # 6. Update Sitemaps (split into sitemap-pages.xml + sitemap-blog.xml + index)
     update_sitemap(visible_categories, taxonomy, posts)
 
-    print("MiGynae Blog Static Build Complete Successfully!")
+    # 7. Generate Redirect Stubs from redirects.json
+    redirects_path = os.path.join(WORKSPACE_DIR, "redirects.json")
+    if os.path.exists(redirects_path):
+        redirects = load_json(redirects_path)
+        stub_template = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <link rel="canonical" href="{new_url}">
+    <meta http-equiv="refresh" content="0; url={new_path}">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {{
+            window.location.replace("{new_path}" + (window.location.search || "") + (window.location.hash || ""));
+        }})();
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a href="{new_path}">{new_path}</a>...</p>
+</body>
+</html>"""
+        for old_path, new_path in redirects.items():
+            rel_old = old_path.lstrip("/")
+            if rel_old.startswith("blog/"):
+                slug = rel_old[5:]
+                path_single = os.path.join(WORKSPACE_DIR, "blog", f"{slug}.html")
+                path_index = os.path.join(WORKSPACE_DIR, "blog", slug, "index.html")
+            else:
+                path_single = os.path.join(WORKSPACE_DIR, f"{rel_old}.html")
+                path_index = os.path.join(WORKSPACE_DIR, rel_old, "index.html")
+            stub_content = stub_template.format(new_url=f"{SITE_URL}{new_path}", new_path=new_path)
+            write_dual_file(path_single, path_index, stub_content)
+        print(f"Generated {len(redirects)} redirect stubs from redirects.json.")
+
+    print("\nMiGynae Blog Static Build Complete Successfully!")
+    print(f"  Posts rendered: {len(posts)} ({guide_count} guides + {article_count} articles)")
+    print(f"  Categories rendered: {len(taxonomy['categories'])} ({len(visible_categories)} visible, {len(empty_categories)} empty/hidden)")
+    print(f"  Sitemaps: sitemap.xml (index) -> sitemap-pages.xml ({8} URLs) + sitemap-blog.xml")
 
 if __name__ == "__main__":
     main()
