@@ -280,10 +280,14 @@ def build_breadcrumbs_html(crumbs):
     </nav>"""
     return html, json.dumps(json_ld, indent=2)
 
+def get_post_url(post):
+    return post.get("urlPath", f"/blog/{post['id']}")
+
 def build_article_card_html(post, category_name):
     img_url = "/" + post["image"] if not post["image"].startswith("/") else post["image"]
+    post_url = get_post_url(post)
     return f"""                <article class="article-card">
-                    <a href="/blog/{post['id']}" class="article-card-thumb-wrap" aria-label="{escape_html(post['title'])}">
+                    <a href="{post_url}" class="article-card-thumb-wrap" aria-label="{escape_html(post['title'])}">
                         <img src="{img_url}" alt="{escape_html(post.get('imageAlt', post['title']))}" class="article-card-thumb" loading="lazy" width="400" height="225">
                     </a>
                     <div class="article-card-body">
@@ -292,12 +296,12 @@ def build_article_card_html(post, category_name):
                             <span class="article-meta-date"><i class="far fa-calendar-alt"></i> {format_date(post['date'])}</span>
                         </div>
                         <h2 class="article-card-title">
-                            <a href="/blog/{post['id']}">{escape_html(post['title'])}</a>
+                            <a href="{post_url}">{escape_html(post['title'])}</a>
                         </h2>
                         <p class="article-card-excerpt">{escape_html(post['excerpt'])}</p>
                         <div class="article-card-footer">
                             <span><i class="far fa-clock"></i> {escape_html(post.get('readTime', '8 min read'))}</span>
-                            <a href="/blog/{post['id']}" class="read-more-link">Read Article &rarr;</a>
+                            <a href="{post_url}" class="read-more-link">Read Article &rarr;</a>
                         </div>
                     </div>
                 </article>"""
@@ -337,7 +341,7 @@ def render_blog_index(taxonomy, visible_categories, posts, current_page=1):
         c_posts = [p for p in posts if p["category"] == c["slug"]]
         links_html = []
         for p in c_posts[:4]:
-            links_html.append(f'<li><a href="/blog/{p["id"]}">{escape_html(p["title"])}</a></li>')
+            links_html.append(f'<li><a href="{get_post_url(p)}">{escape_html(p["title"])}</a></li>')
         # Also add a subcategory link if any
         if c.get("subcategories"):
             sub = c["subcategories"][0]
@@ -600,7 +604,7 @@ def render_category_page(category, taxonomy, visible_categories, posts, subcateg
         item_list_elements.append({
             "@type": "ListItem",
             "position": idx + 1,
-            "url": f"{SITE_URL}/blog/{p['id']}",
+            "url": f"{SITE_URL}{get_post_url(p)}",
             "name": p["title"]
         })
 
@@ -789,7 +793,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     footer_html = build_footer_html(visible_categories)
     app_cta_html = build_app_cta_html()
 
-    canonical_url = f"{SITE_URL}/blog/{post_id}"
+    canonical_url = f"{SITE_URL}{get_post_url(post)}"
     img_url = f"{SITE_URL}/{post['image']}" if not post['image'].startswith("http") else post['image']
 
     meta_title = post.get("metaTitle") or f"{post['title']} | MiGynae"
@@ -1070,7 +1074,7 @@ def render_guide_page(post, category, subcategory, taxonomy, visible_categories,
     footer_html = build_footer_html(visible_categories)
     app_cta_html = build_app_cta_html()
 
-    canonical_url = f"{SITE_URL}/blog/{post_id}"
+    canonical_url = f"{SITE_URL}{get_post_url(post)}"
     img_url = f"{SITE_URL}/{post['image']}" if not post["image"].startswith("http") else post["image"]
 
     meta_desc = post["excerpt"]
@@ -1344,9 +1348,9 @@ def update_sitemap(visible_categories, taxonomy, posts):
             if sub_posts:
                 blog_urls.append((f"/blog/{c['slug']}/{s['slug']}", "weekly", "0.7"))
 
-    # All posts (including migrated guides — they are now at /blog/<slug>)
+    # All posts (including migrated guides)
     for p in posts:
-        blog_urls.append((f"/blog/{p['id']}", "monthly", "0.8"))
+        blog_urls.append((get_post_url(p), "monthly", "0.8"))
 
     # Legacy blog posts (old ones not in blogs.json)
     legacy_posts = [
@@ -1483,25 +1487,19 @@ def main():
             post_html = render_post_page(p, cat, sub, taxonomy, visible_categories, posts)
             article_count += 1
 
-        # 1. Root blog level: /blog/<id>
-        write_dual_file(
-            os.path.join(WORKSPACE_DIR, "blog", f"{p['id']}.html"),
-            os.path.join(WORKSPACE_DIR, "blog", p["id"], "index.html"),
-            post_html
-        )
-
-        # 2. Respective category slug: /blog/<category-slug>/<id>
-        write_dual_file(
-            os.path.join(WORKSPACE_DIR, "blog", cat["slug"], f"{p['id']}.html"),
-            os.path.join(WORKSPACE_DIR, "blog", cat["slug"], p["id"], "index.html"),
-            post_html
-        )
-
-        # 3. Respective subcategory slug: /blog/<category-slug>/<subcategory-slug>/<id>
-        if sub:
+        # If post specifies a custom urlPath (e.g. under category slug):
+        if p.get("urlPath"):
+            rel_path = p["urlPath"].lstrip("/")
             write_dual_file(
-                os.path.join(WORKSPACE_DIR, "blog", cat["slug"], sub["slug"], f"{p['id']}.html"),
-                os.path.join(WORKSPACE_DIR, "blog", cat["slug"], sub["slug"], p["id"], "index.html"),
+                os.path.join(WORKSPACE_DIR, f"{rel_path}.html"),
+                os.path.join(WORKSPACE_DIR, rel_path, "index.html"),
+                post_html
+            )
+        else:
+            # Root blog level: /blog/<id>
+            write_dual_file(
+                os.path.join(WORKSPACE_DIR, "blog", f"{p['id']}.html"),
+                os.path.join(WORKSPACE_DIR, "blog", p["id"], "index.html"),
                 post_html
             )
 
