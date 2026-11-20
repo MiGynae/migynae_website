@@ -679,7 +679,7 @@ def render_category_page(category, taxonomy, visible_categories, posts, subcateg
 <body class="blog-page">
 {header_html}
 
-    <main>
+    <main style="padding-top: 90px;">
         {breadcrumbs_html}
 
         <section class="hub-header" style="padding-top: 20px;">
@@ -950,7 +950,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
 <body class="blog-page">
 {header_html}
 
-    <main>
+    <main style="padding-top: 90px;">
         {breadcrumbs_html}
 
         <article class="post-content-wrap">
@@ -1160,7 +1160,7 @@ def render_guide_page(post, category, subcategory, taxonomy, visible_categories,
 <body class="blog-page">
 {header_html}
 
-    <main>
+    <main style="padding-top: 90px;">
         {breadcrumbs_html}
 
         <div class="post-content-wrap" style="max-width: 820px; margin: 0 auto; padding: 20px 20px 40px;">
