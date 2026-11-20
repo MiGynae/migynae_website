@@ -1371,23 +1371,41 @@ def update_sitemap(visible_categories, taxonomy, posts):
     print(f"Written sitemap-blog.xml with {len(blog_urls)} URLs.")
 
     # -----------------------------------------------------------------------
-    # sitemap.xml — sitemap index referencing both
+    # sitemap.xml — unified, self-contained urlset for Google & GitHub Pages
     # -----------------------------------------------------------------------
-    sitemap_index = f"""<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>{SITE_URL}/sitemap-pages.xml</loc>
-    <lastmod>{today}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>{SITE_URL}/sitemap-blog.xml</loc>
-    <lastmod>{today}</lastmod>
-  </sitemap>
-</sitemapindex>
-"""
+    all_site_urls = list(page_urls)
+    guide_urls = [
+        ("/irregular-periods-pcos-india", "monthly", "0.8"),
+        ("/free-period-tracker", "monthly", "0.8"),
+        ("/free-kick-tracker", "monthly", "0.8"),
+        ("/labour-prep-guide", "monthly", "0.8"),
+        ("/postpartum-recovery-guide", "monthly", "0.8"),
+        ("/pre-labour-prep-guide", "monthly", "0.7"),
+        ("/during-labour-guide", "monthly", "0.7"),
+        ("/epidural-guide", "monthly", "0.7"),
+        ("/caesarean-guide", "monthly", "0.7"),
+        ("/post-delivery-guide", "monthly", "0.7"),
+        ("/partner-support-guide", "monthly", "0.7"),
+        ("/family-support-guide", "monthly", "0.7"),
+        ("/pregnancy-beauty-salon-guide", "monthly", "0.8"),
+        ("/reduced-fetal-movement-when-to-worry", "monthly", "0.8"),
+        ("/safe-period-method-pregnancy", "monthly", "0.8")
+    ]
+    seen_paths = {u[0] for u in all_site_urls}
+    for gu in guide_urls:
+        if gu[0] not in seen_paths:
+            all_site_urls.append(gu)
+            seen_paths.add(gu[0])
+
+    for bu in blog_urls:
+        if bu[0] not in seen_paths:
+            all_site_urls.append(bu)
+            seen_paths.add(bu[0])
+
+    unified_xml = build_sitemap_xml(all_site_urls, today)
     with open(os.path.join(WORKSPACE_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
-        f.write(sitemap_index)
-    print("Written sitemap.xml (sitemap index referencing sitemap-pages.xml + sitemap-blog.xml).")
+        f.write(unified_xml)
+    print(f"Written unified sitemap.xml with {len(all_site_urls)} URLs.")
 
 def main():
     print("Starting MiGynae Blog Static Build...")
