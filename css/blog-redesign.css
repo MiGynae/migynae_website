@@ -77,6 +77,10 @@
 
 /* Desktop Mega-Menu Container */
 @media (min-width: 901px) {
+    .nav-item-has-menu {
+        position: relative;
+    }
+
     .nav-item-has-menu:hover .mega-menu,
     .nav-item-has-menu:focus-within .mega-menu,
     .mega-menu.is-open {
@@ -94,13 +98,16 @@
     .mega-menu {
         position: absolute;
         top: 100%;
-        left: -180px;
-        width: 760px;
+        right: 0;
+        left: auto;
+        width: 720px;
+        max-width: calc(100vw - 32px);
+        box-sizing: border-box;
         background: #ffffff;
         border-radius: 16px;
         box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         border: 1px solid #f1f3f4;
-        padding: 28px;
+        padding: 24px 28px;
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
@@ -112,7 +119,7 @@
     .mega-menu-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        gap: 20px;
     }
 
     .mega-menu-col-title {
@@ -170,6 +177,16 @@
 
     .mega-menu-footer a:hover {
         text-decoration: underline;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+    .mega-menu {
+        width: 660px;
+        padding: 18px 20px;
+    }
+    .mega-menu-grid {
+        gap: 14px;
     }
 }
 
