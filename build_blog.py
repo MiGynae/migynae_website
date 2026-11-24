@@ -972,7 +972,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
                 <span>Medically reviewed by {escape_html(post.get('medicalReviewer', 'Dr. Shuchita Batra, MBBS, MD (Obstetrics & Gynaecology)'))}</span>
             </div>
 
-            <img src="{post['image']}" alt="{escape_html(image_alt)}" class="post-banner" width="820" height="440">
+            <img src="/{post['image'].lstrip('/')}" alt="{escape_html(image_alt)}" class="post-banner" width="820" height="440">
 
             <div class="post-body">
                 {post['content']}
