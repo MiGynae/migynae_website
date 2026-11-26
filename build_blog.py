@@ -1548,6 +1548,9 @@ def main():
     ]
     for filename, active_tab in core_pages:
         update_standalone_page_nav(os.path.join(WORKSPACE_DIR, filename), active_tab, taxonomy, visible_categories)
+    if os.path.exists(os.path.join(WORKSPACE_DIR, "guides")):
+        import shutil
+        shutil.copyfile(os.path.join(WORKSPACE_DIR, "guides.html"), os.path.join(WORKSPACE_DIR, "guides", "index.html"))
     print("Updated core landing pages with new header mega-menu and footer topics.")
 
     # 6. Update Sitemaps (split into sitemap-pages.xml + sitemap-blog.xml + index)
