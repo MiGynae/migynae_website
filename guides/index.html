@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+      (function () {
+        var p = window.location.pathname;
+        if (p.endsWith('.html')) {
+          var c = p.replace(/\.html$/, '');
+          if (c === '/index' || c.endsWith('/index')) c = c.slice(0, -5) || '/';
+          window.location.replace(c + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTYHVLS8B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YRTYHVLS8B');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+    <title>Labour & Postpartum Guides — MiGynae</title>
+    <meta name="description" content="Free labour prep and postpartum recovery guides with OBGYN-backed tips on birth preparation, hospital bag checklists, healing after delivery, and breastfeeding.">
+    <link rel="canonical" href="https://migynaeapp.com/guides">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://migynaeapp.com/guides">
+    <meta property="og:title" content="Labour & Postpartum Guides — MiGynae">
+    <meta property="og:description" content="Free labour prep and postpartum recovery guides with OBGYN-backed tips on birth preparation, hospital bag checklists, healing after delivery, and breastfeeding.">
+    <meta property="og:image" content="https://migynaeapp.com/images/blog/labour-guide-banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Labour & Postpartum Guides — MiGynae">
+    <meta name="twitter:description" content="Free labour prep and postpartum recovery guides with OBGYN-backed tips on birth preparation, hospital bag checklists, healing after delivery, and breastfeeding.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Labour & Postpartum Guides — MiGynae",
+      "url": "https://migynaeapp.com/guides",
+      "description": "Free labour prep and postpartum recovery guides with OBGYN-backed tips on birth preparation, hospital bag checklists, healing after delivery, and breastfeeding.",
+      "publisher": { "@type": "Organization", "name": "MiGynae", "url": "https://migynaeapp.com" }
+    }
+    </script>
+    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/landing.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+        .guides-grid .guide-tile{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid #f1f3f4;border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:transform .3s ease,box-shadow .3s ease;}
+        .guides-grid .guide-tile:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.12);}
+        .guides-grid .guide-thumb{width:100%;height:180px;object-fit:cover;display:block;}
+        .guides-grid .guide-thumb-gradient{width:100%;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;text-align:center;padding:16px;position:relative;overflow:hidden;}
+        .guides-grid .guide-thumb-gradient::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,.12);border-radius:50%;}
+        .guides-grid .guide-thumb-gradient i{font-size:34px;position:relative;}
+        .guides-grid .guide-thumb-gradient .thumb-title{font-size:1.2rem;font-weight:800;line-height:1.2;letter-spacing:.3px;position:relative;}
+        .guides-grid .guide-tile-body{flex:1;display:flex;flex-direction:column;padding:22px;}
+        .guides-grid .guide-tile-body h2{font-size:1.2rem;margin:8px 0;color:var(--text-dark);}
+        .guides-grid .guide-tile-body p{flex:1;font-size:14.5px;color:var(--text-light);line-height:1.6;margin-bottom:16px;}
+        .guides-grid .guide-tile-body .read-link{font-weight:600;color:var(--primary-dark);font-size:14px;}
+        @media (max-width:900px){.guides-grid{grid-template-columns:repeat(2,1fr);}}
+        @media (max-width:600px){.guides-grid{grid-template-columns:1fr;}}
+    </style>
+    <link rel="stylesheet" href="css/blog-redesign.css">
+</head>
+<body>
+                                                                            <header>
+        <nav class="container">
+            <a href="/" class="logo" style="text-decoration:none;">
+                <div class="logo-mark">M</div>
+                <p class="logo-title" aria-label="MiGynae">MiGynae</p>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/how-it-works">How It Works</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li class="nav-item-has-menu">
+                    <a href="/blog" class="mega-menu-trigger" aria-haspopup="true" aria-expanded="false">
+                        Blog <i class="fas fa-chevron-down chevron-icon"></i>
+                    </a>
+                    <div class="mega-menu" id="blogMegaMenu" role="menu" aria-label="Blog Topics">
+  <div class="mega-menu-grid">
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Trying to Conceive</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/getting-pregnant">Getting Pregnant</a></li>
+      </ul>
+    </div>
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Pregnancy</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/pregnancy-symptoms">Pregnancy Symptoms</a></li>
+        <li><a href="/blog/pregnancy-health">Pregnancy Health</a></li>
+        <li><a href="/blog/scans-and-tests">Scans &amp; Tests</a></li>
+        <li><a href="/blog/pregnancy-lifestyle">Pregnancy Lifestyle</a></li>
+      </ul>
+    </div>
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Labour &amp; Baby</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/labour-and-delivery">Labour &amp; Delivery</a></li>
+        <li><a href="/blog/postpartum-recovery">Postpartum &amp; Recovery</a></li>
+        <li><a href="/blog/baby-care">Baby Care &amp; Development</a></li>
+      </ul>
+    </div>
+    <div class="mega-menu-col">
+      <div class="mega-menu-col-title">Women&#39;s Health</div>
+      <ul class="mega-menu-list">
+        <li><a href="/blog/periods-and-cycle">Periods &amp; Cycle</a></li>
+        <li><a href="/blog/womens-health">Women&#39;s Health</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mega-menu-footer">
+    <span>Explore clinical guides, symptom relief &amp; trimester care</span>
+    <a href="/blog">View All Blog Articles &rarr;</a>
+  </div>
+</div>
+                </li>
+                <li><a href="/guides" class="active">Guides</a></li>
+            </ul>
+            <div class="mobile-menu" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-eyebrow">Free expert guides</span>
+            <h1>Labour &amp; Postpartum Guides</h1>
+            <p>Free, medically reviewed guides for every stage of labour, birth and recovery — choose what you're preparing for. Read on the web; track in the app.</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <section style="padding:0 0 80px;">
+            <div class="container">
+                <div class="guides-grid">
+                    <a href="/labour-prep-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/labour-guide-banner.png" alt="Labour prep guide" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Before birth</span>
+                            <h2>Labour Prep Guide</h2>
+                            <p>Breathing, positions, hospital-bag checklist, pain-relief options and birth-partner support — plus when to head to hospital.</p>
+                            <span class="read-link">Read full guide →</span>
+                        </div>
+                    </a>
+                    <a href="/postpartum-recovery-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/postpartum-guide-banner.png" alt="Postpartum recovery guide" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">After birth</span>
+                            <h2>Postpartum Recovery Guide</h2>
+                            <p>Wound care, safe exercises, breastfeeding, recovery nutrition, mental health, and warning signs to watch for.</p>
+                            <span class="read-link">Read full guide →</span>
+                        </div>
+                    </a>
+                    <a href="/pre-labour-prep-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/pre-labour-guide-banner.png" alt="Pre-labour preparation guide for normal delivery — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Before birth</span>
+                            <h2>Pre-Labour Prep</h2>
+                            <p>Stay active, know when to step it up from 28 weeks, questions for your doctor, and hospital warning signs.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/during-labour-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/during-labour-guide-banner.webp" alt="How to make labour pains manageable — MiGynae during labour guide" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">During birth</span>
+                            <h2>During Labour</h2>
+                            <p>Breathing, positions, when not to push, resting between contractions, and asking for pain relief.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/epidural-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/epidural-guide-banner.webp" alt="Epidural analgesia guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Pain relief</span>
+                            <h2>The Epidural, Explained</h2>
+                            <p>What it is, what to expect, myths vs facts, and the right questions to ask your anaesthetist.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/caesarean-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/caesarean-guide-banner.webp" alt="Caesarean guide — C-section preparation and recovery | MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">C-section</span>
+                            <h2>Your Caesarean Guide</h2>
+                            <p>The essentials of a C-section (LSCS), recovering well, warning signs, and reassurance it's still your birth.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/post-delivery-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/post-delivery-guide-banner.webp" alt="Post delivery recovery guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">After birth</span>
+                            <h2>Post-Delivery Recovery</h2>
+                            <p>What's normal and what's not, warning signs, and simple do's and don'ts after birth.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/partner-support-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/partner-support-guide-banner.webp" alt="Partner pregnancy support guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Support</span>
+                            <h2>For the Partner</h2>
+                            <p>How to support her through pregnancy, in the labour room, and after the baby comes.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/family-support-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/family-support-guide-banner.webp" alt="Family support guide for pregnancy and new baby — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Support</span>
+                            <h2>For the Family</h2>
+                            <p>How to understand and support her through pregnancy and after the baby arrives.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/irregular-periods-pcos-india" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/irregular-periods-pcos-banner.webp" alt="Irregular periods and PCOS guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Women's Health</span>
+                            <h2>Irregular Periods &amp; PCOS in India</h2>
+                            <p>PCOD vs PCOS explained — real causes, how it's actually diagnosed, and what helps.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/free-period-tracker" class="guide-tile">
+                        <img class="guide-thumb" src="/images/free-period-tracker-app-migynae.webp" alt="Free period tracker app — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Period Tracking</span>
+                            <h2>Free Period Tracker</h2>
+                            <p>How MiGynae's free period tracker works, how accurate it is, and what to track beyond just dates. Doctor-reviewed, no paywall.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/free-kick-tracker" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/free-kick-tracker-banner.webp" alt="Free kick tracker app — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Pregnancy</span>
+                            <h2>Free Kick Tracker</h2>
+                            <p>When to start counting kicks, how to count properly, and what's genuinely a normal pattern of baby movement.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/reduced-fetal-movement-when-to-worry" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/reduced-fetal-movement-banner.webp" alt="Reduced fetal movement — when to worry guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Pregnancy</span>
+                            <h2>Reduced Fetal Movement</h2>
+                            <p>What counts as reduced movement, and exactly when to call your doctor or go to the hospital — no guesswork.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/safe-period-method-pregnancy" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/safe-period-method-banner.webp" alt="Does the safe period method actually prevent pregnancy — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Women's Health</span>
+                            <h2>Does the Safe Period Method Work?</h2>
+                            <p>A straight answer on the rhythm/calendar method's real effectiveness, and what's actually reliable if you want to avoid pregnancy.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/pregnancy-beauty-salon-guide" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/pregnancy-salon-guide-banner.webp" alt="Pregnancy beauty and salon guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Pregnancy</span>
+                            <h2>Pregnancy Beauty &amp; Salon Guide</h2>
+                            <p>Skin care, hair colour and facial treatments in pregnancy — what's safe, and what to skip until baby arrives.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                
+                    <a href="/blog/periods-and-cycle/irregular-periods" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/irregular-periods-guide-banner.webp" alt="Irregular Periods Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Periods & Cycle</span>
+                            <h2>Irregular Periods Guide</h2>
+                            <p>What a normal menstrual cycle looks like, warning signs of irregular or heavy periods, home remedies, and when to see a doctor.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/scans-and-tests/pregnancy-ultrasound-scans" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/pregnancy-ultrasound-scans-guide-banner.webp" alt="Pregnancy Ultrasound Scans Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Scans & Tests</span>
+                            <h2>Pregnancy Ultrasound Scans</h2>
+                            <p>Your complete guide to all pregnancy scans — dating scan, NT scan, TIFFA anomaly scan, and growth scan week by week.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/womens-health/pcos-diet-exercise" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/pcos-diet-exercise-guide-banner.webp" alt="PCOS Diet & Exercise Plan — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Women's Health</span>
+                            <h2>PCOS Diet &amp; Exercise Plan</h2>
+                            <p>Simple daily steps to manage PCOS and PCOD: what to eat, how to stay active, sleep, stress management, and cycle tracking.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/womens-health/pcod-vs-pcos" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/pcod-vs-pcos-guide-banner.webp" alt="PCOD vs PCOS Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Women's Health</span>
+                            <h2>PCOD vs PCOS: What's the Difference?</h2>
+                            <p>Confused by the terms? Here is how PCOD and PCOS differ, what your ultrasound report means, and when to get checked.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/baby-care/newborn-danger-signs" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/newborn-danger-signs-guide-banner.webp" alt="Newborn Danger Signs Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Baby Care</span>
+                            <h2>Newborn Danger Signs</h2>
+                            <p>Warning signs in a newborn baby you should never miss: breathing distress, poor feeding, fever, jaundice, and emergency steps.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/postpartum-recovery/breastfeeding" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/breastfeeding-guide-banner.webp" alt="Breastfeeding Guide for New Mothers — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Postpartum & Recovery</span>
+                            <h2>Breastfeeding Tips for New Mothers</h2>
+                            <p>Breastfeeding basics: early colostrum feeding, correct latch, nursing frequency, and signs your baby is getting enough milk.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/baby-care/newborn-baby-care" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/newborn-baby-care-guide-banner.webp" alt="Newborn Baby Care Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Baby Care</span>
+                            <h2>Newborn Baby Care at Home</h2>
+                            <p>Bringing your baby home: safe holding, feeding on demand, safe sleep practices, warmth, and umbilical cord care.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/getting-pregnant/how-to-conceive" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/how-to-conceive-guide-banner.webp" alt="How to Conceive Early Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Getting Pregnant</span>
+                            <h2>How to Get Pregnant: Conception Guide</h2>
+                            <p>Boost your chances of conceiving: fertile window calculation, timing intercourse, pre-conception nutrition, and folic acid.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/postpartum-recovery/postpartum-diet" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/postpartum-diet-guide-banner.webp" alt="Indian Postpartum Diet Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Postpartum & Recovery</span>
+                            <h2>Indian Postpartum Diet Guide</h2>
+                            <p>What to eat after delivery to heal faster, rebuild strength, and boost breast milk supply naturally with Indian foods.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+                    <a href="/blog/pregnancy-health/low-lying-placenta" class="guide-tile">
+                        <img class="guide-thumb" src="/images/blog/low-lying-placenta-guide-banner.webp" alt="Low-Lying Placenta Guide — MiGynae" loading="lazy">
+                        <div class="guide-tile-body">
+                            <span class="resource-tag">Pregnancy Health</span>
+                            <h2>Low-Lying Placenta Guide</h2>
+                            <p>What a low-lying placenta report means, why it usually moves up on its own, daily precautions, and delivery planning.</p>
+                            <span class="read-link">Read guide →</span>
+                        </div>
+                    </a>
+</div>
+
+                <div class="why-section" style="border:none;padding-top:60px;">
+                    <div class="section-header">
+                        <h2>How These Guides Work With the App</h2>
+                    </div>
+                    <div class="why-grid">
+                        <div class="why-item">
+                            <i class="fas fa-book-open"></i>
+                            <div>
+                                <h4>Read on the website</h4>
+                                <p>Full guides are free, long-form, and printable — no app login required.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Track in the app</h4>
+                                <p>Use MiGynae's contraction timer during labour and daily recovery tips postpartum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:48px;">
+                    <p style="color:var(--text-light);margin-bottom:20px;">Download the app for daily pregnancy support</p>
+                    <div class="hero-cta" style="justify-content:center;">
+                        <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank" rel="noopener">
+                            <picture><source srcset="/images/Playstore_button.webp" type="image/webp"><img src="/images/Playstore_button.png" alt="Google Play" width="200" height="60"></picture>
+                        </a>
+                        <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank" rel="noopener">
+                            <img src="/images/apple_logo_button_white.svg" alt="App Store" width="200" height="60">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+                                                                            <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MiGynae</h3>
+                    <p>Professional pregnancy care platform trusted by healthcare professionals and expecting mothers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/features">Features</a>
+                    <a href="/how-it-works">How It Works</a>
+                    <a href="/resources">Resources</a>
+                    <a href="/guides">Guides</a>
+                    <a href="/blog">Blog Index</a>
+                </div>
+                <div class="footer-section">
+  <h4>Blog Topics</h4>
+  <a href="/blog/getting-pregnant">Getting Pregnant</a>
+  <a href="/blog/pregnancy-symptoms">Pregnancy Symptoms</a>
+  <a href="/blog/pregnancy-health">Pregnancy Health</a>
+  <a href="/blog/scans-and-tests">Scans &amp; Tests</a>
+  <a href="/blog/pregnancy-lifestyle">Pregnancy Lifestyle</a>
+  <a href="/blog/labour-and-delivery">Labour &amp; Delivery</a>
+  <a href="/blog/postpartum-recovery">Postpartum &amp; Recovery</a>
+  <a href="/blog/baby-care">Baby Care &amp; Development</a>
+  <a href="/blog/periods-and-cycle">Periods &amp; Cycle</a>
+  <a href="/blog/womens-health">Women&#39;s Health</a>
+</div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" target="_blank" rel="noopener">Android App</a>
+                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" target="_blank" rel="noopener">iOS App</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MiGynae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.querySelector('.mobile-menu');
+            var nav = document.querySelector('.nav-links');
+            if (!toggle || !nav) return;
+
+            function setOpen(open) {
+                nav.classList.toggle('open', open);
+                toggle.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                setOpen(!nav.classList.contains('open'));
+            });
+
+            toggle.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!nav.classList.contains('open'));
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -802,9 +802,39 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
         meta_desc = meta_desc[:152] + "..."
     image_alt = post.get("imageAlt") or post["title"]
 
+    post_lang = post.get("lang", "en")
+    lang_attr = f'lang="{post_lang}"' + (' dir="ltr"' if post_lang == "hi" else '')
+
+    hreflang_tags = ""
+    if post.get("hreflang_en"):
+        en_url = f"{SITE_URL}{post['hreflang_en']}"
+        hi_url = canonical_url
+        hreflang_tags = f"""    <link rel="alternate" hreflang="hi" href="{hi_url}">
+    <link rel="alternate" hreflang="en" href="{en_url}">
+    <link rel="alternate" hreflang="x-default" href="{en_url}">"""
+    elif post.get("hreflang_hi"):
+        hi_url = f"{SITE_URL}{post['hreflang_hi']}"
+        en_url = canonical_url
+        hreflang_tags = f"""    <link rel="alternate" hreflang="en" href="{en_url}">
+    <link rel="alternate" hreflang="hi" href="{hi_url}">
+    <link rel="alternate" hreflang="x-default" href="{en_url}">"""
+
+    lang_toggle_html = ""
+    if post.get("hreflang_en"):
+        lang_toggle_html = f"""            <div class="lang-switch-bar" style="margin: 14px 0 20px; padding: 10px 16px; background: #fff5f7; border: 1px solid #fecdd3; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px;">
+                <span>🌐 यह लेख <strong>हिन्दी</strong> में है।</span>
+                <a href="{post['hreflang_en']}" style="color: #cf3476; font-weight: 600; text-decoration: underline;">Read in English →</a>
+            </div>"""
+    elif post.get("hreflang_hi"):
+        lang_toggle_html = f"""            <div class="lang-switch-bar" style="margin: 14px 0 20px; padding: 10px 16px; background: #fff5f7; border: 1px solid #fecdd3; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px;">
+                <span>🌐 This article is also available in Hindi.</span>
+                <a href="{post['hreflang_hi']}" style="color: #cf3476; font-weight: 600; text-decoration: underline;">हिन्दी में पढ़ें →</a>
+            </div>"""
+
     article_schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
+        "inLanguage": post_lang,
         "headline": post.get("metaTitle", post["title"]),
         "description": meta_desc,
         "image": img_url,
@@ -834,6 +864,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
         faq_schema = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "inLanguage": post_lang,
             "mainEntity": [
                 {
                     "@type": "Question",
@@ -851,7 +882,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     </script>"""
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html {lang_attr}>
 <head>
     <base href="/">
     <meta charset="UTF-8">
@@ -882,6 +913,7 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     <title>{escape_html(meta_title)}</title>
     <meta name="description" content="{escape_html(meta_desc)}">
     <link rel="canonical" href="{canonical_url}">
+{hreflang_tags}
     <meta property="og:type" content="article">
     <meta property="og:url" content="{canonical_url}">
     <meta property="og:title" content="{escape_html(meta_title)}">
@@ -904,11 +936,11 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
     <style>
         .post-banner {{
             width: 100%;
-            max-height: 440px;
-            object-fit: cover;
+            height: auto;
             border-radius: 20px;
             margin: 20px 0 30px;
             background: #f8f9fa;
+            display: block;
         }}
         .post-content-wrap {{
             max-width: 820px;
@@ -928,6 +960,10 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
             line-height: 1.8;
             color: #374151;
             margin-top: 30px;
+        }}
+        .post-body[lang="hi"], html[lang="hi"] .post-body, html[lang="hi"] .post-title {{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.85;
         }}
         .post-body h2 {{
             font-size: 1.75rem;
@@ -964,6 +1000,8 @@ def render_post_page(post, category, subcategory, taxonomy, visible_categories, 
                     <i class="far fa-calendar-alt"></i> {format_date(post['date'])} · <i class="far fa-clock"></i> {escape_html(post.get('readTime', '8 min read'))}
                 </span>
             </div>
+
+{lang_toggle_html}
 
             <h1 class="post-title">{escape_html(post['title'])}</h1>
 
@@ -1358,7 +1396,8 @@ def update_sitemap(visible_categories, taxonomy, posts):
         "first-trimester-diet-guide",
         "nausea-friendly-diet",
         "pregnancy-101",
-        "pregnancy-exercises"
+        "pregnancy-exercises",
+        "leaking-vs-labour"
     ]
     post_ids = {p["id"] for p in posts}
     for lp in legacy_posts:
@@ -1548,6 +1587,9 @@ def main():
     ]
     for filename, active_tab in core_pages:
         update_standalone_page_nav(os.path.join(WORKSPACE_DIR, filename), active_tab, taxonomy, visible_categories)
+    if os.path.exists(os.path.join(WORKSPACE_DIR, "guides")):
+        import shutil
+        shutil.copyfile(os.path.join(WORKSPACE_DIR, "guides.html"), os.path.join(WORKSPACE_DIR, "guides", "index.html"))
     print("Updated core landing pages with new header mega-menu and footer topics.")
 
     # 6. Update Sitemaps (split into sitemap-pages.xml + sitemap-blog.xml + index)
@@ -1576,9 +1618,11 @@ def main():
 </body>
 </html>"""
         for old_path, new_path in redirects.items():
-            rel_old = old_path.lstrip("/")
+            rel_old = old_path.strip("/")
+            if not rel_old:
+                continue
             if rel_old.startswith("blog/"):
-                slug = rel_old[5:]
+                slug = rel_old[5:].strip("/")
                 path_single = os.path.join(WORKSPACE_DIR, "blog", f"{slug}.html")
                 path_index = os.path.join(WORKSPACE_DIR, "blog", slug, "index.html")
             else:
