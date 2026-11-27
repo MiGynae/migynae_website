@@ -1396,7 +1396,8 @@ def update_sitemap(visible_categories, taxonomy, posts):
         "first-trimester-diet-guide",
         "nausea-friendly-diet",
         "pregnancy-101",
-        "pregnancy-exercises"
+        "pregnancy-exercises",
+        "leaking-vs-labour"
     ]
     post_ids = {p["id"] for p in posts}
     for lp in legacy_posts:
