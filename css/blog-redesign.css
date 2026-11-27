@@ -550,6 +550,15 @@
     margin-bottom: 12px;
 }
 
+.article-card-title a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.article-card-title a:hover {
+    color: #e88a89;
+}
+
 .article-card-excerpt {
     font-size: 14.5px;
     color: #6b7280;
